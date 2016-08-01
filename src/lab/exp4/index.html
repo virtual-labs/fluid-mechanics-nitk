@@ -31,7 +31,28 @@
     <!-- These are the stylesheets used for the lab. Please don't
   edit them; If you do, you will lose the edits in subsequent 
   releases of this User Interface. -->
-    <link href="../css/default.css" rel="stylesheet">
+   
+
+
+<style type="text/css">
+#wrap {
+    width:85%;margin-left:50px;
+}
+
+#images2{
+   
+    margin:50px auto; 
+}
+#images2 a{
+    margin:0px 20px;
+    display:inline-block;
+    text-decoration:none;
+    color:black;
+ }
+</style>
+
+
+ <link href="../css/default.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
     <!-- Instead add your custom styles to override the defaults 
   coming from the above style sheets. -->
@@ -39,33 +60,39 @@
     <!-- ***************************************************** -->
     <!-- All JavaScript at the bottom, except for Modernizr which
   enables HTML5 elements & feature detects -->
+						
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({jax: ["input/TeX", "output/HTML-CSS"],tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-	  "HTML-CSS": {  preferredFont: "STIX" }});
-</script>
-<script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<!--
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX", "output/HTML-CSS"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-      processEscapes: true
-    },
-    "HTML-CSS": { availableFonts: ["TeX"] }
-  });
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
--->
-<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
-   
 
-    <script src="js/modernizr-1.5.min.js" type="text/javascript"></script>
+ <link href="../css/tabs_slides.css" rel="stylesheet">
+						<style type="text/css" media="print">.jwts_tabbernav{display:none;}</style>
+
+
+
+<script type="text/javascript">
+
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+if(id =='foo4')
+ { 
+document.getElementById("foo5").style.display = 'none';
+}	
+if(id =='foo5')
+ { 
+document.getElementById("foo4").style.display = 'none';
+}
+	
+
+	
+
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+
+       else
+          e.style.display = 'block';
+    }
+
+</script> 
+    <script src="../js/modernizr-1.5.min.js" type="text/javascript"></script>
     <script src="../js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript">
 $(document).ready(function() 
@@ -160,10 +187,13 @@ $(document).ready(function()
     <div id="container"></div>
 
     <div id="hidden-content"></div>
+<div id="footer" style="text-align:center; width:100%; color:white">Copyright &copy 2016 SOLVE - The Virtual Lab at NITK Surathkal</div>
     <!-- Javascript at the bottom for fast page loading -->
     <!--<script type="text/javascript" src="../js/MathJax/MathJax.js"> -->
     <!--  </script> -->
     <!-- ******** ADD/OVERRIDE JAVASCRIPT FILES HERE ********* -->
     <!-- ***************************************************** -->
+
+
 </body>
 </html>
