@@ -1,89 +1,189 @@
-<!-- This file needs to be edited by the lab developer to suit
-the requirements of their lab in particular.-->
-<!-- Add class="default" to include any element as it is
-specified in default.html. 
-Do not include class="default" to the elements that you want to
-edit -->
+<!-- This file needs to be edited by the lab developer to suit the requirements of their lab in particular.-->
+<!-- Add class="default" to include any element as it is specified in default.html. Do not include class="default" to the elements that you want to edit -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+<title> Fluid Mechanics Lab - SOLVE @ NITK Surathkal
+</title>
 
-<style type="text/css">
-#wrap {
-    width:85%;
-}
-
+<style>
+#algn span{
+display: flex;
+  align-items: center;
+  }
 </style>
-
-
 </head>
 
 <body>
-  <div id="experiment">
+   <div id="experiment">
         <!-- The Experiment Document Container-->
-        <!-- The lab Header contains the logo and the name of the lab,
-  usually displayed on the top of the page-->
-
+        <!-- The lab Header contains the logo and the name of the lab,  usually displayed on the top of the page-->
         <header class="default" id="experiment-header">
             <div class="logo" id="experiment-header-logo">
-            <!-- Enclose the logo image of your lab or write it in 
-      text-->
-            <img src="../images/logo.jpg"></div>
+            <!-- Enclose the logo image of your lab or write it in text-->
+            <img src="../images/logo.jpg">
+			</div>
 
             <div class="heading" id="experiment-header-heading">
-                <!-- Write the name of your lab and link it to the home 
-      page of your lab (h1 tag is preferred while writing your 
-      lab name)-->
-                <a href="../index.html">Fluid Mechanics  Lab</a>
-            </div><!-- Add any additional element you want to add to the lab 
-    header, For example : Help (Enclosing them with suitable 
-    div is recommended)-->
-        </header><!-- The lab article is the main content area where all the 
-  experiment content sits-->
+                <!-- Write the name of your lab and link it to the home page of your lab (h1 tag is preferred while writing your lab name)-->
+                <a href="../index.html">Fluid Mechanics Lab</a>
+            </div>
+			
+			<!-- Add any additional element you want to add to the lab header, For example : Help (Enclosing them with suitable div is recommended)-->
+        </header>
+		
+<!-- The lab article is the main content area where all the experiment content sits-->
 
         <article id="experiment-article">
             <!-- The lab article has an header, optional navigational 
-    menu, number of sections, an optional sidebar and a closing 
-    footer-->
+			menu, number of sections, an optional sidebar and a closing 
+			footer-->
 
             <div class="breadcrumb" id="experiment-article-breadcrumb"></div>
 
             <header class="heading" id="experiment-article-heading">
-               Minor Losses - Gate Valve
-            </header><!-- Navigation menu is useful to organize the view of 
-      multiple sections inside the article-->
+				Calibration of Rectangular Notch 
+			</header>
+<!-- Navigation menu is useful to organize the view of multiple sections inside the article-->
 
             <nav class="default" id="experiment-article-navigation">
                 <ul id="experiment-article-navigation-menu">
                     <!-- The menu can be dynamically generated to contain 
-          the headings of your sections or instead write the 
-          menu items of your choice individually enclosedu in 
-          &lt;li&gt; tag as shown below-->
+					the headings of your sections or instead write the 
+					menu items of your choice individually enclosedu in 
+					&lt;li&gt; tag as shown below-->
                 </ul>
-            </nav><!-- All the sections of your lab or experiment can be 
-      enclosed together with a div element as shown below-->
-      
+            </nav>
+<!-- All the sections of your lab or experiment can be enclosed together with a div element as shown below-->
 
+			
             <div id="experiment-article-sections">
+			
                 <!-- First section of the article-->
-<section id="experiment-article-section-1">
-                    <div class="icon" id="experiment-article-section-1-icon">
-                    <!-- Enclose the icon image of your lab. -->
-                    <img src="../images/theory.jpg"></div>
+			<section id="experiment-article-section-1">
+                <div class="icon" id="experiment-article-section-1-icon">
+                <!-- Enclose the icon image of your lab. -->
+                <img src="../images/theory.jpg"></div>
 
-                    <div class="heading" id=
-                    "experiment-article-section-1-heading">
-                        Theory
-                    </div>
+                <div class="heading" id="experiment-article-section-1-heading">
+					Theory
+                </div>
 
-                    <div class="content" id=
-                    "experiment-article-section-1-content">
-                        <div class="divContent" id="wrap">
-                         
+            <div class="content" id="experiment-article-section-1-content">
+            <div class="divContent"  id="wrap">
+					
+					<!-- Theory Content-->
+					<p style="text-indent: 50px;">A Notch is a device used for measuring the rate of flow of a liquid through a small channel or a tank. It 
+					may be defined as an opening in the side of a tank or vessel such as liquid surface in the tank is below the level of opening.</p>
+					<p style="text-indent: 50px;">Notches can be of different shapes such as triangular, rectangular, trapezoidal, stepped notch, etc. 
+					the bottom of the notch over which the water flows is known as crest or sill and the thin sheet of water flowing through the notch is 
+					known as nappe or vein. The edges of the notch are bevelled on the downstream side so as to have a sharp-edged sides and crest resulting 
+					in minimum contact with the flowing fluid.</p></br>
+					
+					<p><center><img src="../images/RN_1.png"style="width:253px; height:386px;"></img></center></p> </br>
+					
+					<p style="text-indent: 50px;">The discharge over notch is measured by measuring the head acting over the notch. As water approaches the 
+					notch, its surface becomes curved. Therefore, the head over the notch is to be measured at the upstream of the notch where the effect of 
+					curvature is minimum. Also, it should be close to the notch so that the loss of energy between head measuring section and notch is 
+					negligible. In practical, the head over notch is measured at a distance of 3 to 4 times the maximum head from the notch.</p></br>
+					
+					<p><b>Classifications of notch:</b></p></br>
+					<p><b>Rectangular notch:</b></p>
+					
+					<p style="text-indent: 50px;">It takes its name from the shape of its notch. The discharge through a weir or notch is directly related to 
+					the water depth or head (H). This head is affected by the condition of the crest, the contraction, the velocity of approaching stream and 
+					the elevation of the water surface downstream from the weir.</p></br>
+					
+					<p><center><img src="../images/RN_2.png"style="width:282px; height:151px;"></img></center></p> </br>
+					
+					<p><b>Trapezoidal or Cipolletti notch:</b></p>
+					<p style="text-indent: 50px;">The Cipolletti notch is trapezoidal in shape. The slope of the sides, inclined outwardly from the crest and should be one 
+					horizontal to four vertical.</p></br>
+					
+					<p><center><img src="../images/RN_3.png"style="width:456px; height:214px;"></img></center></p> </br>
+					
+					<p><b>V-Notch</b></p>
+					<p style="text-indent: 50px;">In this case, the notch is "V" in shape. Depth of water above the bottom of the V is called head (H).
+					The V-notch design causes small changes in discharge hence causing a large change in depth and thus allowing more accurate measurement
+					than with a rectangular notch.</p></br>
+					
+					<p><center><img src="../images/RN_4.png"style="width:282px; height:151px;"></img></center></p> </br>
+					
+					<p><b>Stepped notch:</b></p>
+					<p style="text-indent: 50px;">A stepped notch is a combination of rectangular notches as shown in figure. It is thus obvious that the 
+					discharge over such a notch will be the sum of the discharges over the different rectangular notches.</p>
+					
+					<center><img src="../images/RN_5.png" style =" width:341px; height:240px;"></img></center></br>
+					
+					<p>Let us consider a horizontal strip of water of thickness dh at a depth of h from the water level as shown in figure.</p></br>
+					
+					<center><img src="../images/RN_6.png" style =" width:564px; height:237px;"></img></center></br>
+					
+					<p>Let,</p>
+					<p>H = Height of water above sill of notch</p>
+					<p>b = Width or length of the notch</p>
+					
+					<p>C<sub>d</sub> = Coefficient of discharge</p></br>
+					
+					<div>
+						<img src="../images/RN_7.png" style =" width:230px; height:23px;vertical-align:middle"></img>
+						<span> &nbsp;&nbsp;&nbsp;-------(1)</span>
+					</div></br>
+   
+					<p>We know that,</p>
+					
+					<div>
+						<span> The theoretical velocity of water through the strip</span>
+						<img src="../images/RN_8.png" style =" width:50px; height:23px;vertical-align:middle"></img>
+						<span> &nbsp;&nbsp;&nbsp;-------(2)</span>
+					</div></br>
+					
+					<p>Discharge through the strip,</p></br>
+					
+					<img src="../images/RN_9.png" style =" width:300px; height:20px;"></img></br>
+					<img src="../images/RN_10.png" style =" width:180px; height:24px;"></img></br>
+					
+					<p>The total discharge over the whole notch may be found out by integrating the above equation within the limits 0 and H.</p></br>
+					
+					<img src="../images/RN_11.png" style =" width:140px; height:30px;"></img></br>
+					<img src="../images/RN_12.png" style =" width:180px; height:31px;"></img></br>
+					<img src="../images/RN_13.png" style =" width:150px; height:32px;"></img></br></br>
+					
+					<b>Ventilation of notch or weirs:</b>
+					<p style="text-indent: 50px;">The nappe emerging out from the notch or weir touches the side walls of the channel. The air below the nappe and the 
+					walls are trapped. This air gradually carried along with flowing water and the pressure between the nappe and wall is reduced below atmospheric
+					pressure. Eventually negative pressure is developed and as a result, the nappe starts to depress. The nappe is coming near the wall of the 
+					weir and such type of nappe is called depressed nappe.</p></br>
+					
+					<img src="../images/RN_14.png" style =" width:780px; height:407px;"></img></br></br>
+					
+					<p style="text-indent: 50px;">When water emerges out, the initial nappe becomes depressed nappe where pressure falls below in this area. 
+					The discharge increases due to low pressure in the downstream. When no air is left in the space, the nappe adheres to the weir or notch and
+					the nappe is called clinging nappe. During this clinging of nappe, the ventilated holes are made on the wall and the weir. These holes are 
+					known as ventilation holes and the notch is known as notch.</p>
+					
+					<p style="text-indent: 50px;">The experimental data shows that the ventilated area may be about 0.5% of (L x Z), where L is the length of 
+					crest and Z is the depth of water.</p></br>
+						
+					<b>Effect of computed discharge due to measurement of head:</b>
+					<p>The equation of discharge in rectangular notch is </p></br>
+					<img src="../images/RN_15.png" style =" width:140px; height:33px;"></img></br>
+					<img src="../images/RN_16.png" style =" width:180px; height:39px;"></img></br>
+					<img src="../images/RN_17.png" style =" width:200px; height:36px;"></img></br></br>
+					<p>Let dQ and dH be the errors in measurement of discharge and head.</p></br>
+					<img src="../images/RN_18.png" style =" width:200px; height:69px;"></img></br>
+					<img src="../images/RN_19.png" style =" width:70px; height:35px;"></img></br></br>
+					<p>i.e., an error of 1% in the discharge is equal to 1.5% of error in the head of rectangular channel.</p></br></br>
+					
+					
+			</div>  <!-- Theory Content End-->
 
- </section>  
-    <section id="experiment-article-section-2">
+			</div>
+
+		</section>
+	
+	
+ <section id="experiment-article-section-2">
                     <div class="icon" id="experiment-article-section-2-icon">
                     <!-- Enclose the icon image of your lab.-->
                     <img src="../images/procedure.jpg" style="padding-left: 20px;"></div>
@@ -96,315 +196,358 @@ edit -->
                     <div class="content" id=
                     "experiment-article-section-2-content">
                         <div class="divContent"  id="wrap">
-                    
-                           
+						
+                       <h3><b>Objective: </b></h3>
+
+						<p>To determine the coefficient of discharge of Rectangular notch.</p>
+						<h3><b>Steps:</b></h3>
+						<ol>
+						<li>Open the Calibration of Rectangularnotch experiment and click on the next button shown at the bottom right corner.</li></br>
+						<p><center><img src="../images/rnp_1.png"style =" width:450px; height:339px;"></img></center></p></br>
+
+						<li>Start the pump by clicking on green button and then click on the next button.</li></br>
+						<p><center><img src="../images/rnp_2.png"style =" width:464px; height:350px;"></img></center></p></br>
 
 
+						<li>Click on the inlet valve to rotate it.</li></br>
+						<p><center><img src="../images/rnp_3.png"style =" width:456px; height:344px;"></img></center></p></br>
+
+						<li>Click on hand to rotate the inlet valve and click on the next button.</li></br>
+						<p><center><img src="../images/rnp_4.png"style =" width:457px; height:344px;"></img></center></p></br>
+
+						<li>Note the initial reading of the hook gauge and click on the hook gauge.</li></br>
+						<p><center><img src="../images/rnp_5.png"style =" width:459px; height:345px;"></img></center></p></br>
+
+						<li>Note the head of water, theoretical discharge of rectangular notch and click the next button.</li></br>
+						<p><center><img src="../images/rnp_6.png"style =" width:452px; height:340px;"></img></center></p></br>
+
+						<li>Note the initial reading of the hook gauge and click on the hook gauge.</li></br>
+						<p><center><img src="../images/rnp_7.png"style =" width:453px; height:343px;"></img></center></p></br>
+
+						<li>Note the head of water, actual discharge of V-notch and click the next button.</li></br>
+						<p><center><img src="../images/rnp_8.png"style =" width:458px; height:345px;"></img></center></p></br>
+
+						<li>Note the coefficient of discharge for rectangular notch.</li></br>
+						<p><center><img src="../images/rnp_9.png"style =" width:454px; height:344px;"></img></center></p></br>
+
+						<li>Repeat the same procedure, after certain trials, click on the red button to stop the pump.</li></br>
+						<p><center><img src="../images/rnp_10.png"style =" width:460px; height:347px;"></img></center></p></br></br></br>
 
 
+						</ol>
+ 
 
 
-                        
+   </div>
+</div>                      
 </section>
-   <section id="experiment-article-section-3">
+  <section id="experiment-article-section-3">
                     <div class="icon" id="experiment-article-section-3-icon">
-                    <!-- Enclose the icon image of your lab. -->
-                    <img src="../images/selfevaluation.jpg" style="padding-left:50px;"></div>
-                    <!-- The heading for the section can be enclosed in a 
-        div tag. -->
+                  
+                    <img src="../images/selfevaluation.jpg" style="padding-left:50px;">
+</div>
+                    
 
-                    <div class="heading" id=
-                    "experiment-article-section-3-heading">
-                        Self Evaluation
+                    <div class="heading" id= "experiment-article-section-3-heading">
+                       Self Evaluation
                     </div>
-
-                    <div class="content" id=
+		<div class="content" id=
                     "experiment-article-section-3-content">
                         <div class="divQuiz">
                             <div id="displayQuiz">
                                 <form id="form11" method="post" name="form11">
-                                    
-                         
-                                    
+                                  <p> Check your understanding after you have gone through the basic theory and the procedure to use the simulator.</p>                             
+ <a style="margin-top: 40px;float: left;
+width: auto;
+padding: 5px 15px;
+color: #FFF;
+background-color: #008B8B;
+border: 1px solid #FFF;
+border-radius: 5px;
+text-decoration: none;" href="index2.html">Get Started</a> 
                                 </form>
-                            </div><br>
+                            </div>
+<br>
                         </div>
                     </div>
                 </section>
 
-   
-                <section id="experiment-article-section-4">
+
+  <section id="experiment-article-section-4">
                     <div class="icon" id="experiment-article-section-4-icon">
                     <!-- Enclose the icon image of your lab.-->
-                    <img src="../images/simulation.jpg"  style="padding-left: 20px;"></div>
+                    <img src="../images/simulation.jpg" style="padding-left: 20px;"></div>
 
-                    <div class="heading" id=
-                    "experiment-article-section-4-heading">
+                    <div class="heading" id="experiment-article-section-4-heading">
                         Simulator
                     </div>
+					<div class="content" id= "experiment-article-section-4-content"><center>
+					<iframe noscroll="" scrolling="no" src="../images/simulation/rectangular_notch/index.html" height="610px" width="810px"></iframe></center>
+					</div> 
 
-                    <div class="content" id=
-                    "experiment-article-section-4-content">
-                        <div class="divContent">
-                            
-
-                        </div>
-                
-		 </div>
-			
+               </section>
 
 
-                </section>
-              <section id="experiment-article-section-5">
-                    <div class="icon" id="experiment-article-section-5-icon">
+
+        <section id="experiment-article-section-5">
+            <div class="icon" id="experiment-article-section-5-icon">
                     <!-- Enclose the icon image of your lab -->
-                    <img src="../images/assignment.jpg" style="padding-left: 20px;"></div>
-                    <!-- The heading for the section can be enclosed in a 
-          div tag. -->
+                <img src="../images/assignment.jpg" style="padding-left: 27px;"> </div>
+                    <!-- The heading for the section can be enclosed in a div tag. -->
 
-                    <div class="heading" id=
-                    "experiment-article-section-5-heading">
+                <div class="heading" id="experiment-article-section-5-heading">
                         Assignment
-                    </div>
+                </div>
 
-                    <div class="content" id="experiment-article-section-5-content">
-                        
-                    </div>
-                </section>
+			<div class="content" id="experiment-article-section-5-content">
+                <!-- Assignment Content-->
+				<ol>
+				<li>Draw different types of nappe?</li>
+					<li>Derive the expression for discharge over a rectangular notch?</li>
+					<li>What is ventilation of weir? Why it is required?</li>
+					<li>Prove that error in the discharge due to error in the measurement head over the rectangular notch is (dQ/Q)=(3/2)(dH/H)</li>
+				</ol>
+
+	
 				
-				<!-- Second section of the article-->
+				<!-- Assignment Content End-->      
+			</div>
+        </section>
+				
 
-             
 
-          
-   <section id="experiment-article-section-6">
+<section id="experiment-article-section-8">
+<div class="icon" id="experiment-article-section-8-icon">
+<!-- Enclose the icon image of your lab.-->
+<img src="../images/quiz.jpg">
+</div>
+<div class="heading" id="experiment-article-section-8-heading">
+                        Quiz
+</div>
+
+<div class="content" id="experiment-article-section-8-content">
+<div class="divQuiz">
+<div id="displayQuiz">
+<form id="form11" method="post" name="form11">
+<p> Check your ability to answer some of the questions relevant to the simulation that you used.</p> 
+ <a style="margin-top: 40px;float: left;
+width: auto;
+padding: 5px 15px;
+color: #FFF;
+background-color: #008B8B;
+border: 1px solid #FFF;
+border-radius: 5px;
+text-decoration: none;" href="index1.html">Get Started</a>
+
+
+                                   
+                                </form>
+<br>
+                            </div>
+<br>
+                        </div>
+                    </div>
+</section> 
+
+                <section id="experiment-article-section-7">
+                    <div class="icon" id="experiment-article-section-7-icon">
+                    <img src="../images/video.jpg" style="padding-left:7px">
+			</div>
+
+                    <div class="heading" id="experiment-article-section-7-heading">
+                        Videos
+                    </div>
+
+                    <!--<div class="content" id="experiment-article-section-7-content">
+                        <div class="divContent">
+                         NPTEL:<br>
+                             <a href="https://www.youtube.com/watch?v=bX_m53Xexvk&list=PLAC668A0566953FB5">Mechanical Vibrations</a>
+<br>
+                        </div>
+                    </div>-->
+                </section>
+
+           <section id="experiment-article-section-6">
                     <div class="icon" id="experiment-article-section-6-icon">
                    
-                    <img src="../images/reference.jpg" style="padding-left: 15px;"></div>
+                    <img src="../images/reference.jpg" style="padding-left: 25px;">
+</div>
 
-                    <div class="heading" id=
-                    "experiment-article-section-6-heading">
-                        Reference
+                    <div class="heading" id="experiment-article-section-6-heading">
+                        References
                     </div>
 
                     <div class="content" id="experiment-article-section-6-content">
                         <div class="divContent">
-                            
-                           
-                        </div>
+                       <ul>
+							<li><p style="font-family:courier new,courier,monospace; font-size:18px;"> P.N Modi and S.M.Seth, "Hydraulics and Fluid Mechanics", Standard Book House, Delhi, 2010.</p></li>
+							<li><p style="font-family:courier new,courier,monospace; font-size:18px;"> Miller, R. W., Flow Measurement Engineering Handbook, Second Edition, McGraw-Hill, 1989.</p> </li>
+							<li><p style="font-family:courier new,courier,monospace; font-size:18px;"> Madan Mohan Das, Fluid Mechanics and Turbo Machines, PHI Learning Pvt. Ltd, 2008.</p></li>
+							<li><p style="font-family:courier new,courier,monospace; font-size:18px;"> Miller, R. W., Flow Measurement Engineering Handbook, Second Edition, McGraw-Hill, 1989.</p></li>
+						</ul>
+				</div>
                     </div>
+
                 </section>
 
-               
-               
+<section id="lab-article-section-9">
+
+<div id="lab-article-section-9-icon" class="icon">
+<!-- Enclose the icon image for the section. -->
+<img src="../images/feedback.jpg" style="padding-left: 16px;" />
+</div>
+<!-- The heading for the section can be enclosed in a div tag and shown with a <h2> tag -->
+<div id="lab-article-section-9-heading" class="heading">
+Feedback
+</div>
+<!-- Write the section content inside a paragraph element, You can also include images with <img> tag -->
+<div id="lab-article-section-9-content" class="content">
 
 
-                <section id="experiment-article-section-7">
-                    <div class="icon" id="experiment-article-section-7-icon">
-                    
-                    <img src="../images/video.jpg"></div>
+<!-- Custom form start -->
 
-                    <div class="heading" id=
-                    "experiment-article-section-7-heading">
-                        Video 
-                    </div>
+<form method="POST" action="http://rtlabs.nitk.ac.in/feedback.php" role="form">
+<input type="hidden" name="code" value="1">
+<div class="form-group"> 
+<label for="name">What is your name?</label> <span class="error">*</span><br>
+<input type="text" style="width:700px;" name="name" class="form-control" value="" placeholder="You may chose to be Anonymous if you do not wish to disclose your name."required="">
+<br><br>
+</div>
+<div class="form-group"> 
+<label for="org">Which organization are you associated with?</label><span class="error">*</span><br>
+<input type="text" style="width:700px;" name="org"  class="form-control" value="" placeholder="Name of your College/Institute/University/Organization."required="">
+<br><br>
+</div>
+<div class="form-group">
+<label for="discipline">Which is your primary discipline?</label><span class="error">*</span><br>
+<input type="text" style="width:700px;" name="discipline" class="form-control" value="" placeholder="Example: Mechanical Engineering, Nanotechnology, Biomedical, Mathematics etc."required="">
 
-                    <div class="content" id="experiment-article-section-7-content">
-                        <div class="divContent">
-                        
-                        </div>
-                    </div>
-                </section>
- <section id="experiment-article-section-8">
-                    <div class="icon" id="experiment-article-section-8-icon">
-                    <!-- Enclose the icon image of your lab.-->
-                    <img src="../images/quiz.jpg"></div>
-     <div class="heading" id=
-                    "experiment-article-section-8-heading">
-                        Quiz
-                    </div>
+<br><br>
+</div>
+<label>Which of the following best describes your current work?</label> <span class="error">*</span><br>
+<div class="radio"><label><input type="radio" required name="occ" checked="true"  value="Studying">Studying<br></label></div>
+<div class="radio"><label><input type="radio" required  name="occ"  value="Teaching">Teaching<br></label></div>
+<div class="radio"><label><input type="radio" required name="occ"   value="Research">Research<br></label></div>
+<div class="radio"><label><input type="radio" required name="occ"  value="Industry">Industry<br></label></div>
+<div class="radio"><label><input type="radio" required name="occ"   value="other">Other <input type="text" name="occ-other"></input></label></div>
 
-                    <div class="content" id=
-                    "experiment-article-section-8-content">
-                        <div class="divQuiz">
-                            <div id="displayQuiz">
-                                <form id="form11" method="post" name="form11">
-                                   
-                                </form><br>
-                            </div><br>
-                        </div>
-                    </div>
-                </section>
-              <section id="experiment-article-section-9">
-                    <div class="icon" id="experiment-article-section-9-icon">
-                    <!-- Enclose the icon image of your lab.-->
-                    <img src="../images/feedback.png"></div>
-     <div class="heading" id=
-                    "experiment-article-section-9-heading">
-                        feedback
-                    </div>
+<br>
+<div class="form-group">
+<label>Experiment Performed </label><span class="error">* </span><br>
+<select class="form-control" name="exp"  required>
+<option value="Choose" disabled>Choose</option>
+<option value="Calibration of Rectangular Notch">Calibration of Rectangular Notch </option>
+</select>
 
-                    <div class="content" id=
-                    "experiment-article-section-9-content">
-                        <div class="divQuiz">
-                            <div id="displayQuiz">
-                               <form name="feedback" id="feedback" method="post" action="../new/index.html" >
-	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="forme">
-	<tr>
-	<td align="right" valign="top">Type of Experiment</td>
-	<td valign="top"><span class="radioexptype" style="white-space: nowrap"><input type="radio" name="form[exptype]" id="exptype0" value="simulation" checked="checked"  /><label for="exptype0">Simulator</label></span><span class="radioexptype" style="white-space: nowrap"><input type="radio" name="form[exptype]" id="exptype1" value="Remote Trigger"  /><label for="exptype1">Remote Trigger</label></span><span class="radioexptype" style="white-space: nowrap"><input type="radio" name="form[exptype]" id="exptype2" value="Measurement"  /><label for="exptype2">Measurement</label></span></td>
-	<td valign="top"></td>
+</div>
+<br>
+<label>Please tell your agreement with the following </label><span class="error">* </span><br>
+<table style="width:100%; margin:0">
+<tr>
+<td></td>
+<td style="text-align:center; width:70px">Excellent</td>    
+<td style="text-align:center; width:70px">Very Good</td>
+<td style="text-align:center; width:70px">Good</td>
+<td style="text-align:center; width:70px">Average</td>
+<td style="text-align:center; width:70px">Needs Improvement</td>
 </tr>
 <tr>
-	<td align="right" valign="top">How do you rate the online performance of the experiment?</td>
-	<td valign="top"><span class="radioagreestatement1" style="white-space: nowrap"><input type="radio" name="form[agreestatement1]" id="agreestatement10" value="Excellent"  /><label for="agreestatement10">Excellent</label></span><span class="radioagreestatement1" style="white-space: nowrap"><input type="radio" name="form[agreestatement1]" id="agreestatement11" value="Very Good"  /><label for="agreestatement11">Very Good</label></span><span class="radioagreestatement1" style="white-space: nowrap"><input type="radio" name="form[agreestatement1]" id="agreestatement12" value="Good"  /><label for="agreestatement12">Good</label></span><span class="radioagreestatement1" style="white-space: nowrap"><input type="radio" name="form[agreestatement1]" id="agreestatement13" value="Average"  /><label for="agreestatement13">Average</label></span><span class="radioagreestatement1" style="white-space: nowrap"><input type="radio" name="form[agreestatement1]" id="agreestatement14" value="Poor"  /><label for="agreestatement14">Poor</label></span></td>
-	<td valign="top"></td>
+<td>To what degree was the actual lab environment simulated</td>
+
+<td style="text-align:center;">   <div class="radio"><label><input type="radio" checked="true"  required name="rea"  value="5"></label></div></td>    
+<td style="text-align:center;">   <div class="radio"><label><input type="radio" required  name="rea"  value="4"></label></div></td>
+<td style="text-align:center;">   <div class="radio"><label><input type="radio"required name="rea"   value="3"></label></div></td>
+<td style="text-align:center;">   <div class="radio"><label><input type="radio" required name="rea"  value="2"></label></div></td>
+<td style="text-align:center;">   <div class="radio"><label><input type="radio" required name="rea"  value="1"></label></div></td>
 </tr>
 <tr>
-	<td align="right" valign="top">To what extent did you have control over the interactions?</td>
-	<td valign="top"><span class="radioagreestatement2" style="white-space: nowrap"><input type="radio" name="form[agreestatement2]" id="agreestatement20" value="Excellent"  /><label for="agreestatement20">Excellent</label></span><span class="radioagreestatement2" style="white-space: nowrap"><input type="radio" name="form[agreestatement2]" id="agreestatement21" value="Very Good"  /><label for="agreestatement21">Very Good</label></span><span class="radioagreestatement2" style="white-space: nowrap"><input type="radio" name="form[agreestatement2]" id="agreestatement22" value="Good"  /><label for="agreestatement22">Good</label></span><span class="radioagreestatement2" style="white-space: nowrap"><input type="radio" name="form[agreestatement2]" id="agreestatement23" value="Average"  /><label for="agreestatement23">Average</label></span><span class="radioagreestatement2" style="white-space: nowrap"><input type="radio" name="form[agreestatement2]" id="agreestatement24" value="Poor"  /><label for="agreestatement24">Poor</label></span></td>
-	<td valign="top"></td>
+<td>The theory and procedure were found to be helpful</td>
+<td style="text-align:center;"> <div class="radio"><label><input type="radio"required checked="true"  name="tnp"  value="5"></label></div></td>    
+<td style="text-align:center;"> <div class="radio"><label><input type="radio"required  name="tnp"   value="4"></label></div></td>
+<td style="text-align:center;"> <div class="radio"><label><input type="radio"required  name="tnp"   value="3"></label></div></td>
+<td style="text-align:center;"> <div class="radio"><label><input type="radio"required name="tnp"  value="2"></label></div></td>
+<td style="text-align:center;"> <div class="radio"><label><input type="radio"required name="tnp"   value="1"></label></div></td>
 </tr>
 <tr>
-	<td align="right" valign="top">To what degree was the actual lab environment simulated?</td>
-	<td valign="top"><span class="radioagreestatement3" style="white-space: nowrap"><input type="radio" name="form[agreestatement3]" id="agreestatement30" value="Excellent"  /><label for="agreestatement30">Excellent</label></span><span class="radioagreestatement3" style="white-space: nowrap"><input type="radio" name="form[agreestatement3]" id="agreestatement31" value="Very Good"  /><label for="agreestatement31">Very Good</label></span><span class="radioagreestatement3" style="white-space: nowrap"><input type="radio" name="form[agreestatement3]" id="agreestatement32" value="Good"  /><label for="agreestatement32">Good</label></span><span class="radioagreestatement3" style="white-space: nowrap"><input type="radio" name="form[agreestatement3]" id="agreestatement33" value="Average"  /><label for="agreestatement33">Average</label></span><span class="radioagreestatement3" style="white-space: nowrap"><input type="radio" name="form[agreestatement3]" id="agreestatement34" value="Poor"  /><label for="agreestatement34">Poor</label></span></td>
-	<td valign="top"></td>
+<td>The results of simulation/experiment were easily interpretable</td>
+<td style="text-align:center;"> <div class="radio"><label><input type="radio" checked="true"  required name="eas"  value="5"></label></div></td>    
+<td style="text-align:center;"> <div class="radio"><label><input type="radio"required name="eas"   value="4"></label></div></td>
+<td style="text-align:center;"> <div class="radio"><label><input type="radio"required name="eas"  value="3"></label></div></td>
+<td style="text-align:center;"> <div class="radio"><label><input type="radio"required name="eas"  value="2"></label></div></td>
+<td style="text-align:center;"> <div class="radio"><label><input type="radio"required name="eas"   value="1"></label></div></td>
+</tr>
+</table>
+<br>
+<div class="form-group">
+<label for="help">How helpful do you feel the system is?</label>
+<br><input type="text" style="width:700px;" class="form-control"name="help" value="">
+<br><br>
+</div>
+<label>Please answer the following questions</label><span class="error">* </span><br>
+<table style="width:100%; border:none; margin:0">
+<tr>
+<td></td>
+<td>Yes</td>    
+<td>No</td>
 </tr>
 <tr>
-	<td align="right" valign="top">Was the measurement and analysis of data easy for you?</td>
-	<td valign="top"><span class="radioagreestatement4" style="white-space: nowrap"><input type="radio" name="form[agreestatement4]" id="agreestatement40" value="Excellent"  /><label for="agreestatement40">Excellent</label></span><span class="radioagreestatement4" style="white-space: nowrap"><input type="radio" name="form[agreestatement4]" id="agreestatement41" value="Very Good"  /><label for="agreestatement41">Very Good</label></span><span class="radioagreestatement4" style="white-space: nowrap"><input type="radio" name="form[agreestatement4]" id="agreestatement42" value="Good"  /><label for="agreestatement42">Good</label></span><span class="radioagreestatement4" style="white-space: nowrap"><input type="radio" name="form[agreestatement4]" id="agreestatement43" value="Average"  /><label for="agreestatement43">Average</label></span><span class="radioagreestatement4" style="white-space: nowrap"><input type="radio" name="form[agreestatement4]" id="agreestatement44" value="Poor"  /><label for="agreestatement44">Poor</label></span></td>
-	<td valign="top"></td>
+<td>Did you get the feel of actual lab while performing the simulation/experiments</td>
+<td> <div class="radio"><label><input type="radio"required name="a" checked="true"  value="Y"></label></div></td>    
+<td> <div class="radio"><label><input type="radio"required name="a"  value="N"></label></div></td>
 </tr>
 <tr>
-	<td align="right" valign="top">The manuals were found to be helpful</td>
-	<td valign="top"><span class="radioagreestatement5" style="white-space: nowrap"><input type="radio" name="form[agreestatement5]" id="agreestatement50" value="Excellent"  /><label for="agreestatement50">Excellent</label></span><span class="radioagreestatement5" style="white-space: nowrap"><input type="radio" name="form[agreestatement5]" id="agreestatement51" value="Very Good"  /><label for="agreestatement51">Very Good</label></span><span class="radioagreestatement5" style="white-space: nowrap"><input type="radio" name="form[agreestatement5]" id="agreestatement52" value="Good"  /><label for="agreestatement52">Good</label></span><span class="radioagreestatement5" style="white-space: nowrap"><input type="radio" name="form[agreestatement5]" id="agreestatement53" value="Average"  /><label for="agreestatement53">Average</label></span><span class="radioagreestatement5" style="white-space: nowrap"><input type="radio" name="form[agreestatement5]" id="agreestatement54" value="Poor"  /><label for="agreestatement54">Poor</label></span></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Were the links provided consistent with the objectives of the experiment?</td>
-	<td valign="top"><span class="radioagreestatement6" style="white-space: nowrap"><input type="radio" name="form[agreestatement6]" id="agreestatement60" value="Excellent"  /><label for="agreestatement60">Excellent</label></span><span class="radioagreestatement6" style="white-space: nowrap"><input type="radio" name="form[agreestatement6]" id="agreestatement61" value="Very Good"  /><label for="agreestatement61">Very Good</label></span><span class="radioagreestatement6" style="white-space: nowrap"><input type="radio" name="form[agreestatement6]" id="agreestatement62" value="Good"  /><label for="agreestatement62">Good</label></span><span class="radioagreestatement6" style="white-space: nowrap"><input type="radio" name="form[agreestatement6]" id="agreestatement63" value="Average"  /><label for="agreestatement63">Average</label></span><span class="radioagreestatement6" style="white-space: nowrap"><input type="radio" name="form[agreestatement6]" id="agreestatement64" value="Poor"  /><label for="agreestatement64">Poor</label></span></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Were the results of the experiment easily interpreted?</td>
-	<td valign="top"><span class="radioagreestatement7" style="white-space: nowrap"><input type="radio" name="form[agreestatement7]" id="agreestatement70" value="Excellent"  /><label for="agreestatement70">Excellent</label></span><span class="radioagreestatement7" style="white-space: nowrap"><input type="radio" name="form[agreestatement7]" id="agreestatement71" value="Very Good"  /><label for="agreestatement71">Very Good</label></span><span class="radioagreestatement7" style="white-space: nowrap"><input type="radio" name="form[agreestatement7]" id="agreestatement72" value="Good"  /><label for="agreestatement72">Good</label></span><span class="radioagreestatement7" style="white-space: nowrap"><input type="radio" name="form[agreestatement7]" id="agreestatement73" value="Average"  /><label for="agreestatement73">Average</label></span><span class="radioagreestatement7" style="white-space: nowrap"><input type="radio" name="form[agreestatement7]" id="agreestatement74" value="Poor"  /><label for="agreestatement74">Poor</label></span></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">A clear understanding of the experiment and related topics was gained</td>
-	<td valign="top"><span class="radioagreestatement8" style="white-space: nowrap"><input type="radio" name="form[agreestatement8]" id="agreestatement80" value="Excellent"  /><label for="agreestatement80">Excellent</label></span><span class="radioagreestatement8" style="white-space: nowrap"><input type="radio" name="form[agreestatement8]" id="agreestatement81" value="Very Good"  /><label for="agreestatement81">Very Good</label></span><span class="radioagreestatement8" style="white-space: nowrap"><input type="radio" name="form[agreestatement8]" id="agreestatement82" value="Good"  /><label for="agreestatement82">Good</label></span><span class="radioagreestatement8" style="white-space: nowrap"><input type="radio" name="form[agreestatement8]" id="agreestatement83" value="Average"  /><label for="agreestatement83">Average</label></span><span class="radioagreestatement8" style="white-space: nowrap"><input type="radio" name="form[agreestatement8]" id="agreestatement84" value="Poor"  /><label for="agreestatement84">Poor</label></span></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">How helpful do you feel the system is?</td>
-	<td valign="top"><textarea name="form[helpful]" id="helpful" cols="40" rows="6"></textarea></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Did you experience any problem?</td>
-	<td valign="top"><textarea name="form[anyproblem]" id="anyproblem" cols="40" rows="6"></textarea></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Is there anything you would like to tell us?</td>
-	<td valign="top"><textarea name="form[tellus]" id="tellus" cols="40" rows="6"></textarea></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Did you feel confident enough while performing the experiment?</td>
-	<td valign="top"><span class="radioconfienough" style="white-space: nowrap"><input type="radio" name="form[confienough]" id="confienough0" value="Yes"  /><label for="confienough0">Yes</label></span><span class="radioconfienough" style="white-space: nowrap"><input type="radio" name="form[confienough]" id="confienough1" value="No"  /><label for="confienough1">No</label></span><span class="radioconfienough" style="white-space: nowrap"><input type="radio" name="form[confienough]" id="confienough2" value="Can't say"  /><label for="confienough2">Can't say</label></span></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Was the experiment/process motivating enough?</td>
-	<td valign="top"><span class="radiomotivating" style="white-space: nowrap"><input type="radio" name="form[motivating]" id="motivating0" value="Yes"  /><label for="motivating0">Yes</label></span><span class="radiomotivating" style="white-space: nowrap"><input type="radio" name="form[motivating]" id="motivating1" value="No"  /><label for="motivating1">No</label></span><span class="radiomotivating" style="white-space: nowrap"><input type="radio" name="form[motivating]" id="motivating2" value="Can't say"  /><label for="motivating2">Can't say</label></span></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Did you go through the manual / step by step procedure before performing the experiments live?</td>
-	<td valign="top"><span class="radioexperimentslive" style="white-space: nowrap"><input type="radio" name="form[experimentslive]" id="experimentslive0" value="Yes"  /><label for="experimentslive0">Yes</label></span><span class="radioexperimentslive" style="white-space: nowrap"><input type="radio" name="form[experimentslive]" id="experimentslive1" value="No"  /><label for="experimentslive1">No</label></span></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Did you get the feel of a real lab while performing the experiments virtually?</td>
-	<td valign="top"><span class="radioanswerfollow1" style="white-space: nowrap"><input type="radio" name="form[answerfollow1]" id="answerfollow10" value="Yes"  /><label for="answerfollow10">Yes</label></span><span class="radioanswerfollow1" style="white-space: nowrap"><input type="radio" name="form[answerfollow1]" id="answerfollow11" value="No"  /><label for="answerfollow11">No</label></span></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Did you feel the absence of an instructor?</td>
-	<td valign="top"><span class="radioanswerfollow2" style="white-space: nowrap"><input type="radio" name="form[answerfollow2]" id="answerfollow20" value="Yes"  /><label for="answerfollow20">Yes</label></span><span class="radioanswerfollow2" style="white-space: nowrap"><input type="radio" name="form[answerfollow2]" id="answerfollow21" value="No"  /><label for="answerfollow21">No</label></span></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Could you run the experiments smoothly, i.e., without interruptions?</td>
-	<td valign="top"><span class="radioanswerfollow3" style="white-space: nowrap"><input type="radio" name="form[answerfollow3]" id="answerfollow30" value="Yes"  /><label for="answerfollow30">Yes</label></span><span class="radioanswerfollow3" style="white-space: nowrap"><input type="radio" name="form[answerfollow3]" id="answerfollow31" value="No"  /><label for="answerfollow31">No</label></span></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Could you measure and analyse the data successfully?</td>
-	<td valign="top"><span class="radioanswerfollow4" style="white-space: nowrap"><input type="radio" name="form[answerfollow4]" id="answerfollow40" value="Yes"  /><label for="answerfollow40">Yes</label></span><span class="radioanswerfollow4" style="white-space: nowrap"><input type="radio" name="form[answerfollow4]" id="answerfollow41" value="No"  /><label for="answerfollow41">No</label></span></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Did you follow the step by step procedure before doing the live experiment?</td>
-	<td valign="top"><span class="radioanswerfollow5" style="white-space: nowrap"><input type="radio" name="form[answerfollow5]" id="answerfollow50" value="Yes"  /><label for="answerfollow50">Yes</label></span><span class="radioanswerfollow5" style="white-space: nowrap"><input type="radio" name="form[answerfollow5]" id="answerfollow51" value="No"  /><label for="answerfollow51">No</label></span></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Could you compare your results with the given typical results?</td>
-	<td valign="top"><span class="radioanswerfollow6" style="white-space: nowrap"><input type="radio" name="form[answerfollow6]" id="answerfollow60" value="Yes"  /><label for="answerfollow60">Yes</label></span><span class="radioanswerfollow6" style="white-space: nowrap"><input type="radio" name="form[answerfollow6]" id="answerfollow61" value="No"  /><label for="answerfollow61">No</label></span></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Do you think performing experiments through virtual labs were more challenging than the real lab experiments?</td>
-	<td valign="top"><span class="radioanswerfollow7" style="white-space: nowrap"><input type="radio" name="form[answerfollow7]" id="answerfollow70" value="Yes"  /><label for="answerfollow70">Yes</label></span><span class="radioanswerfollow7" style="white-space: nowrap"><input type="radio" name="form[answerfollow7]" id="answerfollow71" value="No"  /><label for="answerfollow71">No</label></span></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Specify three problems/difficulties you faced while performing the experiments?</td>
-	<td valign="top"><textarea name="form[problemsdifficulties]" id="problemsdifficulties" cols="40" rows="6"></textarea></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Describe three interesting things about the experiments</td>
-	<td valign="top"><textarea name="form[interestingthings]" id="interestingthings" cols="40" rows="6"></textarea></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top">Do you think doing experiments through virtual lab gives scope for more innovative and creative research work? </td>
-	<td valign="top"><span class="radioresearchwork" style="white-space: nowrap"><input type="radio" name="form[researchwork]" id="researchwork0" value="Yes"  /><label for="researchwork0">Yes</label></span><span class="radioresearchwork" style="white-space: nowrap"><input type="radio" name="form[researchwork]" id="researchwork1" value="No"  /><label for="researchwork1">No</label></span></td>
-	<td valign="top"></td>
-</tr>
-<tr>
-	<td align="right" valign="top"></td>
-	<td valign="top"><input type="submit" name="form[submit]" value="Submit" id="submit"  /></td>
-	<td valign="top"></td>
+<td>Did you read the theory and procedure before performing the simulation/experiments</td>
+<td> <div class="radio"><label><input type="radio"required name="b" checked="true"  value="Y"></label></div></td>    
+<td> <div class="radio"><label><input type="radio"required name="b"   value="N"></label></div></td>
 </tr>
 
-	</table>
+<tr>
+<td>Could you conduct the simulation/experiment successfully</td>
+<td> <div class="radio"><label><input type="radio"required name="c" checked="true"  value="Y"></label></div></td>    
+<td> <div class="radio"><label><input type="radio"required name="c" value="N"></label></div></td>
+</tr>
+<tr>
+<td>Could you compare your results with the given typical results in explore</td>
+<td> <div class="radio"><label><input type="radio"required name="d" checked="true"  value="Y"></label></div></td>    
+<td> <div class="radio"><label><input type="radio"required name="d"   value="N"></label></div></td>
+</tr>
+<tr>
+<td>Do you think performing experiments through virtual labs are more challenging than the real experiments</td>
+<td> <div class="radio"><label><input type="radio"required name="e"  checked="true"  value="Y"></label></div></td>    
+<td> <div class="radio"><label><input type="radio"required name="e"   value="N"></label></div></td>
+</tr>
+<tr>
+<td>Do you think doing experiments through virtual lab gives scope for more innovative and creative research work</td>
+<td> <div class="radio"><label><input type="radio"required name="f"  checked="true"  value="Y"></label></div></td>    
+<td> <div class="radio"><label><input type="radio"required name="f"  value="N"></label></div></td>
+</tr>
+</table>
+<br><br>
+<div class="form-group">
+<label for="c1">Please mention any problems/difficulties you faced while performing the simulation/experiment. It will help us improve the content for your later visits.</label>
+<br><textarea  name="c1" class="form-control" rows="4" cols="50"></textarea>
+<br><br>
+</div>
+<div class="form-group">
+<label for="c2">What do you find most interesting thing about the simulation/experiment? We would be happy to know what delighted you.</label>
+<br><textarea name="c2" class="form-control" rows="4" cols="50"></textarea>
+<br><br>
+</div>
+<div class="form-group">
+<label for="c2">Is there anything else that you would like to tell us ?</label>
+<br><textarea name="c3"class="form-control"  rows="4" cols="50"></textarea>
+<br><br>
+</div>
+<button type="submit" name="submit"  class="btn btn-default" value="Submit"> Submit </button>
 </form>
-                            </div><br>
-                        </div>
-                    </div>
-                </section>
-                   <section id="experiment-article-section-10">
-                    <div class="icon" id="experiment-article-section-10-icon">
-                    <!-- Enclose the icon image of your lab.-->
-                    <img src="../images/credits.png"></div>
-     <div class="heading" id=
-                    "experiment-article-section-10-heading">
-                        Credits
-                    </div>
 
-                    <div class="content" id=
-                    "experiment-article-section-10-content">
-                        <div class="divQuiz">
-                            <div id="displayQuiz">
-                               pruthvi & krishna
-                            </div><br>
-                        </div>
-                    </div>
-                </section>
+
+<!-- Custom form complete -->
+
+</div>
+	
+</section>
+               
             </div>
         </article>
     </div>
