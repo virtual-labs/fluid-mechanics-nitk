@@ -332,10 +332,8 @@ function step6()
                 majorGridLines: { width: 1.5, opacity: 0.8 },
                 minorGridLines:{ visible: true },
 				minorTickLines:{ width: 1, size: 4, visible: true },
-               title: { text: 'Theoretical Discharge' },
+                title: { text: 'Theoretical Discharge' },
                 labelFormat:'{value}'
-                
-               // range:{ min:0, max:8,interval:1}                                
             }, 
             
 			//Initializing Series
