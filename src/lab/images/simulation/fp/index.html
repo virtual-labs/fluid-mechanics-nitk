@@ -4,14 +4,15 @@
 <meta charset="UTF-8">
 
 <title>SOLVE</title>
-<link rel="stylesheet" href="fp.css" />
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
-<script type="text/javascript" src= "jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src= "fp.js"></script>
-<script type="text/javascript" src= "jquery-1.4.2.min"></script>
-<script type="text/javascript" src= "ej.web.all.js"></script>
-
+<link rel="stylesheet" href="css/fp.css" />
+<!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>  -->
+<script type="text/javascript" src= "js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src= "js/fp.js"></script>
+<script type="text/javascript" src= "js/jquery-1.4.2.min"></script>
+<script type="text/javascript" src= "js/ej.web.all.js"></script>
+<!--Stylesheet to display Math functions -->
+<link href="css/mathstyle.css" rel="stylesheet" />
 
 <script>
 var simsubscreennum=0;
@@ -262,7 +263,10 @@ Select the Pipe of required diameter:
 
 <p id="lw" style="position: absolute; left: 460px; top: 320px;font-family:verdana;font-size:14px;"></p>
 <p id="rw" style="position: absolute; left: 460px; top: 370px;font-family:verdana;font-size:14px;"></p>
-<p id="hl" style="position: absolute; left: 430px; top: 420px;font-family:verdana;font-size:14px;"></p>
+<div class="tooltip" style="position:absolute;left: 460px; top: 420px;">
+    <p id="hl" style="font-family:verdana;font-size:14px;"></p>
+    <span class="tooltiptext">H(cm) = 12.6 x (LL - RL)</span>
+</div>
 
 
 
@@ -293,7 +297,7 @@ Select the Pipe of required diameter:
 
 <p id="ir" style="position:absolute;left: 360px; top: 340px;visibility:hidden;font-family:verdana;font-size:14px;"> Initial reading = 55cm</p>
 <p id="fr" style="position:absolute;left: 360px; top: 370px;visibility:hidden;font-family:verdana;font-size:14px;"> Final reading   = 65cm</p>
-<p id="dif" style="position:absolute;left: 360px; top: 400px;visibility:hidden;font-family:verdana;font-size:14px;"> Rise(h)  = 10cm</p>
+<p id="dif" style="position:absolute;left: 360px; top: 400px;visibility:hidden;font-family:verdana;font-size:14px;"> Rise (h)  = 10cm</p>
 <p id="time" style="position:absolute;left: 360px; top: 430px;font-family:verdana;font-size:14px;visibility:hidden"> </p>
 </div>
 
@@ -303,19 +307,36 @@ Select the Pipe of required diameter:
 
 <!--Step7	-->	
 <div class="simsubscreen" id="canvas7" style="visibility:hidden">
-<strong id="step7" class="incanvas">STEP &nbsp;</strong>
+<!-- <strong id="step7" class="incanvas">STEP &nbsp;</strong>
 <span class="circlebg" id="six">&nbsp;7&nbsp;</span>
-<p  id="step7-1" class="steptext" style="font-family:verdana; font-size:14px;">Observations and Calculations:</p>
-<p id="71" style="position:absolute;left: 80px; top: 40px;font-family:verdana;font-size:14px;">Length of the pipe(l)&nbsp;=&nbsp;3m </p>
-<p id="72" style="position:absolute;left: 80px; top: 90px;font-family:verdana;font-size:14px;"></p>
-<p id="73" style="position:absolute;left: 80px; top: 140px;font-family:verdana;font-size:14px;">Area of collecting tank(A)&nbsp;=&nbsp;3500cm<sup>2</sup> </p>
-<p id="73a" style="position:absolute;left:80px; top: 190px;font-family:verdana;font-size:14px;visibility:hidden"></p>
-<p id="73b" style="position:absolute;left:80px; top: 240px;font-family:verdana;font-size:14px;visibility:hidden"> </p>
-<p id="73c" style="position:absolute;left: 80px; top: 290px;font-family:verdana;font-size:14px;">Rise(h) = 10cm</p>
-<p id="74" style="position:absolute;left: 80px; top: 340px;font-family:verdana;font-size:14px;visibility:hidden"> </p>
-<p id="75" style="position:absolute;left: 80px; top: 390px;font-family:verdana;font-size:14px;visibility:hidden"> </p>
-<p id="76" style="position:absolute;left: 80px; top: 440px;font-family:verdana;font-size:14px;visibility:hidden"> </p>
-<p id="77" style="position:absolute;left: 80px; top: 490px;font-family:verdana;font-size:14px;visibility:hidden"> </p>
+<p  id="step7-1" class="steptext" style="font-family:verdana; font-size:14px;">Observations and Calculations:</p> -->
+<strong class="incanvas" style="position:absolute;top: 30px; left:50px;font-family: verdana;"><h2>Observation</h2></strong>
+<p id="71" style="position:absolute;left: 220px; top: 80px;font-family:verdana;font-size:14px;">Length of the pipe (l)&nbsp;=&nbsp;3m </p>
+<p id="72" style="position:absolute;left: 220px; top: 110px;font-family:verdana;font-size:14px;"></p>
+<p id="73" style="position:absolute;left: 220px; top: 140px;font-family:verdana;font-size:14px;">Area of collecting tank (A)&nbsp;=&nbsp;3500cm<sup>2</sup> </p>
+<p id="73a" style="position:absolute;left:220px; top: 170px;font-family:verdana;font-size:14px;"></p>
+<p id="73b" style="position:absolute;left:220px; top: 200px;font-family:verdana;font-size:14px;"> </p>
+<p id="73c" style="position:absolute;left: 220px; top: 230px;font-family:verdana;font-size:14px;">Rise (h) = 10cm</p>
+<p id="73d" style="position:absolute;left: 220px; top: 260px;font-family:verdana;font-size:14px;">Acceleration due to gravity (g) = 981 cm/sec<sup>2</sup> </p>
+<strong class="incanvas" style="position:absolute;top: 290px; left:50px;font-family: verdana;"><h2>Calculations</h2></strong>
+<div class="tooltip" style="position:absolute;left: 220px; top: 320px;">
+    <p id="74" style="font-family:verdana;font-size:14px;"></p>
+    <!-- <span class="tooltiptext">Q<sub>act</sub> (cm<sup>3</sup>/s) = (Axh/t)</span> -->
+    <span class="tooltiptext">Q<sub>act</sub> (cm<sup>3</sup>/sec)= <span class="frac"><sup>A x h</sup><span>&frasl;</span><sub>t</sub></span></span>
+</div>
+<div class="tooltip" style="position:absolute;left: 220px; top: 360px;">
+    <p id="75" style="font-family:verdana;font-size:14px;"></p>
+    <!-- <span class="tooltiptext">v (cm/sec) = Q<sub>act</sub> / A</span> -->
+    <span class="tooltiptext">v (cm/sec)= <span class="frac"><sup>Q<sub>act</sub></sup><span>&frasl;</span><sub>A</sub></span></span>
+</div>
+<div class="tooltip" style="position:absolute;left: 220px; top: 400px;">
+    <p id="76" style="font-family:verdana;font-size:14px;"></p>
+    <!-- <span class="tooltiptext">f = (2 * g * d)/(v<sup>2</sup>) * (H / l)</sup></span> -->
+    <span class="tooltiptext">f = <span class="frac"><sup>2gd</sup><span>&frasl;</span><sub>v<sup>2</sup></sub></span> x <span class="frac"><sup>H</sup><span>&frasl;</span><sub>l</sub></span>
+
+</div>
+
+<p id="77" style="position:absolute;left: 220px; top: 440px;font-family:verdana;font-size:14px;"> </p> 
 
 </div>
 
@@ -331,7 +352,10 @@ Select the Pipe of required diameter:
 </div>
 
 
-
+<!-- formula display -->
+<div id="formula" class="tooltip">
+    <span id="formulaContent" class="tooltiptext">sdfsf</span>
+</div>
 
 <!--Blinking Arrow	-->	
 <img class ="" id="arr" style="visibility:hidden;" src="images/arr.png"/>
@@ -343,6 +367,6 @@ Select the Pipe of required diameter:
 <p class ="close2" id="close5" style="position:absolute;visibility:hidden;font-family:verdana; font-size:14px;left: 105px; top:480px; height: 30px; z-index: 10;">CLOSED</p>
 
 
-<div id="copyright"> &copy; 2016 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
+<div id="copyright"> &copy; 2016-2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
 </body>
 </html>

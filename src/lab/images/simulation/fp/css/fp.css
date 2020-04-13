@@ -26,20 +26,15 @@ select:disabled{
 }
 
 
+
 @keyframes pipe{
 from {left: 220px; top:20px;}
 to {left: 220px; top:150px;}
 
 }
 
-input[type=text]:focus {
-    padding: 40px;
-    margin: 18px 0;
-    display: inline-block;
-    border: 1px solid black;
-    border-radius: 2px;
-    text-align:center;
-    background-color:#D3D3D3
+input[type=text]:focus{
+    outline:none;
 }
 #table
 {
@@ -179,6 +174,87 @@ color:#fff;
 text-align:center;
 background:#000
 }
+.inputStyle{
+	border:none;
+	border-bottom: 1px solid;
+	width:55px;
+	font-family:verdana;
+	font-size:14px;
+	text-align:center;
+}
+.resultStyle{
+	border:none;
+	border-bottom-style:double;
+	width:55px;
+	font-family:verdana;
+	font-size:14px;
+	text-align:center;
+	
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 80%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .tooltipObservation {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    font-family: verdana;
+      font-size:14px;
+  }
+  
+  .tooltipObservation .tooltipObservationText {
+      font-family: verdana;
+      font-size:14px;
+    visibility: hidden;
+    width: 500px;
+    background-color: black;
+    color: #fff;
+    border-radius: 6px;
+    padding: 10px 10px 10px 10px;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 100;
+  }
+  
+  .tooltipObservation:hover .tooltipObservationText {
+    visibility: visible;
+  }
 
 /* -------------------------------------- water ---------------------------------------- */
 /* Chrome, Safari, Opera */
@@ -357,12 +433,9 @@ background:#000
 @keyframes myhook-1 {
     0% {transform: translate(0, 0);}
 	50% {transform: translate(0, -15px);}
-	
-	
     100% {transform: translate(0, 8px);}
 }
 
-//345
 
 @-webkit-keyframes mymv-1 {
 0% {left: 50px; top:325px;}

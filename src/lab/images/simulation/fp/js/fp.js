@@ -9,6 +9,174 @@ var f1=0,f2=0,f3=0,favg=0;
 
 var dia=0;
 
+//Variables
+var idInput = null, checkUnit = null, textDisplay = null;
+var compareVal = 0, qCount = 0, resultCount = 0 ;
+var ansDisplay = 0;
+var HVal = 0;
+var qVal = 0;
+var vVal = 0;
+var fVal = 0;
+
+
+//To insert input and check button
+function userCalculation(elem)
+{
+	ansDisplay++;
+	var inputVal = document.createElement("input");
+	var checkVal = document.createElement("input");
+	var rightVal = document.createElement("span");
+	inputVal.setAttribute("type","text");
+	inputVal.setAttribute("id","res"+ansDisplay);
+	rightVal.setAttribute("id","rightAns"+ansDisplay);
+	inputVal.classList.add("inputStyle");
+	checkVal.setAttribute("type","button");
+	checkVal.setAttribute("id","chk"+ansDisplay);
+	checkVal.setAttribute("style","cursor:pointer");
+	checkVal.setAttribute("onclick","checkResult();");
+	checkVal.setAttribute("value","CHECK");
+	elem.appendChild(inputVal);
+	elem.appendChild(rightVal);
+	elem.appendChild(checkVal);
+	// elem.appendChild(document.getElementById("formula"));
+	// document.getElementById("formula").appendChild(document.getElementById("formulaContent"));
+	// elem.setAttribute("onmouseover","formulaDisplay(event,this);");
+	// elem.setAttribute("onmouseout","formulaDisplayClose();");
+}
+function checkResult()
+{
+	var idd = document.getElementById("res"+ansDisplay);
+	var idd1 = document.getElementById("chk"+ansDisplay);
+	var ansId = document.getElementById("rightAns"+ansDisplay);
+	// if(simsubscreennum == 4)
+	// {
+	// 	compareVal = values[lnt][8];
+	// 	checkUnit = "m<sup>3</sup>/sec";
+	// }
+	if(simsubscreennum == 5)
+	{
+		compareVal = HVal;
+		checkUnit = "cm";
+	}
+	
+	else if(simsubscreennum == 7 && resultCount == 0)
+	{
+		compareVal = qVal;
+		checkUnit = "cm<sup>3</sup>/sec";
+	}
+	else if(simsubscreennum == 7 && resultCount == 1)
+	{
+		compareVal = vVal;
+		checkUnit = "cm/sec";
+	}
+	else if(simsubscreennum == 7 && resultCount == 2)
+	{
+		compareVal = fVal;
+		checkUnit = "";
+	}
+	
+	if(!idd.value  || !idd.value!=" ")
+	{
+		// idd.setAttribute("placeholder","Please enter value");
+	}
+	// else if(Math.round(idd.value) != Math.round(compareVal))
+	else if(((Math.floor(idd.value * 10000)/10000) != (Math.floor(compareVal * 10000)/10000)) || ((Math.floor(idd.value * 1000)/1000) != (Math.floor(compareVal * 1000)/1000)) || ((Math.floor(idd.value * 100)/100) != (Math.floor(compareVal * 100)/100)) || ((Math.floor(idd.value * 10)/10) != (Math.floor(compareVal * 10)/10)))
+	{
+		// console.log(2);
+		qCount++;
+		// blinkStop();
+		ansId.classList.remove("resultStyle");
+		idd.style.borderColor = "red";
+		ansId.style.color = "red";
+		ansId.innerHTML= "&#10008;";
+		if(qCount == 2)
+		{
+			idd1.value = "RESULT";
+		}
+		if(qCount == 3)
+		{
+			idd1.style.visibility = "hidden";
+			idd.parentNode.removeChild(idd);
+			idd1.parentNode.removeChild(idd1);
+			ansId.classList.add("resultStyle");
+			ansId.style.color = "black";
+			ansId.innerHTML= (Math.floor(compareVal * 10000)/10000)+checkUnit;
+			goToNextFunction();
+		}
+	}
+	else
+	{
+		idd1.style.visibility = "hidden";
+		idd.parentNode.removeChild(idd);
+		idd1.parentNode.removeChild(idd1);
+		ansId.classList.add("resultStyle");
+		ansId.style.color = "black";
+		ansId.innerHTML= (Math.floor(compareVal * 10000)/10000)+checkUnit+"<span style='color:green;font-size:20px;'>&#10004;</span>";
+		goToNextFunction();
+	}
+}
+function goToNextFunction()
+{
+	// if(simsubscreennum == 4)
+	// {
+	// 	qCount = 0;
+	// 	document.getElementById("nextButton").style.visibility = "visible";
+	// }
+	// else 
+	if(simsubscreennum == 5)
+	{
+		qCount = 0;
+		document.getElementById("nextButton").style.visibility = "visible";
+	}
+	else if(simsubscreennum == 7 && resultCount == 0)
+	{
+		resultCount = 1;
+		qCount = 0;
+		switch(dia) {
+			case "50mm": vVal = m50[5][p];
+						break;
+			case "40mm": vVal = m40[5][p];
+						break;
+			case "25mm": vVal = m25[5][p];
+						break;
+			case "20mm": vVal = m20[5][p];
+			 			break;	
+			case "15mm": vVal = m15[5][p];
+						break;
+		}
+		document.getElementById('75').style.visibility="visible";
+		document.getElementById('75').innerHTML = "Velocity (v) = ";
+		idInput = document.getElementById('75');
+		userCalculation(idInput);
+	}
+	else if(simsubscreennum == 7 && resultCount == 1)
+	{
+		resultCount = 2;
+		qCount = 0;
+		switch(dia) {
+			case "50mm": fVal = m50[6][p];
+						break;
+			case "40mm": fVal = m40[6][p];
+						break;
+			case "25mm": fVal = m25[6][p];
+						break;
+			case "20mm": fVal = m20[6][p];
+			 			break;	
+			case "15mm": fVal = m15[6][p];
+						break;
+		}
+		document.getElementById('76').style.visibility="visible";
+		document.getElementById('76').innerHTML = "Analytical Friction Factor (f) =  ";
+		idInput = document.getElementById('76');
+		userCalculation(idInput);
+	}
+	else if(simsubscreennum == 7 && resultCount == 2)
+	{
+		qCount = 0;
+		resultCount = 0;
+		step7Next();
+	}
+}
 
 
 function navNext()
@@ -179,7 +347,7 @@ function magic()
 	
 	else if (simsubscreennum==3)
 	{
-	 repeat=repeat+1;
+		repeat+=1;
 	 if(dia=="50mm")
 	 {
 	 if(repeat==1)
@@ -238,6 +406,7 @@ function magic()
 		document.getElementById('71').style.visibility="hidden";
 		document.getElementById('73').style.visibility="hidden";
 		document.getElementById('73c').style.visibility="hidden";
+		document.getElementById('73d').style.visibility="hidden";
 		document.getElementById('73a').style.visibility="hidden";
 		document.getElementById('73b').style.visibility="hidden";
 		document.getElementById('74').style.visibility="hidden";
@@ -387,35 +556,65 @@ function magic()
 			
 			if(dia=="50mm")
 			{
-			document.getElementById('lw').innerHTML="Left Limb Reading&nbsp=&nbsp"+m50[0][p]+"cm";
-			document.getElementById('rw').innerHTML="Right Limb Reading&nbsp=&nbsp"+m50[1][p]+"cm";
-			document.getElementById('hl').innerHTML="Head Loss(hl=12.6*(LL- RL))=&nbsp"+m50[3][p]+"cm";
+				document.getElementById('lw').innerHTML="Left Limb Reading (LL)&nbsp=&nbsp"+m50[0][p]+"cm";
+				document.getElementById('rw').innerHTML="Right Limb Reading (RL)&nbsp=&nbsp"+m50[1][p]+"cm";
+				HVal = m50[3][p];
+				document.getElementById('hl').innerHTML="Head Loss (H) = ";
+				setTimeout(function(){
+					idInput = document.getElementById('hl');
+					userCalculation(idInput);
+				}, 1000);
+			// document.getElementById('hl').innerHTML="Head Loss(hl=12.6*(LL- RL))=&nbsp"+m50[3][p]+"cm";
 			}
 			else if(dia=="40mm")
 			{
-			document.getElementById('lw').innerHTML="Left Limb Reading&nbsp=&nbsp"+m40[0][p]+"cm";
-			document.getElementById('rw').innerHTML="Right Limb Reading&nbsp=&nbsp"+m40[1][p]+"cm";
-			document.getElementById('hl').innerHTML="Head Loss(hl=12.6*(LL- RL))&nbsp=&nbsp"+m40[3][p]+"cm";
+
+				document.getElementById('lw').innerHTML="Left Limb Reading (LL)&nbsp=&nbsp"+m40[0][p]+"cm";
+				document.getElementById('rw').innerHTML="Right Limb Reading (RL)&nbsp=&nbsp"+m40[1][p]+"cm";
+				HVal = m40[3][p];
+				document.getElementById('hl').innerHTML="Head Loss (H) = ";
+				setTimeout(function(){
+					idInput = document.getElementById('hl');
+					userCalculation(idInput);
+				}, 1000);
+				// document.getElementById('hl').innerHTML="Head Loss(hl=12.6*(LL- RL))&nbsp=&nbsp"+m40[3][p]+"cm";
 			}
 			else if(dia=="25mm")
 			{
-			document.getElementById('lw').innerHTML="Left Limb Reading&nbsp=&nbsp"+m25[0][p]+"cm";
-			document.getElementById('rw').innerHTML="Right Limb Reading&nbsp=&nbsp"+m25[1][p]+"cm";
-			document.getElementById('hl').innerHTML="Head Loss(hl=12.6*(LL- RL))&nbsp=&nbsp"+m25[3][p]+"cm";
+			document.getElementById('lw').innerHTML="Left Limb Reading (LL)&nbsp=&nbsp"+m25[0][p]+"cm";
+			document.getElementById('rw').innerHTML="Right Limb Reading (RL)&nbsp=&nbsp"+m25[1][p]+"cm";
+			HVal = m25[3][p];
+			document.getElementById('hl').innerHTML="Head Loss (H) = ";
+			setTimeout(function(){
+				idInput = document.getElementById('hl');
+				userCalculation(idInput);
+			}, 1000);
+			// document.getElementById('hl').innerHTML="Head Loss(hl=12.6*(LL- RL))&nbsp=&nbsp"+m25[3][p]+"cm";
 			}
 			else if(dia=="20mm")
 			{
-			document.getElementById('lw').innerHTML="Left Limb Reading&nbsp=&nbsp"+m20[0][p]+"cm";
-			document.getElementById('rw').innerHTML="Right Limb Reading&nbsp=&nbsp"+m20[1][p]+"cm";
-			document.getElementById('hl').innerHTML="Head Loss(hl=12.6*(LL- RL))&nbsp=&nbsp"+m20[3][p]+"cm";
+			document.getElementById('lw').innerHTML="Left Limb Reading (LL)&nbsp=&nbsp"+m20[0][p]+"cm";
+			document.getElementById('rw').innerHTML="Right Limb Reading (RL)&nbsp=&nbsp"+m20[1][p]+"cm";
+			HVal = m20[3][p];
+			document.getElementById('hl').innerHTML="Head Loss (H) = ";
+			setTimeout(function(){
+				idInput = document.getElementById('hl');
+				userCalculation(idInput);
+			}, 1000);
+			// document.getElementById('hl').innerHTML="Head Loss(hl=12.6*(LL- RL))&nbsp=&nbsp"+m20[3][p]+"cm";
 			}
 			else if(dia=="15mm")
 			{
-			document.getElementById('lw').innerHTML="Left Limb Reading&nbsp=&nbsp"+m15[0][p]+"cm";
-			document.getElementById('rw').innerHTML="Right Limb Reading&nbsp=&nbsp"+m15[1][p]+"cm";
-			document.getElementById('hl').innerHTML="Head Loss(hl=12.6*(LL- RL))&nbsp=&nbsp"+m15[3][p]+"cm";
+			document.getElementById('lw').innerHTML="Left Limb Reading (LL)&nbsp=&nbsp"+m15[0][p]+"cm";
+			document.getElementById('rw').innerHTML="Right Limb Reading (RL)&nbsp=&nbsp"+m15[1][p]+"cm";
+			HVal = m15[3][p];
+			document.getElementById('hl').innerHTML="Head Loss (H) = ";
+			setTimeout(function(){
+				idInput = document.getElementById('hl');
+				userCalculation(idInput);
+			}, 1000);
+			// document.getElementById('hl').innerHTML="Head Loss(hl=12.6*(LL- RL))&nbsp=&nbsp"+m15[3][p]+"cm";
 			}
-			document.getElementById('nextButton').style.visibility="visible";
 		},1500);
 		
   	}
@@ -507,148 +706,76 @@ function magic()
 		document.getElementById('time').style.visibility="hidden";
 		
 		document.getElementById('71').style.visibility="visible";
-		document.getElementById('72').innerHTML="Diameter of pipe(d) = "+dia;
+		document.getElementById('72').innerHTML="Diameter of pipe (d) = "+dia;
 		document.getElementById('73').style.visibility="visible";
 		document.getElementById('73c').style.visibility="visible";
+		document.getElementById('73d').style.visibility="visible";
+		document.getElementById('74').style.visibility="visible";
+		document.getElementById('75').style.visibility="visible";
+		document.getElementById('76').style.visibility="visible";
 		if(dia=="50mm")
 		{
-		document.getElementById('73a').style.visibility="visible";
-		document.getElementById('73a').innerHTML="Head Loss(h<sub>l</sub>=12.6*(LL-RL))=&nbsp"+m50[3][p].toFixed(2)+"cm";
+			document.getElementById('73a').style.visibility="visible";
+			document.getElementById('73a').style.visibility="visible";
+			document.getElementById('73a').style.visibility="visible";
+			document.getElementById('73a').style.visibility="visible";
+			document.getElementById('73b').style.visibility="visible";
+			document.getElementById('73a').innerHTML="Head Loss (H)=&nbsp"+m50[3][p].toFixed(2)+"cm";
+			document.getElementById('73b').innerHTML="Time taken (t)=&nbsp"+m50[2][p].toFixed(2)+"sec";
+			qVal = m50[4][p];
+			document.getElementById('74').innerHTML="Q<sub>act</sub> = ";
+			idInput = document.getElementById('74');
+			userCalculation(idInput);
 		}
 		else if(dia=="40mm")
 		{
-		document.getElementById('73a').style.visibility="visible";
-		document.getElementById('73a').innerHTML="Head Loss(h<sub>l</sub>=12.6*(LL-RL))=&nbsp"+m40[3][p].toFixed(2)+"cm";
+			document.getElementById('73a').style.visibility="visible";
+			document.getElementById('73b').style.visibility="visible";
+			document.getElementById('73a').innerHTML="Head Loss (H)=&nbsp"+m40[3][p].toFixed(2)+"cm";
+			document.getElementById('73b').innerHTML="Time taken (t)=&nbsp"+m40[2][p].toFixed(2)+"sec";
+			qVal = m40[4][p];
+			document.getElementById('74').innerHTML="Q<sub>act</sub> = ";
+			idInput = document.getElementById('74');
+			userCalculation(idInput);
+			
 		}
 		else if(dia=="25mm")
 		{
-		document.getElementById('73a').style.visibility="visible";
-		document.getElementById('73a').innerHTML="Head Loss(h<sub>l</sub>=12.6*(LL-RL))=&nbsp"+m25[3][p].toFixed(2)+"cm";
+			document.getElementById('73a').style.visibility="visible";
+			document.getElementById('73b').style.visibility="visible";
+			document.getElementById('73a').innerHTML="Head Loss (H)=&nbsp"+m25[3][p].toFixed(2)+"cm";
+			document.getElementById('73b').innerHTML="Time taken (t)=&nbsp"+m25[2][p].toFixed(2)+"sec";
+			qVal = m25[4][p];
+			document.getElementById('74').innerHTML="Q<sub>act</sub> = ";
+			idInput = document.getElementById('74');
+			userCalculation(idInput);
+		
 		}
 		else if(dia=="20mm")
 		{
-		document.getElementById('73a').style.visibility="visible";
-		document.getElementById('73a').innerHTML="Head Loss(h<sub>l</sub>=12.6*(LL-RL))=&nbsp"+m20[3][p].toFixed(2)+"cm";
+			document.getElementById('73a').style.visibility="visible";
+			document.getElementById('73b').style.visibility="visible";
+			document.getElementById('73a').innerHTML="Head Loss (H)=&nbsp"+m20[3][p].toFixed(2)+"cm";
+			document.getElementById('73b').innerHTML="Time taken (t)=&nbsp"+m20[2][p].toFixed(2)+"sec";
+			qVal = m20[4][p];
+			document.getElementById('74').innerHTML="Q<sub>act</sub> = ";
+			idInput = document.getElementById('74');
+			userCalculation(idInput);
+		
 		}
 		else if(dia=="15mm")
 		{
-		document.getElementById('73a').style.visibility="visible";
-		document.getElementById('73a').innerHTML="Head Loss(h<sub>l</sub>=12.6*(LL-RL))=&nbsp"+m15[3][p].toFixed(2)+"cm";
-		}
-		if(dia=="50mm")
-		{
-		document.getElementById('73b').style.visibility="visible";
-		document.getElementById('73b').innerHTML="Time taken(t)=&nbsp"+m50[2][p].toFixed(2)+"s";
-		}
-		else if(dia=="40mm")
-		{
-		document.getElementById('73b').style.visibility="visible";
-		document.getElementById('73b').innerHTML="Time taken(t)=&nbsp"+m40[2][p].toFixed(2)+"s";
-		}
-		else if(dia=="25mm")
-		{
-		document.getElementById('73b').style.visibility="visible";
-		document.getElementById('73b').innerHTML="Time taken(t)=&nbsp"+m25[2][p].toFixed(2)+"s";
-		}
-		else if(dia=="20mm")
-		{
-		document.getElementById('73b').style.visibility="visible";
-		document.getElementById('73b').innerHTML="Time taken(t)=&nbsp"+m20[2][p].toFixed(2)+"s";
-		}
-		else if(dia=="15mm")
-		{
-		document.getElementById('73b').style.visibility="visible";
-		document.getElementById('73b').innerHTML="Time taken(t)=&nbsp"+m15[2][p].toFixed(2)+"s";
-		}
-		if(dia=="50mm")
-		{
-		document.getElementById('74').style.visibility="visible";
-		document.getElementById('74').innerHTML="Q<sub>act</sub>(Axh/t)=&nbsp"+m50[4][p].toFixed(2)+"cm<sup>3</sup>/s";
-		}
-		else if(dia=="40mm")
-		{
-		document.getElementById('74').style.visibility="visible";
-		document.getElementById('74').innerHTML="Q<sub>act</sub>(Axh/t)=&nbsp"+m40[4][p].toFixed(2)+"cm<sup>3</sup>/s";
-		}
-		else if(dia=="25mm")
-		{
-		document.getElementById('74').style.visibility="visible";
-		document.getElementById('74').innerHTML="Q<sub>act</sub>(Axh/t)=&nbsp"+m25[4][p].toFixed(2)+"cm<sup>3</sup>/s";
-		}
-		else if(dia=="20mm")
-		{
-		document.getElementById('74').style.visibility="visible";
-		document.getElementById('74').innerHTML="Q<sub>act</sub>(Axh/t)=&nbsp"+m20[4][p].toFixed(2)+"cm<sup>3</sup>/s";
-		}
-		else if(dia=="15mm")
-		{
-		document.getElementById('74').style.visibility="visible";
-		document.getElementById('74').innerHTML="Q<sub>act</sub>(Axh/t)=&nbsp"+m15[4][p].toFixed(2)+"cm<sup>3</sup>/s";
-		}
-		if(dia=="50mm")
-		{			
-		document.getElementById('75').style.visibility="visible";
-		document.getElementById('75').innerHTML="Velocity(v)&nbsp=&nbsp"+m50[5][p].toFixed(2)+"cm/s";
-		}
-		else if(dia=="40mm")
-		{			
-		document.getElementById('75').style.visibility="visible";
-		document.getElementById('75').innerHTML="Velocity(v)&nbsp=&nbsp"+m40[5][p].toFixed(2)+"cm/s";
-		}
-		else if(dia=="25mm")
-		{			
-		document.getElementById('75').style.visibility="visible";
-		document.getElementById('75').innerHTML="Velocity(v)&nbsp=&nbsp"+m25[5][p].toFixed(2)+"cm/s";
-		}
-		else if(dia=="20mm")
-		{			
-		document.getElementById('75').style.visibility="visible";
-		document.getElementById('75').innerHTML="Velocity(v)&nbsp=&nbsp"+m20[5][p].toFixed(2)+"cm/s";
-		}
-		else if(dia=="15mm")
-		{			
-		document.getElementById('75').style.visibility="visible";
-		document.getElementById('75').innerHTML="Velocity(v)&nbsp=&nbsp"+m15[5][p].toFixed(2)+"cm/s";
+			document.getElementById('73a').style.visibility="visible";
+			document.getElementById('73b').style.visibility="visible";
+			document.getElementById('73a').innerHTML="Head Loss (H)=&nbsp"+m15[3][p].toFixed(2)+"cm";
+			document.getElementById('73b').innerHTML="Time taken (t)=&nbsp"+m15[2][p].toFixed(2)+"sec";
+			qVal = m15[4][p];
+			document.getElementById('74').innerHTML="Q<sub>act</sub> = ";
+			idInput = document.getElementById('74');
+			userCalculation(idInput);
 		}
 		
-		if(dia=="50mm")
-		{
-		document.getElementById('76').style.visibility="visible";
-		document.getElementById('76').innerHTML="Analytical Friction Factor(f = ((2*g*d)/v<sup>2</sup>)*(h<sub>l</sub>/l)&nbsp=&nbsp"+m50[6][p]+"&nbsp";
-		}
-		else if(dia=="40mm")
-		{
-		document.getElementById('76').style.visibility="visible";
-		document.getElementById('76').innerHTML="Analytical Friction Factor(f = ((2*g*d)/v<sup>2</sup>)*(h<sub>l</sub>/l)&nbsp=&nbsp"+m40[6][p]+"&nbsp";
-		}
-		else if(dia=="25mm")
-		{
-		document.getElementById('76').style.visibility="visible";
-		document.getElementById('76').innerHTML="Analytical Friction Factor(f = ((2*g*d)/v<sup>2</sup>)*(h<sub>l</sub>/l)&nbsp=&nbsp"+m25[6][p]+"&nbsp";
-		}
-		else if(dia=="20mm")
-		{
-		document.getElementById('76').style.visibility="visible";
-		document.getElementById('76').innerHTML="Analytical Friction Factor(f = ((2*g*d)/v<sup>2</sup>)*(h<sub>l</sub>/l)&nbsp=&nbsp"+m20[6][p]+"&nbsp";
-		}
-		else if(dia=="15mm")
-		{
-		document.getElementById('76').style.visibility="visible";
-		document.getElementById('76').innerHTML="Analytical Friction Factor(f = ((2*g*d)/v<sup>2</sup>)*(h<sub>l</sub>/l)&nbsp=&nbsp"+m15[6][p]+"&nbsp";
-		}
 		
-		if(repeat>=1 && repeat<3)
-		{
-        simsubscreennum=2;
-		document.getElementById("nextButton").style.visibility="visible";
-		}
-		else if(repeat==3)
-		{
-		 favg=(f1+f2+f3)/3.0;
-		 document.getElementById("77").style.visibility="visible";
-		 document.getElementById("77").innerHTML="Average Analytical Friction Factor(f)&nbsp=&nbsp"+favg.toFixed(2)+"&nbsp";
-		 document.getElementById("nextButton").style.visibility="hidden";	
-		}
 		
 	}
 	
@@ -663,6 +790,22 @@ function magic()
 		// document.getElementById('step8text1').onclick=function() { step8();}
 	// }
 }
+
+function step7Next () {
+	if(repeat>=1 && repeat<3)
+	{
+		simsubscreennum=2;
+		document.getElementById("nextButton").style.visibility="visible";
+	}
+	else if(repeat==3)
+	{
+		favg=(f1+f2+f3)/3.0;
+		document.getElementById("77").style.visibility="visible";
+		document.getElementById("77").innerHTML="Average Analytical Friction Factor (f)&nbsp=<span class='resultStyle'>&nbsp"+favg.toFixed(2)+"&nbsp</span>";
+		document.getElementById("nextButton").style.visibility="hidden";	
+	}
+}
+
     
 	
 
@@ -816,6 +959,7 @@ function magic()
 		     // Standard syntax
 	     document.getElementById("arr").style.transform = "rotate(35deg)";
 		
+         document.getElementById('b2').onclick= '';
          document.getElementById('b1').onclick=function(){step32();}
 	}
 	
@@ -946,27 +1090,27 @@ function magic()
 		if(dia=="50mm")
 		{
 		document.getElementById('time').style.visibility="visible";
-		document.getElementById('time').innerHTML="Time required by water to fill 10cm height&nbsp=&nbsp"+m50[2][p]+"s";
+		document.getElementById('time').innerHTML="Time required by water to fill 10cm height&nbsp=&nbsp"+m50[2][p]+"sec";
 		}
 		else if(dia=="40mm")
 		{
 		document.getElementById('time').style.visibility="visible";
-		document.getElementById('time').innerHTML="Time required by water to fill 10cm height&nbsp=&nbsp"+m40[2][p]+"s";
+		document.getElementById('time').innerHTML="Time required by water to fill 10cm height&nbsp=&nbsp"+m40[2][p]+"sec";
 		}
 		else if(dia=="25mm")
 		{
 		document.getElementById('time').style.visibility="visible";
-		document.getElementById('time').innerHTML="Time required by water to fill 10cm height&nbsp=&nbsp"+m25[2][p]+"s";
+		document.getElementById('time').innerHTML="Time required by water to fill 10cm height&nbsp=&nbsp"+m25[2][p]+"sec";
 		}
 		else if(dia=="40mm")
 		{
 		document.getElementById('time').style.visibility="visible";
-		document.getElementById('time').innerHTML="Time required by water to fill 10cm height&nbsp=&nbsp"+m20[2][p]+"s";
+		document.getElementById('time').innerHTML="Time required by water to fill 10cm height&nbsp=&nbsp"+m20[2][p]+"sec";
 		}
 		else if(dia=="15mm")
 		{
 		document.getElementById('time').style.visibility="visible";
-		document.getElementById('time').innerHTML="Time required by water to fill 10cm height&nbsp=&nbsp"+m15[2][p]+"s";
+		document.getElementById('time').innerHTML="Time required by water to fill 10cm height&nbsp=&nbsp"+m15[2][p]+"sec";
 		}
 		
 		document.getElementById('nextButton').style.visibility="visible";
@@ -1054,8 +1198,8 @@ function magic()
 		document.getElementById('arr').style.animation="";
 		document.getElementById('lw').innerHTML="";
 		document.getElementById('rw').innerHTML="";
-		document.getElementById('hl').innerHTML="";
-
-
-
+		document.getElementById('hl').innerHTML=" ";
+		document.getElementById('74').innerHTML="Q<sub>act</sub> = ";
+		document.getElementById('75').innerHTML="Velocity (v) = "
+		document.getElementById('76').innerHTML="Analytical Friction Factor =  ";
 	}

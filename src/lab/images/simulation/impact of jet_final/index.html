@@ -5,17 +5,12 @@
 
 <title>SOLVE</title>
 <link rel="stylesheet" href="sgca.css" />
-<!-- <link rel="stylesheet" type="text/css" href="csshake.min.css"> -->
-<!-- <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css"> -->
-<!-- <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake-vertical.min.css"> -->
+<link href="mathstyle.css" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
 <script type="text/javascript" src= "jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src= "sgca.js"></script>
 <script type="text/javascript" src= "jquery-2.1.4.js"></script>
 <script type="text/javascript" src= "ej.web.all.js"></script>
-<!-- <script type="text/javascript" src="/assets/script/canvasjs.min.js"></script> -->
-
-
 
 <script>
 var simsubscreennum=0;
@@ -24,33 +19,33 @@ var simsubscreennum=0;
 <!-- var inclined=[10,15,20]; -->
 
 var flat=[[25,50,75],
-          [4.5,31,25],
+          [45,31,25],
 		  [418.6,580.65,720],
-		  [341.16,473.23,586.8],
+		  [3.41,4.73,5.86],
 		  [1.428,2.472,4.225],
 		  [1.178,2.356,3.584],
 		  [0.825,0.857,0.836]];			
 var hemi=[[50,100,150],
           [41,32,26],
 		  [439.02,562.5,692.31],
-		  [351.8,458.4,564.2],
+		  [3.51,4.54,5.64],
 		  [3.182,5.158,7.812],
 		  [2.336,4.712,7.067],
 		  [0.749,0.9135,0.9103]];
 var inclined=[[10,15,20],
               [61,50,43],
 			  [295.08,360,418.60],
-			  [240.5,293.4,341.2],
-			  [0.382,0.703,1.011],
-			  [0.411,0.703,0.942],
-			  [0.885,0.893,0.879]];
+			  [2.41,2.93,3.41],
+			  [0.644,0.958,1.291],
+			  [0.411,0.703,1.011],
+			  [0.638,0.733,0.780]];
 
 </script>
 </head>
 
 
 
-<body style="margin:0" onload="vane.reset();">
+<body style="margin:0; font-family:verdana; " >
 <!--Simulation Screen start		-->
 <div id="simscreen">
 
@@ -224,60 +219,93 @@ var inclined=[[10,15,20],
 <div class="simsubscreen" id="canvas6" style="visibility:hidden;">
 <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;6&nbsp;</span>
 <p class="steptext" style="font-family:verdana; font-size:14px;" >&nbsp;Close outlet valve and find discharge by noting the time taken by water to fill certain height in the collecting.</p>
-<img id="can6-2" style="position: absolute; left:1px; top: 123.25px;  visibility:hidden;" src="images/4.png"/>
-<img id="can6-2a" style="position: absolute; left:6px; top: 124px;  visibility:hidden;" src="images/3a.png"/>
+<img id="can6-2" style="position: absolute; left:-11px; top: 123.25px;  visibility:hidden;" src="images/4.png"/>
+<img id="can6-2a" style="position: absolute; left:-6px; top: 124px;  visibility:hidden;" src="images/3a.png"/>
 
-<img id="can6-8w" style="position: absolute; left: 136px; top: 188.5px;  visibility:hidden;" src="images/wat.png">
-<img id="can6-8wh" style="position: absolute; left: 125px; top: 187px; visibility:hidden;" src="images/wathemi.png">
+<img id="can6-8w" style="position: absolute; left: 126px; top: 188.5px;  visibility:hidden;" src="images/wat.png">
+<img id="can6-8wh" style="position: absolute; left: 115px; top: 187px; visibility:hidden;" src="images/wathemi.png">
 
-<img id="can6-10" style="position: absolute; left:374px; top: 451px; visibility:hidden;" src="images/water.png"/>
+<img id="can6-10" style="position: absolute; left:364px; top: 451px; visibility:hidden;" src="images/water.png"/>
 
-<img id="can6-1f" style="position: absolute; left:0px; top: 120px; visibility:hidden;" src="images/2f.png"/>
-<img id="can6-1h" style="position: absolute; left:0px; top: 120px; visibility:hidden;" src="images/2h.png"/>
-<img id="can6-1i" style="position: absolute; left:0px; top: 120px; visibility:hidden;" src="images/2i.png"/>
-<img id="can6-6" style="position: absolute; left:129.25px; top: 120px;  visibility:hidden;" src="images/5.png"/>
-<img id="can6-3" style="position: absolute; left:192.50px; top: 120.55px;  visibility:hidden;" src="images/2.2.png"/>
+<img id="can6-1f" style="position: absolute; left:-10px; top: 120px; visibility:hidden;" src="images/2f.png"/>
+<img id="can6-1h" style="position: absolute; left:-10px; top: 120px; visibility:hidden;" src="images/2h.png"/>
+<img id="can6-1i" style="position: absolute; left:-10px; top: 120px; visibility:hidden;" src="images/2i.png"/>
+<img id="can6-6" style="position: absolute; left:119.25px; top: 120px;  visibility:hidden;" src="images/5.png"/>
+<img id="can6-3" style="position: absolute; left:182.50px; top: 120.55px;  visibility:hidden;" src="images/2.2.png"/>
 
-<img id="can6-8wf" style="position: absolute; left: 136px; top: 186.5px;  visibility:hidden;" src="images/watflat.png">
-<img id="can6-8wi" style="position: absolute; left: 136px; top: 182px; visibility:hidden;" src="images/watincli.png">
+<img id="can6-8wf" style="position: absolute; left: 126px; top: 186.5px;  visibility:hidden;" src="images/watflat.png">
+<img id="can6-8wi" style="position: absolute; left: 126px; top: 182px; visibility:hidden;" src="images/watincli.png">
 
-<img id="can6-out" style="position: absolute; left:334px; top: 405px; visibility:hidden; cursor:pointer;" src="images/outlet_on.png"/>
-<img id="can6-outoff" style="position: absolute; left:334px; top: 405px; visibility:hidden;" src="images/outlet_off.png"/>
+<img id="can6-out" style="position: absolute; left:324px; top: 405px; visibility:hidden; cursor:pointer;" src="images/outlet_on.png"/>
+<img id="can6-outoff" style="position: absolute; left:324px; top: 405px; visibility:hidden;" src="images/outlet_off.png"/>
 
-<img id="can6-4" style="position: absolute; left: 403px; top: 365px; visibility:hidden;" src="images/wtrblu.png">
-<img id="can6-5" style="position: absolute; left: 403px; top: 380px;" src="images/wtrblank.png">
-<img id="can6-6" style="position: absolute; left: 403px; top: 95px;" src="images/measuring tube.png">
+<img id="can6-4" style="position: absolute; left: 403px; top: 335px; visibility:hidden;" src="images/wtrblu.png">
+<img id="can6-5" style="position: absolute; left: 403px; top: 350px;" src="images/wtrblank.png">
+<img id="can6-6" style="position: absolute; left: 403px; top: 65px;" src="images/measuring tube.png">
 
-<img id="can6-7" style="position: absolute; left: 499px; top: 170px;" src="images/stopwatch.png"/>
-<img id="can6-8" style="position: absolute; left: 567px; top: 241px;" src="images/needle.png"/>
-
-
-<img id="can6-9" style="position: absolute; left: 202.10px; top: 272.99px; " src="images/waterpipe.png">
+<img id="can6-7" style="position: absolute; left: 499px; top: 140px;" src="images/stopwatch.png"/>
+<img id="can6-8" style="position: absolute; left: 567px; top: 211px;" src="images/needle.png"/>
 
 
+<img id="can6-9" style="position: absolute; left: 192.10px; top: 272.99px; " src="images/waterpipe.png">
 
-<p id="v6-1" style="position:absolute; top: 415px; left:390px"> Time taken by water to fill 5cm height, t =</p>
-<p id="v6-2" style="position:absolute; top: 445px; left:390px"> Discharge of water, Q =  </p>
+<p id="v6-1" style="position:absolute; top: 390px; left:390px"> Time taken by water to fill 5cm height, t =</p>
+
+
+<div class="tooltip" style="position:absolute; top:420px; left:390px; visibility:hidden;">
+	<p id="v6-2">Discharge of water, Q = </p>
+	<span id="fcan4-11" class="tooltiptext" ><span>Q (cm<sup>3</sup>/sec) = <span class="frac"><sup>A &times; h</sup><span>&frasl;</span><sub>t</sub></span><br>Where, A = 3600cm<sup>2</sup></span></span>
+</div> 
+
 </div>
 
 
 <!--Step7	-->	
 <div class="simsubscreen" id="canvas7" style="visibility:hidden;">
-<h3 style="position:absolute; top: 5px; left:40px;">Observations:</h3>
 
-<p id="v7-1" style="position:absolute; top: 50px; left:50px"> Diameter of nozzle = 12.5 cm</p>
-<p id="v7-2" style="position:absolute; top: 90px; left:50px"> Length of channel = 60cm</p>
-<p id="v7-2" style="position:absolute; top: 140px; left:50px"> Breadth of channel = 60cm</p>
-<p id="v7-3" style="position:absolute; top: 190px; left:50px"> Area of collecting tank = 60 &times; 60 = 3600cm<sup>2</sup></p>
+<span id="ap1" class="ttip" style="border-bottom:1px dotted ; color:red; position:absolute; left:430px; top: 70px; text-align:justify;"><strong>Observations</strong>
+<span  class="ttiptext" style="text-align:-webkit-justify;">
+</br>
+<p>Length of channel = 60cm</p>
+<p>Breadth of channel = 60cm</p>
+<p>Area of collecting tank = 3600cm<sup>2</sup></p><!-- 60 x 40 -->
 
-<h3 style="position:absolute; top: 240px; left:40px;">Calculation:</h3>
-<p id="v7-4f" style="position:absolute; top: 280px; left:50px; visibility:hidden;"> For Flat vane: </p>
-<p id="v7-4h" style="position:absolute; top: 280px; left:50px; visibility:hidden;"> For curved vane (hemispherical): </p>
-<p id="v7-4i" style="position:absolute; top: 280px; left:50px; visibility:hidden;"> For inclined vane (&theta; =60&deg; with the horizontal):</p>
-<p id="v7-5" style="position:absolute; top: 320px; left:50px"> Velocity of jet, V = </p>
-<p id="v7-6" style="position:absolute; top: 360px; left:50px"> Theoretical force, F<sub>th</sub> = </p>
-<p id="v7-7" style="position:absolute; top: 400px; left:50px"> Actual force, F<sub>act</sub> = </p>
-<p id="v7-8" style="position:absolute; top: 440px; left:50px"> Coefficient of impact =  </p>
+<p>Diameter of nozzle, d = 12.5 cm</p>
+<span class="tooltip">Area of the nozzle, A = 122.66cm<sup>2</sup>
+	<span id="fcan4-11" class="tooltiptext" ><span>A = <span class="frac"><sup>&pi; &times; d<sup>2</sup></sup><span>&frasl;</span><sub>4</sub></span></span></span>
+</span>
+
+<p id="v7-1">Discharge of water, Q = </p>
+
+<p>Density of water, &rho; = 1g/cm<sup>3</sup></p>
+
+<p>Distance a = 1.25cm</p>
+<p>Distance b = 13cm</p>
+<p id="v7-2">Wieght on the pan, W = </p>
+
+</span>
+</span>
+
+<h3 style="position:absolute; left: 0px; top:50px;">Calculation:</h3>
+<p id="v7-4f" style="position:absolute; top: 100px; left:15px; visibility:hidden; border-bottom-style:double;"> For Flat vane: </p>
+<p id="v7-4h" style="position:absolute; top: 100px; left:15px; visibility:hidden; border-bottom-style:double;"> For curved vane (hemispherical): </p>
+<p id="v7-4i" style="position:absolute; top: 100px; left:15px;; visibility:hidden; border-bottom-style:double;"> For inclined vane (&theta; =60&deg; with the horizontal):</p>
+
+<div id="vp7-5" style="position:absolute; left:15px; top: 150px;">
+	<p>Velocity of jet, V = <span class="frac"><sup title="Discharge of water">Q</sup><span>&frasl;</span><sub title="Area of the nozzle">A</sub></span> = <span id="v7-5"></span></p>
+</div>
+
+<div id="vp7-6" style="position:absolute; left:15px; top: 210px; visibility:hidden; ">
+	<p id="v7-6">Theoretical force, F<sub>th</sub> = </p>
+</div>
+
+<div id="vp7-7" style="position:absolute; left:15px; top: 260px; visibility:hidden; ">
+	<p>Actual force, F<sub>act</sub> = <span class="frac"><sup>W &times; b</sup><span>&frasl;</span><sub>a</sub></span> = <span id="v7-7"></span></p>
+</div>
+
+<div id="vp7-8" style="position:absolute; left:15px; top: 320px; visibility:hidden; ">
+	<p>Coefficient of impact, C<sub>i</sub> = <span class="frac"><sup title="Actual force">F<sub>act</sub></sup><span>&frasl;</span><sub title="Theoretical force">F<sub>th</sub></sub></span> = <span id="v7-8"></span></p>
+</div>
 
 </div>
 
@@ -287,7 +315,7 @@ var inclined=[[10,15,20],
 <div class="simsubscreen" id="canvas8" style="visibility:hidden">
 <center><h2 id="step8" style="font-family:verdana;">Characteristic Curves<h2></center></p>
 <center><span id="step8text1" style="border: 2px solid; position:absolute;top: 60px; left:220px;cursor:pointer;font-family:verdana; font-size:14px;">
-Theoretical force, F<sub>th</sub> vs Actual force, F<sub>act</sub> </span></center>
+Theoretical force (F<sub>th</sub>) vs Actual force (F<sub>act</sub>) </span></center>
 <div id="chartContainer" style="height: 420px; width: 600px;margin-left:25px;margin-right:100px;margin-top:50px"></div>
 </div>
 
@@ -311,6 +339,6 @@ Theoretical force, F<sub>th</sub> vs Actual force, F<sub>act</sub> </span></cent
 <!--Blinking Arrow	-->	
 <img class ="" id="arrow1" style="visibility:hidden;" src="images/arrow1.png"/>
 
-<div id="copyright"> &copy; 2016 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
+<div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
 </body>
 </html>

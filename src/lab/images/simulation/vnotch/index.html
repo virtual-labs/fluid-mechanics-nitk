@@ -5,6 +5,7 @@
 
 <title>SOLVE</title>
 <link rel="stylesheet" href="vnotch.css" />
+<link href="mathstyle.css" rel="stylesheet" />
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>-->
 <script type="text/javascript" src= "jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src= "vnotch.js"></script>
@@ -36,8 +37,8 @@ var values=[[3.15,10.04,6.89,2943.7,10,20,1750,0.59,2.53,14,0.593],
 
 <!--SubScreen Home	-->	
 <div class="simsubscreen" id="canvas0">
-<h4 class="incanvas" >Objective</h4>
-<p class="incanvas" >To determinate the co-efficient of discharge of a V-Notch.</p>
+<h4 class="incanvas" >Objective:</h4>
+<p class="incanvas" >To determinate the co-efficient of discharge of a V-Notch.</p></br>
 <h4 class="incanvas" >Apparatus used:</h4>
 <p class="incanvas" >A channel with V-Notch, hook gauge, collecting tank, piezometer, etc</p>
 <img id="" style="position: absolute; left: 80px; top: 125px;" src="Images/vnotch.png"/>
@@ -74,10 +75,6 @@ var values=[[3.15,10.04,6.89,2943.7,10,20,1750,0.59,2.53,14,0.593],
 <img id="can2-3" style="position: absolute; left: 545px; top: 167px;" src="Images/Inlet valve_horizontal.png">
 <img id="can2-4" style="position: absolute; left: 85px; top: 155px;cursor:zoom-in;" src="Images/nob2.png"/>
 
-
-
-
-
 </div>
 
 <!--Step3	-->	
@@ -96,12 +93,23 @@ var values=[[3.15,10.04,6.89,2943.7,10,20,1750,0.59,2.53,14,0.593],
 
 <img id="can3-6" style="position: absolute; left: 250px; top: 375px;" src="Images/cover.png"/>
 <img id="can3-7" style="position: absolute; left: 119px; top: 185px;cursor:crosshair;" src="Images/nob.png"/>
-<p id="can3-9" style="position:absolute;top: 260px; left:370px"> Initial reading (water level till crest) = 2.6 cm</p>
-<p id="can3-10" style="position:absolute;top: 290px; left:370px"> Final reading = </p>
-<p id="can3-11" style="position:absolute;top: 320px; left:370px"> Head of water =  </p>
-<p id="can3-12" style="position:absolute;top:350px; left:370px"> Theoretical  discharge, Q<sub>act</sub> =  </p>
 
+<p id="can3-9" style="position:absolute;top: 210px; left:370px"> Initial reading (water level till crest) = 2.6 cm</p>
 
+<p id="can3-10" style="position:absolute;top: 250px; left:370px;"> Final reading = </p>
+
+<div class="tooltip" style="position:absolute; top: 290px; left:370px; visibility:hidden;">
+	<p id="can3-11" >Head of water, H =  </p>
+	<span id="fcan3-11" class="tooltiptext" >Head of water, H(cm) = Final reading - Initial reading</span>
+</div> 
+
+<div class="tooltip" style="position:absolute; top: 330px; left:370px; visibility:hidden;">
+	<p id="can3-12" >Theoretical discharge, Q<sub>th</sub> = </p>
+	<span id="fcan3-12" class="tooltiptext" ><p>Q<sub>th</sub> = <span class="frac"><sup>8</sup><span>&frasl;</span><sub>15</sub></span> &times; &radic;(2g) &times; tan<span class="frac"><sup>&theta;</sup><span>&frasl;</span><sub>2</sub></span>&times; H<sup><sup><sup><span class="frac"><sup>5</sup><span>&frasl;</span><sub>2</sub></sup></sup></sup></span></p></span>
+</div>
+
+<span id="ap1" class="ttip" style="border-bottom:1px dotted ; color:red; position:absolute; left:370px; top:390px; text-align:justify; visibility:hidden;">Additional parameters
+<span  class="ttiptext" style="text-align:-webkit-justify;">Acceleration due to gravity (g) = 981 cm/s<sup>2</sup></br></br>&theta; = 90&deg;</span></span>
 </div>
 
 <!--Step4	-->	
@@ -109,47 +117,50 @@ var values=[[3.15,10.04,6.89,2943.7,10,20,1750,0.59,2.53,14,0.593],
 <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
 <p class="steptext-2">&nbsp;Note actual discharge reading of the V-notch from the collecting tank.</p>
 
-<img id="can4-1" style="position: absolute; left: 0px; top: 130px;" src="Images/vnotch3.png">
-<img id="can4-2" style="position: absolute; left: 300px; top: 400px;cursor:pointer;" src="Images/outlet1.png">
-<img id="can4-3" style="position: absolute; left: 295px; top: 402px;" src="Images/outlet2.png">
+<img id="can4-1" style="position: absolute; left: -20px; top: 130px;" src="Images/vnotch3.png">
+<img id="can4-2" style="position: absolute; left: 280px; top: 400px;cursor:pointer;" src="Images/outlet1.png">
+<img id="can4-3" style="position: absolute; left: 275px; top: 402px;" src="Images/outlet2.png">
 
-<img id="can4-7" style="position: absolute; left: 403px; top: 365px;" src="Images/wtrblu.png">
-<img id="can4-8" style="position: absolute; left: 403px; top: 380px;" src="Images/wtrblank.png">
+<img id="can4-7" style="position: absolute; left: 383px; top: 340px;" src="Images/wtrblu.png">
+<img id="can4-8" style="position: absolute; left: 383px; top: 355px;" src="Images/wtrblank.png">
+<img id="can4-4" style="position: absolute; left: 383px; top: 70px;" src="Images/measuring tube.png">
 
-<img id="can4-4" style="position: absolute; left: 403px; top: 95px;" src="Images/measuring tube.png">
-<img id="stopwatch" style="position: absolute; left: 479px; top: 170px;" src="Images/stopwatch.1.png"/>
-<img id="stopwatchndl" style="position: absolute; left: 547px; top: 241px;" src="Images/stopwatch needle.png"/>
+<img id="stopwatch" style="position: absolute; left: 479px; top: 140px;" src="Images/stopwatch.1.png"/>
+<img id="stopwatchndl" style="position: absolute; left: 547px; top: 211px;" src="Images/stopwatch needle.png"/>
 
-<p id="can4-9" style="position:absolute;top: 410px; left:380px"> Time required by water to fill 10cm height =  </p>
-<p id="can4-10" style="position:absolute;top: 440px; left:380px"> Discharge of water =  </p>
+<p id="can4-9" style="position:absolute;top: 380px; left:370px"> Time required by water to fill 10cm height, t =  </p>
 
-
-
-
+<div class="tooltip" style="position:absolute; top: 420px; left:370px; visibility:hidden;">
+	<p id="can4-10" >Discharge of water, Q<sub>act</sub> =  </p>
+	<span id="fcan4-10" class="tooltiptext" ><p>Q<sub>act</sub> = <span class="frac"><sup>A &times; h</sup><span>&frasl;</span><sub>t</sub></span>
+	<br><br>Where, A = 3500cm<sup>2</sup>,<br>&nbsp;&nbsp;&nbsp;&nbsp;h = 10cm</span>
+</div>
 </div>
 
 
 <!--Step5	-->	
 <div class="simsubscreen" id="canvas5" style="visibility:hidden">
-<strong class="incanvas" style="position:absolute;top: 30px; left:100px" ><h2>Observation</h2></strong>
+<strong class="incanvas" style="position:absolute;top: 30px; left:30px" ><h2>Observation</h2></strong>
 
-<p id="can6-1" style="position:absolute;top: 80px; left:220px">  Length of the collecting tank = 70 cm  </p>
-<p id="can6-2" style="position:absolute;top: 110px; left:220px"> Breadth of the collecting tank = 50 cm  </p>
+<p id="can6-1" style="position:absolute;top: 80px; left:70px">  Length of the collecting tank = 70 cm  </p>
+<p id="can6-2" style="position:absolute;top: 120px; left:70px"> Breadth of the collecting tank = 50 cm  </p>
+<p id="can6-3" style="position:absolute;top: 160px; left:70px"> Theoretical discharge, Q<sub>th</sub> = </p>
+<p id="can6-4" style="position:absolute;top: 200px; left:70px"> Discharge of water, Q<sub>act</sub> = </p>
 
+<strong class="incanvas" style="position:absolute; top: 250px; left:30px" ><h2>Result</h2></strong>
 
-<strong class="incanvas" style="position:absolute;top: 150px; left:100px" ><h2>Result</h2></strong>
-
-<p id="can6-5" style="position:absolute;top: 200px; left:220px"> Coefficient of discharge, C<sub>d</sub> =  </p>
-
+<div style="position:absolute; top: 290px; left:70px;">
+	<p>Coefficient of discharge, C<sub>d</sub> = <span class="frac"><sup>Q<sub>act</sub></sup><span>&frasl;</span><sub>Q<sub>th</sub></sub></span> = <span id="can6-5"></span></p>
+</div>
 </div>
 
 <!--Step6	-->	
 <div class="simsubscreen" id="canvas6" style="visibility:hidden">
 <center><h2>Characteristic Curves<h2></center></p>
-<center><span id="step7text1" style="border: 2px solid; position:absolute;top: 60px; left:270px;cursor:pointer;">
+<center><span id="step7text1" style="border: 2px solid; position:absolute;top: 60px; left:250px;cursor:pointer;">
 &nbsp;&nbsp; Theoretical Flow Rate vs Head &nbsp;&nbsp;</span></center>
 
-<div id="chartContainer" style="height: 420px; width: 600px;margin-left:50px;margin-right:100px;margin-top:50px"></div>
+<div id="chartContainer" style="height: 420px; width: 600px;margin-left:40px;margin-right:100px;margin-top:50px"></div>
 </div>
 
 <!--Step7	-->	
@@ -180,6 +191,6 @@ var values=[[3.15,10.04,6.89,2943.7,10,20,1750,0.59,2.53,14,0.593],
 <!--Blinking Arrow	-->	
 <img class ="" id="arrow1" style="visibility:hidden" src="Images/arrow1.png"/>
 
-<div id="copyright"> &copy; 2016 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
+<div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
 </body>
 </html>

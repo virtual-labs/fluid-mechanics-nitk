@@ -16,16 +16,16 @@ html
 }
 
 
-input[type=text]:focus {
+/* input[type=text]:focus { */
    
-    padding: 10px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid black;
-    border-radius: 4px;
-    text-align:center;
-    background-color:#D3D3D3
-}
+    /* padding: 10px; */
+    /* margin: 8px 0; */
+    /* display: inline-block; */
+    /* border: 1px solid black; */
+    /* border-radius: 4px; */
+    /* text-align:center; */
+    /* background-color:#D3D3D3 */
+/* } */
 
 #simscreen
 {
@@ -35,6 +35,8 @@ top:0px;
 height: 600px; 
 width:800px;
 border:solid 1px;
+font-family:verdana;
+font-size:14px;
 }
 
 #copyright{
@@ -137,6 +139,128 @@ text-align:center;
 background:#000
 }
 
+
+/* -------------------------------------- dynamic check button and result ---------------------------------- */
+.inputStyle{
+	border:none;
+	border-bottom: 1px solid;
+	width:55px;
+	font-family:verdana;
+	font-size:14px;
+	text-align:center;
+}
+.resultStyle{
+	border:none;
+	border-bottom-style:double;
+	width:55px;
+	font-family:verdana;
+	font-size:14px;
+	text-align:center;
+	
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 80%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .tooltipObservation {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    font-family: verdana;
+      font-size:14px;
+  }
+  
+  .tooltipObservation .tooltipObservationText {
+      font-family: verdana;
+      font-size:14px;
+    visibility: hidden;
+    width: 500px;
+    background-color: black;
+    color: #fff;
+    border-radius: 6px;
+    padding: 10px 10px 10px 10px;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 100;
+  }
+  
+  .tooltipObservation:hover .tooltipObservationText {
+    visibility: visible;
+  }
+  
+  
+  /* <!-- For description --> */
+.popup
+{
+	border-radius:5px;
+	background-color:transparent;
+	color:black;
+	padding:5px;
+}
+
+.ttip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted white;
+}
+
+.ttip .ttiptext
+{ 
+  left : 0px;
+  visibility: hidden;
+  width: 280px;
+  background-color: transparent;
+  color: black;
+  text-align: left;
+  border-radius: 6px;
+  padding: 10px 10px 10px 10px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 100;
+}
+
+.ttip:hover .ttiptext {
+  visibility: visible;
+}
+
+  
 /* -------------------------------------- water ---------------------------------------- */
 /* Chrome, Safari, Opera */
 @-webkit-keyframes water-1 {

@@ -10,6 +10,168 @@ var gy1=0,gy2=0,gy3=0,gy4=0;
 var dia=0,k1=0,k2=0,k3=0;k4=0;
 var graph;
 
+//Variables
+var idInput = null, checkUnit = null, textDisplay = null;
+var compareVal = 0, qCount = 0, resultCount = 0 ;
+var ansDisplay = 0;
+var HVal = 0;
+var qactVal = 0;
+var qthVal = 0;
+var cdVal = 0;
+
+
+//To insert input and check button
+function userCalculation(elem)
+{
+	ansDisplay++;
+	var inputVal = document.createElement("input");
+	var checkVal = document.createElement("input");
+	var rightVal = document.createElement("span");
+	inputVal.setAttribute("type","text");
+	inputVal.setAttribute("id","res"+ansDisplay);
+	rightVal.setAttribute("id","rightAns"+ansDisplay);
+	inputVal.classList.add("inputStyle");
+	checkVal.setAttribute("type","button");
+	checkVal.setAttribute("id","chk"+ansDisplay);
+	checkVal.setAttribute("style","cursor:pointer");
+	checkVal.setAttribute("onclick","checkResult();");
+	checkVal.setAttribute("value","CHECK");
+	elem.appendChild(inputVal);
+	elem.appendChild(rightVal);
+	elem.appendChild(checkVal);
+	// elem.appendChild(document.getElementById("formula"));
+	// document.getElementById("formula").appendChild(document.getElementById("formulaContent"));
+	// elem.setAttribute("onmouseover","formulaDisplay(event,this);");
+	// elem.setAttribute("onmouseout","formulaDisplayClose();");
+}
+function checkResult()
+{
+	var idd = document.getElementById("res"+ansDisplay);
+	var idd1 = document.getElementById("chk"+ansDisplay);
+	var ansId = document.getElementById("rightAns"+ansDisplay);
+	// if(simsubscreennum == 4)
+	// {
+	// 	compareVal = values[lnt][8];
+	// 	checkUnit = "m<sup>3</sup>/sec";
+	// }
+	if(simsubscreennum == 3)
+	{
+		compareVal = HVal;
+		checkUnit = "cm";
+	}
+	
+	else if(simsubscreennum == 6 && resultCount == 0)
+	{
+		compareVal = qactVal;
+		checkUnit = "cm<sup>3</sup>/sec";
+	}
+	else if(simsubscreennum == 6 && resultCount == 1)
+	{
+		compareVal = qthVal;
+		checkUnit = "cm<sup>3</sup>/sec";
+	}
+	else if(simsubscreennum == 6 && resultCount == 2)
+	{
+		compareVal = cdVal;
+		checkUnit = "";
+	}
+	
+	if(!idd.value  || !idd.value!=" ")
+	{
+		// idd.setAttribute("placeholder","Please enter value");
+	}
+	// else if(idd.value != roundd(compareVal,2) || ((idd.value<= roundd((compareVal-0.5),2)) && idd.value>=roundd((compareVal+0.5),2)))
+		// Math.floor(num * 10000)/10000
+	// else if(Math.round(idd.value) != Math.round(compareVal))
+	else if(((Math.floor(idd.value * 10000)/10000) != (Math.floor(compareVal * 10000)/10000)) || ((Math.floor(idd.value * 1000)/1000) != (Math.floor(compareVal * 1000)/1000)) || ((Math.floor(idd.value * 100)/100) != (Math.floor(compareVal * 100)/100)) || ((Math.floor(idd.value * 10)/10) != (Math.floor(compareVal * 10)/10)))
+	{
+		// console.log(2);
+		qCount++;
+		// blinkStop();
+		ansId.classList.remove("resultStyle");
+		idd.style.borderColor = "red";
+		ansId.style.color = "red";
+		ansId.innerHTML= "&#10008;";
+		if(qCount == 2)
+		{
+			idd1.value = "RESULT";
+		}
+		if(qCount == 3)
+		{
+			idd1.style.visibility = "hidden";
+			idd.parentNode.removeChild(idd);
+			idd1.parentNode.removeChild(idd1);
+			ansId.classList.add("resultStyle");
+			ansId.style.color = "black";
+			ansId.innerHTML= (Math.floor(compareVal * 10000)/10000)+checkUnit;
+			goToNextFunction();
+		}
+	}
+	else
+	{
+		idd1.style.visibility = "hidden";
+		idd.parentNode.removeChild(idd);
+		idd1.parentNode.removeChild(idd1);
+		ansId.classList.add("resultStyle");
+		ansId.style.color = "black";
+		ansId.innerHTML= (Math.floor(compareVal * 10000)/10000)+checkUnit+"<span style='color:green;font-size:20px;'>&#10004;</span>";
+		goToNextFunction();
+	}
+}
+function goToNextFunction()
+{
+	// if(simsubscreennum == 4)
+	// {
+	// 	qCount = 0;
+	// 	document.getElementById("nextButton").style.visibility = "visible";
+	// }
+	// else 
+	if(simsubscreennum == 3)
+	{
+		qCount = 0;
+		document.getElementById("nextButton").style.visibility = "visible";
+	}
+	else if(simsubscreennum == 6 && resultCount == 0)
+	{
+		resultCount = 1;
+		qCount = 0;
+		switch(dia) {
+			case "50mm": qthVal = mano50[6][p];
+						break;
+			case "40mm": qthVal = mano40[6][p];
+						break;
+			case "20mm": qthVal = mano20[6][p];
+		}
+		document.getElementById('75').style.visibility="visible";
+		document.getElementById('75').innerHTML = "Q<sub>th</sub>= ";
+		idInput = document.getElementById('75');
+		userCalculation(idInput);
+	}
+	else if(simsubscreennum == 6 && resultCount == 1)
+	{
+		resultCount = 2;
+		qCount = 0;
+		switch(dia) {
+			case "50mm": cdVal = mano50[7][p];
+						break;
+			case "40mm": cdVal = mano40[7][p];
+						break;
+			case "20mm": cdVal = mano20[7][p];
+						break;
+		}
+		document.getElementById('76').style.visibility="visible";
+		document.getElementById('76').innerHTML = "C<sub>d</sub> =  ";
+		idInput = document.getElementById('76');
+		userCalculation(idInput);
+	}
+	else if(simsubscreennum == 6 && resultCount == 2)
+	{
+		qCount = 0;
+		resultCount = 0;
+		step7Next();
+	}
+}
+
 
 function navNext()
 {
@@ -203,6 +365,7 @@ function magic()
 		document.getElementById('70a').style.visibility="hidden";
 		document.getElementById('70b').style.visibility="hidden";
 		document.getElementById('71').style.visibility="hidden";
+		document.getElementById('73g').style.visibility="hidden";
 		document.getElementById('2a').style.visibility="visible";
 		document.getElementById('pvalve').style.visibility="visible";
 		document.getElementById('meter').style.visibility="visible";
@@ -392,47 +555,55 @@ function magic()
 	    document.getElementById('70a').style.visibility="visible";
 	    document.getElementById('71').style.visibility="visible";
 	    document.getElementById('70b').style.visibility="visible";
+	    document.getElementById('73g').style.visibility="visible";
         if(dia=="50mm")
 		{
-		 document.getElementById('70').innerHTML="Area A<sub>1</sub>=19.625cm<sup>2</sup> ";
-		 document.getElementById('70a').innerHTML="Area A<sub>2</sub>=5.81cm<sup>2</sup>";
-         document.getElementById('72').innerHTML="Time taken(t)="+mano50[4][p]+"s";
-         document.getElementById('73').innerHTML="Head Loss(H = 12.6(LL-RL))="+(12.6*(mano50[0][p]-mano50[1][p])).toFixed(2)+"cm";
-         document.getElementById('74').innerHTML="Q<sub>act</sub>(Axh/t)=&nbsp"+mano50[5][p]+"cm<sup>3</sup>/s";
-         document.getElementById('75').innerHTML="Q<sub>th</sub>="+mano50[6][p].toFixed(2)+"cm<sup>3</sup>/s";
-         document.getElementById('76').innerHTML="C<sub>d</sub>(Q<sub>act</sub>/Q<sub>th</sub>)="+mano50[7][p];
+			document.getElementById('70c').innerHTML="d<sub>1</sub>=5cm ";
+			document.getElementById('70d').innerHTML="d<sub>2</sub>=2.72cm";
+			document.getElementById('70').innerHTML="Area A<sub>1</sub>=19.625cm<sup>2</sup> ";
+			document.getElementById('70a').innerHTML="Area A<sub>2</sub>=5.81cm<sup>2</sup>";
+			document.getElementById('72').innerHTML="Time taken (t)="+mano50[4][p]+"sec";
+			document.getElementById('73').innerHTML="Head Loss (H)="+(12.6*(mano50[0][p]-mano50[1][p])).toFixed(2)+"cm";
+			qactVal = mano50[5][p];
+			document.getElementById('74').innerHTML="Q<sub>act</sub> = ";
+			idInput = document.getElementById('74');
+			userCalculation(idInput);
+			// document.getElementById('74').innerHTML="Q<sub>act</sub>(Axh/t)=&nbsp"+mano50[5][p]+"cm<sup>3</sup>/s";
+			// document.getElementById('75').innerHTML="Q<sub>th</sub>="+mano50[6][p].toFixed(2)+"cm<sup>3</sup>/s";
+			// document.getElementById('76').innerHTML="C<sub>d</sub>(Q<sub>act</sub>/Q<sub>th</sub>)="+mano50[7][p];
 		}
         else if(dia=="40mm")
 		{
-		 document.getElementById('70').innerHTML="Area A<sub>1</sub>=12.568cm<sup>2</sup> ";
-		 document.getElementById('70a').innerHTML="Area A<sub>2</sub>=4.397cm<sup>2</sup>";
-         document.getElementById('72').innerHTML="Time taken(t)="+mano40[4][p]+"s";
-         document.getElementById('73').innerHTML="Head Loss(H = 12.6(LL-RL))="+(12.6*(mano40[0][p]-mano40[1][p])).toFixed(2)+"cm";
-         document.getElementById('74').innerHTML="Q<sub>act</sub>(Axh/t)=&nbsp"+mano40[5][p]+"cm<sup>3</sup>/s";
-         document.getElementById('75').innerHTML="Q<sub>th</sub>="+mano40[6][p].toFixed(2)+"cm<sup>3</sup>/s";
-         document.getElementById('76').innerHTML="C<sub>d</sub>(Q<sub>act</sub>/Q<sub>th</sub>)="+mano40[7][p];
+			document.getElementById('70c').innerHTML="d<sub>1</sub>=4cm ";
+			document.getElementById('70d').innerHTML="d<sub>2</sub>=2.366cm";
+			document.getElementById('70').innerHTML="Area A<sub>1</sub>=12.568cm<sup>2</sup> ";
+			document.getElementById('70a').innerHTML="Area A<sub>2</sub>=4.397cm<sup>2</sup>";
+			document.getElementById('72').innerHTML="Time taken (t)="+mano40[4][p]+"sec";
+			document.getElementById('73').innerHTML="Head Loss (H)="+(12.6*(mano40[0][p]-mano40[1][p])).toFixed(2)+"cm";
+			qactVal = mano40[5][p];
+			document.getElementById('74').innerHTML="Q<sub>act</sub> = ";
+			idInput = document.getElementById('74');
+			userCalculation(idInput);
+			// document.getElementById('74').innerHTML="Q<sub>act</sub>(Axh/t)=&nbsp"+mano40[5][p]+"cm<sup>3</sup>/s";
+			// document.getElementById('75').innerHTML="Q<sub>th</sub>="+mano40[6][p].toFixed(2)+"cm<sup>3</sup>/s";
+			// document.getElementById('76').innerHTML="C<sub>d</sub>(Q<sub>act</sub>/Q<sub>th</sub>)="+mano40[7][p];
 			
 		}
 	    else if(dia=="20mm")
 		{
-		 document.getElementById('70').innerHTML="Area A<sub>1</sub>=4cm<sup>2</sup> ";
-		 document.getElementById('70a').innerHTML="Area A<sub>2</sub>=1.8496cm<sup>2</sup>";
-         document.getElementById('72').innerHTML="Time taken(t)="+mano40[4][p]+"s";
-         document.getElementById('73').innerHTML="Head Loss(H = 12.6(LL-RL))="+(12.6*(mano20[0][p]-mano40[1][p])).toFixed(2)+"cm";
-         document.getElementById('74').innerHTML="Q<sub>act</sub>(Axh/t)=&nbsp"+mano20[5][p]+"cm<sup>3</sup>/s";
-         document.getElementById('75').innerHTML="Q<sub>th</sub>="+mano20[6][p].toFixed(2)+"cm<sup>3</sup>/s";
-         document.getElementById('76').innerHTML="C<sub>d</sub>(Q<sub>act</sub>/Q<sub>th</sub>)="+mano20[7][p];
-		}
-
-		if(repeat>=1 && repeat<4)
-		{
-        simsubscreennum=1;
-		  document.getElementById("nextButton").style.visibility="visible";
-	   }
-		else if(repeat==4)
-		{
-		 simsubscreennum=6;
-		 document.getElementById("nextButton").style.visibility="visible";	
+			document.getElementById('70c').innerHTML="d<sub>1</sub>=2cm ";
+		 	document.getElementById('70d').innerHTML="d<sub>2</sub>=1.36cm";
+			document.getElementById('70').innerHTML="Area A<sub>1</sub>=4cm<sup>2</sup> ";
+			document.getElementById('70a').innerHTML="Area A<sub>2</sub>=1.8496cm<sup>2</sup>";
+			document.getElementById('72').innerHTML="Time taken (t)="+mano40[4][p]+"sec";
+			document.getElementById('73').innerHTML="Head Loss (H)="+(12.6*(mano20[0][p]-mano20[1][p])).toFixed(2)+"cm";
+			qactVal = mano20[5][p];
+			document.getElementById('74').innerHTML="Q<sub>act</sub> = ";
+			idInput = document.getElementById('74');
+			userCalculation(idInput);
+			// document.getElementById('74').innerHTML="Q<sub>act</sub>(Axh/t)=&nbsp"+mano20[5][p]+"cm<sup>3</sup>/s";
+			// document.getElementById('75').innerHTML="Q<sub>th</sub>="+mano20[6][p].toFixed(2)+"cm<sup>3</sup>/s";
+			// document.getElementById('76').innerHTML="C<sub>d</sub>(Q<sub>act</sub>/Q<sub>th</sub>)="+mano20[7][p];
 		}
 	
 	}
@@ -446,10 +617,10 @@ function magic()
       document.getElementById('70b').style.visibility="hidden";
 		document.getElementById('72').style.visibility="hidden";
 		document.getElementById('73').style.visibility="hidden";
+		document.getElementById('73g').style.visibility="hidden";
 		document.getElementById('74').style.visibility="hidden";
 		document.getElementById('75').style.visibility="hidden";
 		document.getElementById('76').style.visibility="hidden";
-		document.getElementById('qth').style.visibility="hidden";
 		graph=[[gx1,gy1],
 				 [gx2,gy2],
 				 [gx3,gy3],
@@ -741,23 +912,41 @@ function magic()
 		{
 		 if(dia=="50mm")
 			{
-			document.getElementById('lw').innerHTML="Left Limb Reading(LL)&nbsp=&nbsp"+mano50[0][p]+"cm";
-			document.getElementById('rw').innerHTML="Right Limb Reading(RL)&nbsp=&nbsp"+mano50[1][p]+"cm";
-			document.getElementById('rlh').innerHTML="Head Loss(12.6*(LL-RL))&nbsp=&nbsp"+(12.6*(mano50[0][p]-mano50[1][p])).toFixed(2)+"cm";
+			document.getElementById('lw').innerHTML="Left Limb Reading (LL)&nbsp=&nbsp"+mano50[0][p]+"cm";
+			document.getElementById('rw').innerHTML="Right Limb Reading (RL)&nbsp=&nbsp"+mano50[1][p]+"cm";
+			HVal = 12.6*(mano50[0][p]-mano50[1][p]);
+			document.getElementById('rlh').innerHTML="Head Loss (H) = ";
+			setTimeout(function(){
+				idInput = document.getElementById('rlh');
+				userCalculation(idInput);
+			}, 1000);
+			// document.getElementById('rlh').innerHTML="Head Loss(12.6*(LL-RL))&nbsp=&nbsp"+(12.6*(mano50[0][p]-mano50[1][p])).toFixed(2)+"cm";
 			}
 			else if(dia=="40mm")
 			{
-			document.getElementById('lw').innerHTML="Left Limb Reading(LL)&nbsp=&nbsp"+mano40[0][p]+"cm";
-			document.getElementById('rw').innerHTML="Right Limb Reading(RL)&nbsp=&nbsp"+mano40[1][p]+"cm";
-			document.getElementById('rlh').innerHTML="Head Loss(12.6*(LL-RL))&nbsp=&nbsp"+(12.6*(mano40[0][p]-mano40[1][p])).toFixed(2)+"cm";
+			document.getElementById('lw').innerHTML="Left Limb Reading (LL)&nbsp=&nbsp"+mano40[0][p]+"cm";
+			document.getElementById('rw').innerHTML="Right Limb Reading (RL)&nbsp=&nbsp"+mano40[1][p]+"cm";
+			HVal = 12.6*(mano40[0][p]-mano40[1][p]);
+			document.getElementById('rlh').innerHTML="Head Loss (H) = ";
+			setTimeout(function(){
+				idInput = document.getElementById('rlh');
+				userCalculation(idInput);
+			}, 1000);
+			// document.getElementById('rlh').innerHTML="Head Loss(12.6*(LL-RL))&nbsp=&nbsp"+(12.6*(mano40[0][p]-mano40[1][p])).toFixed(2)+"cm";
 			}
 			else if(dia=="20mm")
 			{
-			document.getElementById('lw').innerHTML="Left Limb Reading(LL)L&nbsp=&nbsp"+mano20[0][p]+"cm";
-			document.getElementById('rw').innerHTML="Right Limb Reading(RL)&nbsp=&nbsp"+mano20[1][p]+"cm";
-			document.getElementById('rlh').innerHTML="Head Loss(12.6*(LL-RL))&nbsp=&nbsp"+(12.6*(mano40[0][p]-mano40[1][p])).toFixed(2)+"cm";
+			document.getElementById('lw').innerHTML="Left Limb Reading (LL)L&nbsp=&nbsp"+mano20[0][p]+"cm";
+			document.getElementById('rw').innerHTML="Right Limb Reading (RL)&nbsp=&nbsp"+mano20[1][p]+"cm";
+			HVal = 12.6*(mano20[0][p]-mano20[1][p]);
+			document.getElementById('rlh').innerHTML="Head Loss (H) = ";
+			setTimeout(function(){
+				idInput = document.getElementById('rlh');
+				userCalculation(idInput);
+			}, 1000);
+			// document.getElementById('rlh').innerHTML="Head Loss(12.6*(LL-RL))&nbsp=&nbsp"+(12.6*(mano40[0][p]-mano40[1][p])).toFixed(2)+"cm";
 			}
-		   document.getElementById('nextButton').style.visibility="visible";
+		//    document.getElementById('nextButton').style.visibility="visible";
 		 },2500);
 
 				 
@@ -826,11 +1015,20 @@ function magic()
 	function step6()
 	{
 		myStopFunction();
-		
-		
 	}
 	
-	
+	function step7Next() {
+		if(repeat>=1 && repeat<4)
+		{
+        simsubscreennum=1;
+		  document.getElementById("nextButton").style.visibility="visible";
+	   }
+		else if(repeat==4)
+		{
+		 simsubscreennum=6;
+		 document.getElementById("nextButton").style.visibility="visible";	
+		}
+	}
 	function step750()
 {
 	
@@ -1041,3 +1239,9 @@ function step720()
 		document.getElementById('b2').onclick="";
 
 	}
+	
+	//function to round off number n to d decimal places
+function roundd( n, d )
+{
+	return Math.round(n*Math.pow(10,d))/Math.pow(10,d);
+}
