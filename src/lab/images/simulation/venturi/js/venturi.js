@@ -29,6 +29,7 @@ function userCalculation(elem)
 	var rightVal = document.createElement("span");
 	inputVal.setAttribute("type","text");
 	inputVal.setAttribute("id","res"+ansDisplay);
+	inputVal.setAttribute("oninput","isANumber()");
 	rightVal.setAttribute("id","rightAns"+ansDisplay);
 	inputVal.classList.add("inputStyle");
 	checkVal.setAttribute("type","button");
@@ -43,6 +44,12 @@ function userCalculation(elem)
 	// document.getElementById("formula").appendChild(document.getElementById("formulaContent"));
 	// elem.setAttribute("onmouseover","formulaDisplay(event,this);");
 	// elem.setAttribute("onmouseout","formulaDisplayClose();");
+}
+function isANumber()
+{
+	$('input').on('input', function() {
+		this.value = this.value.match(/\d*(\.\d*)?/)[0];
+	});
 }
 function checkResult()
 {
