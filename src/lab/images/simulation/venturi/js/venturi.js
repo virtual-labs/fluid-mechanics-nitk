@@ -19,7 +19,10 @@ var qactVal = 0;
 var qthVal = 0;
 var cdVal = 0;
 
-
+function isANumber(ele)
+{
+	ele.value = ele.value.match(/\d*(\.\d*)?/)[0];
+}
 //To insert input and check button
 function userCalculation(elem)
 {
@@ -29,8 +32,8 @@ function userCalculation(elem)
 	var rightVal = document.createElement("span");
 	inputVal.setAttribute("type","text");
 	inputVal.setAttribute("id","res"+ansDisplay);
-	inputVal.setAttribute("oninput","isANumber()");
 	rightVal.setAttribute("id","rightAns"+ansDisplay);
+	inputVal.setAttribute("oninput","isANumber(this)");
 	inputVal.classList.add("inputStyle");
 	checkVal.setAttribute("type","button");
 	checkVal.setAttribute("id","chk"+ansDisplay);
@@ -44,12 +47,6 @@ function userCalculation(elem)
 	// document.getElementById("formula").appendChild(document.getElementById("formulaContent"));
 	// elem.setAttribute("onmouseover","formulaDisplay(event,this);");
 	// elem.setAttribute("onmouseout","formulaDisplayClose();");
-}
-function isANumber()
-{
-	$('input').on('input', function() {
-		this.value = this.value.match(/\d*(\.\d*)?/)[0];
-	});
 }
 function checkResult()
 {

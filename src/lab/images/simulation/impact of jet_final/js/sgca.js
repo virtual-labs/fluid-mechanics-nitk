@@ -4,8 +4,12 @@ var repeat =0;
 var flag=1;
 var lnt=0;
 
-
 var ansDisplay=0, compareVal = 0, qCount = 0, idInput = null, checkUnit = null, textDisplay = null, ans=0, unit=null, noq=false, resultCount=0;
+
+function isANumber(ele)
+{
+	ele.value = ele.value.match(/\d*(\.\d*)?/)[0];
+}
 
 function userCalculation(elem, corAns, corUnit)
 {
@@ -16,8 +20,8 @@ function userCalculation(elem, corAns, corUnit)
 	var inputVal = document.createElement("input");
 	inputVal.setAttribute("type","text");
 	inputVal.setAttribute("id","text"+ansDisplay);
+	inputVal.setAttribute("oninput","isANumber(this)");
 	inputVal.classList.add("inputStyle");
-	inputVal.setAttribute("oninput","isANumber()");
 		
 	//check button
 	var checkVal = document.createElement("input");
@@ -42,12 +46,7 @@ function userCalculation(elem, corAns, corUnit)
 	elem.appendChild(rightVal);
 	elem.appendChild(rightUnit);
 }
-function isANumber()
-{
-	$('input').on('input', function() {
-		this.value = this.value.match(/\d*(\.\d*)?/)[0];
-	});
-}
+
 function checkResult(ans,unit)
 {
 	var idd = document.getElementById("text"+ansDisplay);

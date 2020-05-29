@@ -18,6 +18,13 @@ var qVal = 0;
 var vVal = 0;
 var fVal = 0;
 
+// $('input').on('input', function() {
+		// this.value = this.value.match(/\d*(\.\d*)?/)[0];
+	// });
+	
+function ceckInputValid(e) {
+	e.value = e.value.match(/\d*(\.\d*)?/)[0];
+}
 
 //To insert input and check button
 function userCalculation(elem)
@@ -28,8 +35,8 @@ function userCalculation(elem)
 	var rightVal = document.createElement("span");
 	inputVal.setAttribute("type","text");
 	inputVal.setAttribute("id","res"+ansDisplay);
+	inputVal.setAttribute("oninput","ceckInputValid(this)");
 	rightVal.setAttribute("id","rightAns"+ansDisplay);
-	inputVal.setAttribute("oninput","isANumber()");
 	inputVal.classList.add("inputStyle");
 	checkVal.setAttribute("type","button");
 	checkVal.setAttribute("id","chk"+ansDisplay);
@@ -43,12 +50,6 @@ function userCalculation(elem)
 	// document.getElementById("formula").appendChild(document.getElementById("formulaContent"));
 	// elem.setAttribute("onmouseover","formulaDisplay(event,this);");
 	// elem.setAttribute("onmouseout","formulaDisplayClose();");
-}
-function isANumber()
-{
-	$('input').on('input', function() {
-		this.value = this.value.match(/\d*(\.\d*)?/)[0];
-	});
 }
 function checkResult()
 {
@@ -824,7 +825,10 @@ function step7Next () {
 		document.getElementById('hv').style.visibility="visible";
 		document.getElementById('hv').style.transformOrigin="13% 14%";
 		document.getElementById('hv').style.animation="pipes-2 1.2s 1 forwards";
-		document.getElementById('nextButton').style.visibility="visible";
+		setTimeout(function()
+		{
+			document.getElementById('nextButton').style.visibility="visible";
+		},1200);
 	}
 	
 	

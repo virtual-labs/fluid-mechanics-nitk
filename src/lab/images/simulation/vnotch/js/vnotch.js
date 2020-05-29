@@ -18,7 +18,7 @@ function userCalculation(elem, corAns, corUnit)
 	inputVal.setAttribute("type","text");
 	inputVal.setAttribute("id","text"+ansDisplay);
 	inputVal.classList.add("inputStyle");
-	inputVal.setAttribute("oninput","isANumber()");
+	inputVal.setAttribute("oninput","isANumber(this)");
 	
 	//check button
 	var checkVal = document.createElement("input");
@@ -43,11 +43,9 @@ function userCalculation(elem, corAns, corUnit)
 	elem.appendChild(rightVal);
 	elem.appendChild(rightUnit);
 }
-function isANumber()
+function isANumber(ele)
 {
-	$('input').on('input', function() {
-		this.value = this.value.match(/\d*(\.\d*)?/)[0];
-	});
+	ele.value = ele.value.match(/\d*(\.\d*)?/)[0];
 }
 function checkResult(ans,unit)
 {

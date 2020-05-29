@@ -49,7 +49,7 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans:  rate of change of fluid through small channels</p>" // no comma here
         },
 		 { // Question 4 - Multiple Choice, Multiple True Answers, Select Any
-            "q": "4.	The sheet of liquid flowing over a notch is known as",
+            "q": "The sheet of liquid flowing over a notch is known as",
             "a": [
                 {"option": "Nappe ",	 "correct": true},
 				{"option": "Sill",	 "correct": false},

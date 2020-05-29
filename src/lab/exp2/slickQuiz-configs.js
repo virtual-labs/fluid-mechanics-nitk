@@ -27,7 +27,7 @@ var quizJSON = {
 			"incorrect": "<p><span>wrong</span> It's wrong,<br>Ans:Weir</p>" // no comma here
         },
          { // Question 2 - Multiple Choice, Multiple True Answers, Select Any
-            "q": "Head of water over the rectangular notch is 900mm.the discharge is 300 liters/ sec,Find the length of the notch when c<sub>d=0.62.",
+            "q": "Head of water over the rectangular notch is 900mm. The discharge is 300 liters/sec, Find the length of the notch when C<sub>d</sub>=0.62.",
             "a": [
                 {"option": "192mm", "correct": true},
                 {"option": "162mm", "correct": false},
@@ -51,7 +51,7 @@ var quizJSON = {
         },
          
 		{ // Question 4 - Multiple Choice, Multiple True Answers, Select Any
-            "q": "The velocity with which the liquid approaches the notch or weir before passing over it is called as velocity approach.( Say true or false).",
+            "q": "The velocity with which the liquid approaches the notch or weir before passing over it is called as velocity approach. (Say true or false).",
             "a": [
                 {"option": "True","correct": true},
 				{"option": "False", "correct": false} // no comma here
@@ -67,8 +67,8 @@ var quizJSON = {
 				{"option": "2/3C<sub>d</sub>&radic;&nbsp;2g &nbsp;(H<sup>5/2</sup>)",  "correct": false},
 				{"option": "5/2C<sub>d</sub>&radic;&nbsp;2g &nbsp;", "correct": false} // no comma here
             ],
-                       "correct": "<p><span>Right answer</span> </p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans: 3/2c<sub>d</sub>&radic;&nbsp;2g &nbsp;(H<sup>3/2</sup>)</p>" // no comma here
+            "correct": "<p><span>Right answer</span> </p>",
+            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans: 3/2C<sub>d</sub>&radic;&nbsp;2g &nbsp;(H<sup>3/2</sup>)</p>" // no comma here
         }
 		
         

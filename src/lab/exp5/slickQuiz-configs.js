@@ -51,7 +51,7 @@ var quizJSON = {
         },
          
 		{ // Question 4 - Multiple Choice, Multiple True Answers, Select Any
-            "q": "Value of coefficient of discharge of orifice meter is much smaller than the venturimeter.( Say true or false)",
+            "q": "Value of coefficient of discharge of orifice meter is much smaller than the venturimeter. (Say true or false)",
             "a": [
                 {"option": "True","correct": true},
 				{"option": "False", "correct": false} // no comma here
