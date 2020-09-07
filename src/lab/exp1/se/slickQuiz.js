@@ -22,9 +22,9 @@
                 tryAgainText: '',
                 skipStartButton: false,
                 numberOfQuestions: 5,
-                randomSort: true,
+                randomSort: false,
                 randomSortQuestions: true,
-                randomSortAnswers: true,
+                randomSortAnswers: false,
                 preventUnanswered: false,
                 completionResponseMessaging: false,
                 disableResponseMessaging: false

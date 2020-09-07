@@ -99,7 +99,7 @@ function checkResult(ans,unit)
 }
 function goToNextFunction()
 {
-	console.log("in gotonext fun"+" "+simsubscreennum+" "+resultCount+" "+noq);
+	//console.log("in gotonext fun"+" "+simsubscreennum+" "+resultCount+" "+noq);
 	if(noq == true)
 	{
 		qCount = 0;
@@ -118,13 +118,13 @@ function goToNextFunction()
 		resultCount++;
 		if(simsubscreennum==7)
 		{
-			console.log("1");
+			//console.log("1");
 			setTimeout(function()
 			{
-				console.log("2");
+				//console.log("2");
 				if(resultCount==1)
 				{
-					console.log("3");
+					//console.log("3");
 					qCount = 0;
 					document.getElementById("vp7-6").style.visibility = "visible";
 					noq=false;
@@ -149,7 +149,7 @@ function goToNextFunction()
 				}
 				else if(resultCount==2)
 				{
-					console.log("3");
+					//console.log("3");
 					qCount = 0;
 					document.getElementById('vp7-7').style.visibility="visible";
 					noq=false;
@@ -169,7 +169,7 @@ function goToNextFunction()
 				}
 				else if(resultCount==3)
 				{
-					console.log("4");
+					//console.log("4");
 					qCount = 0;
 					resultCount=0;
 					document.getElementById('vp7-8').style.visibility="visible";
@@ -249,34 +249,7 @@ function magic()
 		refresh();
       	document.getElementById('nextButton').style.visibility="hidden";
       	document.getElementById('v2-1').style.visibility="hidden";
-   		// setTimeout(function()
-         // {	
-		    // setTimeout(function(){
-		        // if(document.getElementById('f').checked)
-		        // {
-			         // flag=1;
-	            // }
-	            // else   if(document.getElementById('h').checked)
-			    // {
-		             // flag=2;
-		        // } else   if(document.getElementById('i').checked)
-			    // {
-		             // flag=3;
-		        // }
-			// },500);
-			
-	     // }, 3000);
-		 // setTimeout(function(){
-			 // if(flag==1||flag==2||flag==3)
-			 // {
-		 		 	 // document.getElementById('nextButton').style.visibility="visible";
-			 // }
-			 // else if(flag==0)
-			 // {
-				 // simsubscreennum=0;
-				 // navNext();
-			 // }
-         // },1000);
+
 		 document.getElementById("can1-1").onclick=function(){fvane();}
 		 document.getElementById("can1-2").onclick=function(){hvane();}
 		 document.getElementById("can1-3").onclick=function(){ivane();}
@@ -467,19 +440,6 @@ function magic()
 		 document.getElementById("arrow1").style.transform = "rotate(180deg)";
 		 document.getElementById('can4-5').onclick=function(){step4zoom();}
 		 },600);
-		 		 
-		  /*$(document).ready(function(){
-			 var small={width:"34px" , height:"58px"}; 
-			 var large={width:"320px" , height:"352px"};
-			 var count=1;
-			 $("#can4-6").css(small).on('click',function(){
-			 $(this).animate((count==1)?large:small);
-			 document.getElementById('can4-2').style.visibility="hidden";
-			 });
-		     });*/
-			 
-			 
-			 
 	}
 	else if (simsubscreennum==5)
 	{
@@ -641,47 +601,23 @@ function magic()
 			document.getElementById('v7-2').innerHTML="Wieght on the pan, W = "+inclined[0][lnt]+"g"
 		   }
 		 document.getElementById('can6-8w').style.visibility="hidden"
-	     // document.getElementById('nextButton').style.visibility="visible";
 		 setTimeout(function(){
 			noq=false;
 			idInput = document.getElementById('v7-5');
 			 if(flag==1)
 			 {
 				
-				userCalculation(idInput, flat[3][lnt], "cm/sec");
-				// document.getElementById('v7-5').innerHTML="Velocity of jet,V = " +flat[3][lnt] + "cm/sec";
-                // document.getElementById('v7-6').innerHTML="Theoretical force, F<sub>th</sub> = " +flat[4][lnt]+ "N"; 
-				// document.getElementById('v7-7').innerHTML="Actual force, F<sub>act</sub> = " +flat[5][lnt]+ "N";
-                // document.getElementById('v7-8').innerHTML="Coefficient of impact = "+flat[6][lnt] ;			
+				userCalculation(idInput, flat[3][lnt], "cm/sec");	
 			 }
 			 else if(flag==2)
 			 {
 				userCalculation(idInput, hemi[3][lnt], "cm/sec");
-				// document.getElementById('v7-5').innerHTML="Velocity of jet,V = " +hemi[3][lnt] + "cm/sec";
-                // document.getElementById('v7-6').innerHTML="Theoretical force, F<sub>th</sub> = " +hemi[4][lnt]+ "N"; 
-				// document.getElementById('v7-7').innerHTML="Actual force, F<sub>act</sub> = " +hemi[5][lnt]+ "N";
-                // document.getElementById('v7-8').innerHTML="Coefficient of impact = "+hemi[6][lnt] ;
 			 }
 			 else if(flag==3)
 			 {
 				userCalculation(idInput, inclined[3][lnt], "cm/sec");
-				// document.getElementById('v7-5').innerHTML="Velocity of jet,V = " +inclined[3][lnt] + "cm/sec";
-                // document.getElementById('v7-6').innerHTML="Theoretical force, F<sub>th</sub> = " +inclined[4][lnt]+ "N"; 
-				// document.getElementById('v7-7').innerHTML="Actual force, F<sub>act</sub> = " +inclined[5][lnt]+ "N";
-                // document.getElementById('v7-8').innerHTML="Coefficient of impact = "+inclined[6][lnt] ; 
 			 }
 		 },500);
-		 // setTimeout(function(){
-			 // lnt++;
-		 // },600);
-         // if(repeat<3)
-		 // {
-			// //lnt++;
-			// simsubscreennum=3;
-			// // setTimeout(function(){
-				// // //document.getElementById('nextButton').style.visibility="visible";
-			// // },600);
-		 // }
 	}
 	
 	
@@ -711,8 +647,6 @@ function magic()
 			 
 		   }
 		document.getElementById('nextButton').style.visibility="hidden";
-		//document.getElementById('step7text1').style="visibility:visible; border:1px solid; position:absolute; cursor:pointer; padding:5px; left:30px; top:50px ";
-		 //document.getElementById('graph').src="images/rivgraph.png"
 		 document.getElementById('step8text1').onclick=function(){step8();}
 		 
     }
@@ -1046,7 +980,6 @@ function step53()
 					idInput = document.getElementById('v6-2');
 					userCalculation(idInput, flat[2][lnt], "cm<sup>3</sup>/sec");
 				}, 300);
-                // document.getElementById('v6-2').innerHTML="Discharge, Q = " +flat[2][lnt]+ "cm<sup>3</sup>/sec"; 
 			 }
 			 else if(flag==2)
 			 {
@@ -1058,7 +991,6 @@ function step53()
 					idInput = document.getElementById('v6-2');
 					userCalculation(idInput, hemi[2][lnt], "cm<sup>3</sup>/sec");
 				}, 300);
-                // document.getElementById('v6-2').innerHTML="Discharge, Q = " +hemi[2][lnt]+ "cm<sup>3</sup>/sec"; 
 			 }
 			 else if(flag==3)
 			 {
@@ -1070,12 +1002,9 @@ function step53()
 					idInput = document.getElementById('v6-2');
 					userCalculation(idInput, inclined[2][lnt], "cm<sup>3</sup>/sec");
 				}, 300);
-                // document.getElementById('v6-2').innerHTML="Discharge, Q = " +inclined[2][lnt]+ "cm<sup>3</sup>/sec"; 
 			 }
 		},3000);
-		// setTimeout(function(){
-			// //document.getElementById('nextButton').style.visibility="visible";
-		// },3300);
+
 	}
 	
 	
@@ -1105,10 +1034,7 @@ function step53()
 				
                
             },	
-			
-			//Initializing Common Properties for all the series
-           
-            //Initializing Series				
+				
             series: 
 			[
 			    {
@@ -1208,7 +1134,7 @@ function step53()
             {
 			    labelFormat: "{value}",
                 title: { text: 'Theoretical force (N)' },
-                range: { min: 0, max:1.4, interval:0.2 }
+                range: { min : 1, max : 4, interval : 0.5}
             },	
 			
 			//Initializing Primary Y Axis	
@@ -1217,7 +1143,7 @@ function step53()
 				
 				 labelFormat: "{value}",
                 title: { text: 'Actual force (N)' },
-                range: { min: 0, max: 1.4, interval: 0.2 }
+                range: { min : 0, max : 1, interval : 0.2 }
 				
                
             },	
@@ -1258,9 +1184,6 @@ function step53()
 		}
 		
 	}
-
-	
-	
 
 	function refresh()
 	{

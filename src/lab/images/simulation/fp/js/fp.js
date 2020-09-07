@@ -1,32 +1,10 @@
-var mpointer=0;
-var repeat =0;
-var flag=0;
-var sub="";
-var n=0;
-var count=0;
-var time=0;
-var f1=0,f2=0,f3=0,favg=0;
-
-var dia=0;
-
-//Variables
-var idInput = null, checkUnit = null, textDisplay = null;
-var compareVal = 0, qCount = 0, resultCount = 0 ;
-var ansDisplay = 0;
-var HVal = 0;
-var qVal = 0;
-var vVal = 0;
-var fVal = 0;
-
-// $('input').on('input', function() {
-		// this.value = this.value.match(/\d*(\.\d*)?/)[0];
-	// });
+var mpointer=0; var repeat =0; var flag=0; var sub=""; var n=0; var count=0; var time=0; var f1=0,f2=0,f3=0,favg=0; var dia=0;
+var idInput = null, checkUnit = null, textDisplay = null; var compareVal = 0, qCount = 0, resultCount = 0 ;
+var ansDisplay = 0; var HVal = 0; var qVal = 0; var vVal = 0; var fVal = 0;
 	
 function ceckInputValid(e) {
 	e.value = e.value.match(/\d*(\.\d*)?/)[0];
 }
-
-//To insert input and check button
 function userCalculation(elem)
 {
 	ansDisplay++;
@@ -46,27 +24,17 @@ function userCalculation(elem)
 	elem.appendChild(inputVal);
 	elem.appendChild(rightVal);
 	elem.appendChild(checkVal);
-	// elem.appendChild(document.getElementById("formula"));
-	// document.getElementById("formula").appendChild(document.getElementById("formulaContent"));
-	// elem.setAttribute("onmouseover","formulaDisplay(event,this);");
-	// elem.setAttribute("onmouseout","formulaDisplayClose();");
 }
 function checkResult()
 {
 	var idd = document.getElementById("res"+ansDisplay);
 	var idd1 = document.getElementById("chk"+ansDisplay);
 	var ansId = document.getElementById("rightAns"+ansDisplay);
-	// if(simsubscreennum == 4)
-	// {
-	// 	compareVal = values[lnt][8];
-	// 	checkUnit = "m<sup>3</sup>/sec";
-	// }
 	if(simsubscreennum == 5)
 	{
 		compareVal = HVal;
 		checkUnit = "cm";
 	}
-	
 	else if(simsubscreennum == 7 && resultCount == 0)
 	{
 		compareVal = qVal;
@@ -85,9 +53,7 @@ function checkResult()
 	
 	if(!idd.value  || !idd.value!=" ")
 	{
-		// idd.setAttribute("placeholder","Please enter value");
 	}
-	// else if(Math.round(idd.value) != Math.round(compareVal))
 	else if(((Math.floor(idd.value * 10000)/10000) != (Math.floor(compareVal * 10000)/10000)) || ((Math.floor(idd.value * 1000)/1000) != (Math.floor(compareVal * 1000)/1000)) || ((Math.floor(idd.value * 100)/100) != (Math.floor(compareVal * 100)/100)) || ((Math.floor(idd.value * 10)/10) != (Math.floor(compareVal * 10)/10)))
 	{
 		// console.log(2);
@@ -123,15 +89,10 @@ function checkResult()
 		goToNextFunction();
 	}
 }
+
 function goToNextFunction()
 {
-	// if(simsubscreennum == 4)
-	// {
-	// 	qCount = 0;
-	// 	document.getElementById("nextButton").style.visibility = "visible";
-	// }
-	// else 
-	if(simsubscreennum == 5)
+    if(simsubscreennum == 5)
 	{
 		qCount = 0;
 		document.getElementById("nextButton").style.visibility = "visible";
@@ -186,7 +147,6 @@ function goToNextFunction()
 	}
 }
 
-
 function navNext()
 {
 
@@ -201,8 +161,6 @@ function navNext()
      magic();
 }
 
-//-----------------------------------------blink arrow on the next step---------------------------------------------
-//blink arrow on the next step
 function animatearrow()
 {
      if (document.getElementById('arr').style.visibility=="hidden")
@@ -211,13 +169,11 @@ function animatearrow()
          document.getElementById('arr').style.visibility="hidden";
 }
 
-//stop blinking arrow
 function myStopFunction() 
 {
      clearInterval(myInt);
      document.getElementById('arr').style.visibility="hidden";
 }
-
 
 function animateclose()
 {
@@ -227,52 +183,41 @@ function animateclose()
          document.getElementById('close').style.visibility="hidden";
 }
 
-
 function myStopFunctionclose() 
 {
      clearInterval(myInt);
      document.getElementById('close').style.visibility="hidden";
 }
 
-//-----------------------------Select tag--------------------------
-$(document).ready(function() {
-
-	
-	$("select").change(function(){
-  		
-  				dia=$(this).val();
-            $('#s1').text("Diameter of the pipe = "+dia);
-            $('#s2').text("Length of the pipe = 3m");
-            document.getElementById('pipe').disabled="true";
-				document.getElementById('select').style.visibility="hidden";
-				document.getElementById('s1').style.visibility="visible";
-				document.getElementById('s2').style.visibility="visible";
-				document.getElementById('nextButton').style.visibility="visible";
-				
- 
-		});
+$(document).ready(function() 
+{
+	$("select").change(function()
+	{
+		dia=$(this).val();
+		$('#s1').text("Diameter of the pipe = "+dia);
+		$('#s2').text("Length of the pipe = 3m");
+		document.getElementById('pipe').disabled="true";
+		document.getElementById('select').style.visibility="hidden";
+		document.getElementById('s1').style.visibility="visible";
+		document.getElementById('s2').style.visibility="visible";
+		setTimeout(function(){
+			document.getElementById('nextButton').style.visibility="visible";
+		},250);
+	});
 });
-
-
-
-
-
-//-------------------------------------function magic starts here----------------------------------------------------
 
 function magic()
 {
-	
-	
-	
 	if (simsubscreennum==1)
 	{  
 		 document.getElementById('nextButton').style.visibility="hidden";
-		 document.getElementById('select').style.visibility="visible";
-		 document.getElementById('select').style.animation = "pipe 1.0s 1 forwards "
 		 
+		 setTimeout(function()
+		 {
+			document.getElementById('select').style.visibility="visible";
+			document.getElementById('select').style.animation = "pipe 1.0s 1 forwards ";
+		 },250);
     }
-	
-	
 	else if (simsubscreennum==2)
 	{
 		 p=Math.floor(Math.random() * (max - min + 1) ) + min;	
@@ -352,7 +297,6 @@ function magic()
 		 },700);
 		 
     }
-	
 	else if (simsubscreennum==3)
 	{
 		repeat+=1;
@@ -786,17 +730,7 @@ function magic()
 		
 		
 	}
-	
-	// else if(simsubscreennum==8)
-	// {
-		// document.getElementById('71').style.visibility="hidden";
-		// document.getElementById('72').style.visibility="hidden";
-		// document.getElementById('73').style.visibility="hidden";
-		// document.getElementById('74').style.visibility="hidden";
-		// document.getElementById('75').style.visibility="hidden";
-		// document.getElementById('76').style.visibility="hidden";
-		// document.getElementById('step8text1').onclick=function() { step8();}
-	// }
+
 }
 
 function step7Next () {
@@ -847,74 +781,57 @@ function step7Next () {
 		{
 		 if(dia=="50mm")
 		 {
-			 		document.getElementById('31a').style.visibility="visible";
-					document.getElementById('circle').style.left="235.5px";
-			 		document.getElementById('circle').style.top="130px";
-				    document.getElementById('arr').style="position:absolute; left: 260.5px; top:150px; height: 30px; z-index: 10;";
-
+			document.getElementById('31a').style.visibility="visible";
+			document.getElementById('circle').style.left="235.5px";
+			document.getElementById('circle').style.top="130px";
+			document.getElementById('arr').style="position:absolute; left: 260.5px; top:150px; height: 30px; z-index: 10;";
 		 }
-
-       else if(dia=="40mm")
+		 else if(dia=="40mm")
 		 {
-			 		document.getElementById('31b').style.visibility="visible";
-					document.getElementById('circle').style.left="235.5px";
-			 		document.getElementById('circle').style.top="180px";
-					document.getElementById('arr').style="position:absolute; left: 260.5px; top:210px; height: 30px; z-index: 10;";
-
+			document.getElementById('31b').style.visibility="visible";
+			document.getElementById('circle').style.left="235.5px";
+			document.getElementById('circle').style.top="180px";
+			document.getElementById('arr').style="position:absolute; left: 260.5px; top:210px; height: 30px; z-index: 10;";
 		 }
          else if(dia=="25mm")
 		 {
-
-		 		document.getElementById('31c').style.visibility="visible";
-				document.getElementById('circle').style.left="235.5px";
-			 	document.getElementById('circle').style.top="230px";
-				document.getElementById('arr').style="position:absolute; left: 260.5px; top:260px; height: 30px; z-index: 10;";
-
-
+			document.getElementById('31c').style.visibility="visible";
+			document.getElementById('circle').style.left="235.5px";
+			document.getElementById('circle').style.top="230px";
+			document.getElementById('arr').style="position:absolute; left: 260.5px; top:260px; height: 30px; z-index: 10;";
 		 }
          else if(dia=="20mm")
 		 {
-			 		document.getElementById('31d').style.visibility="visible";
-					document.getElementById('circle').style.left="235.5px";
-			 		document.getElementById('circle').style.top="280px";
-			        document.getElementById('arr').style="position:absolute; left: 262.5px; top:310px; height: 30px; z-index: 10";
-
-
+			document.getElementById('31d').style.visibility="visible";
+			document.getElementById('circle').style.left="235.5px";
+			document.getElementById('circle').style.top="280px";
+			document.getElementById('arr').style="position:absolute; left: 262.5px; top:310px; height: 30px; z-index: 10";
 		 }
          else if(dia=="15mm")
 		 {
-			 		document.getElementById('31e').style.visibility="visible";
-					document.getElementById('circle').style.left="235.5px";
-			 		document.getElementById('circle').style.top="330px";
-					document.getElementById('arr').style="position:absolute; left: 266.5px; top:360px; height: 30px; z-index: 10;";
-
+			document.getElementById('31e').style.visibility="visible";
+			document.getElementById('circle').style.left="235.5px";
+			document.getElementById('circle').style.top="330px";
+			document.getElementById('arr').style="position:absolute; left: 266.5px; top:360px; height: 30px; z-index: 10;";
 		 }
+			document.getElementById("arr").style.WebkitTransform = "rotate(35deg)"; 
+			// Code for IE9
+			document.getElementById("arr").style.msTransform = "rotate(35deg)"; 
+			// Standard syntax
+			document.getElementById("arr").style.transform = "rotate(35deg)";
+			 document.getElementById('circle').style.visibility="visible";
+			 myInt = setInterval(function(){ animatearrow(); }, 500);
+			 document.getElementById('arr').style.visibility="visible";
+			 document.getElementById('hv3').style.visibility="hidden";
+			 document.getElementById('pole2').style.visibility="hidden";	
+			 document.getElementById('circle').onclick=function(){step3a();}
 		},2500);
-		
-		 setTimeout(function()
-		 {
-		 document.getElementById('circle').style.visibility="visible";
-		 myInt = setInterval(function(){ animatearrow(); }, 500);
-		 document.getElementById('arr').style.visibility="visible";
-		 document.getElementById('hv3').style.visibility="hidden";
-		 document.getElementById('pole2').style.visibility="hidden";
-	     document.getElementById("arr").style.WebkitTransform = "rotate(35deg)"; 
-		     // Code for IE9
-         document.getElementById("arr").style.msTransform = "rotate(35deg)"; 
-		     // Standard syntax
-	     document.getElementById("arr").style.transform = "rotate(35deg)";
-		
-         document.getElementById('circle').onclick=function(){step3a();}
-	    },3500);  
-	
-		
 	}
 	
 	function step3a()
 	{
 		myStopFunction();
 		document.getElementById('circle').style.visibility="hidden";
-		// document.getElementById('tapz').style.visibility="visible";			
 		document.getElementById('pv').style.visibility="visible";	
 		document.getElementById('pv2').style.visibility="visible";
 		
@@ -948,7 +865,6 @@ function step7Next () {
 		     // Standard syntax
 	     document.getElementById("arr").style.transform = "rotate(35deg)";
 		 document.getElementById('pv2').style.visibility="hidden";	
-		 document.getElementById('tapz').style.visibility="hidden";	
          document.getElementById('meter').onclick=function(){step31();}
 		},1500);
 	  

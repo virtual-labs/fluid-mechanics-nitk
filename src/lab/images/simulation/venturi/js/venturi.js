@@ -43,21 +43,13 @@ function userCalculation(elem)
 	elem.appendChild(inputVal);
 	elem.appendChild(rightVal);
 	elem.appendChild(checkVal);
-	// elem.appendChild(document.getElementById("formula"));
-	// document.getElementById("formula").appendChild(document.getElementById("formulaContent"));
-	// elem.setAttribute("onmouseover","formulaDisplay(event,this);");
-	// elem.setAttribute("onmouseout","formulaDisplayClose();");
 }
 function checkResult()
 {
 	var idd = document.getElementById("res"+ansDisplay);
 	var idd1 = document.getElementById("chk"+ansDisplay);
 	var ansId = document.getElementById("rightAns"+ansDisplay);
-	// if(simsubscreennum == 4)
-	// {
-	// 	compareVal = values[lnt][8];
-	// 	checkUnit = "m<sup>3</sup>/sec";
-	// }
+
 	if(simsubscreennum == 3)
 	{
 		compareVal = HVal;
@@ -82,11 +74,8 @@ function checkResult()
 	
 	if(!idd.value  || !idd.value!=" ")
 	{
-		// idd.setAttribute("placeholder","Please enter value");
 	}
-	// else if(idd.value != roundd(compareVal,2) || ((idd.value<= roundd((compareVal-0.5),2)) && idd.value>=roundd((compareVal+0.5),2)))
-		// Math.floor(num * 10000)/10000
-	// else if(Math.round(idd.value) != Math.round(compareVal))
+
 	else if(((Math.floor(idd.value * 10000)/10000) != (Math.floor(compareVal * 10000)/10000)) || ((Math.floor(idd.value * 1000)/1000) != (Math.floor(compareVal * 1000)/1000)) || ((Math.floor(idd.value * 100)/100) != (Math.floor(compareVal * 100)/100)) || ((Math.floor(idd.value * 10)/10) != (Math.floor(compareVal * 10)/10)))
 	{
 		// console.log(2);
@@ -124,12 +113,7 @@ function checkResult()
 }
 function goToNextFunction()
 {
-	// if(simsubscreennum == 4)
-	// {
-	// 	qCount = 0;
-	// 	document.getElementById("nextButton").style.visibility = "visible";
-	// }
-	// else 
+
 	if(simsubscreennum == 3)
 	{
 		qCount = 0;
@@ -512,7 +496,6 @@ function magic()
 		
 		document.getElementById('v').style.visibility="visible";
 		document.getElementById('vwater').style.visibility="visible";
-		document.getElementById('vwater1').style.visibility="visible";
 		document.getElementById('vwater').style.animation="vwater 5s 1 forwards";
 		setTimeout(function () {
 		document.getElementById('nextButton').style.visibility="visible";
@@ -530,7 +513,6 @@ function magic()
 	 }
 	    document.getElementById('v').style.visibility="hidden";
 	    document.getElementById('vwater').style.visibility="hidden";	
-	    document.getElementById('vwater1').style.visibility="hidden";	
 		myInt = setInterval(function(){ animatearrow(); }, 500);
 	
 		document.getElementById('arr').style="visibility:visible ;position:absolute;  left: 20px; top: 340px;   height: 30px; z-index: 10;";
@@ -605,9 +587,6 @@ function magic()
 			document.getElementById('74').innerHTML="Q<sub>act</sub> = ";
 			idInput = document.getElementById('74');
 			userCalculation(idInput);
-			// document.getElementById('74').innerHTML="Q<sub>act</sub>(Axh/t)=&nbsp"+mano20[5][p]+"cm<sup>3</sup>/s";
-			// document.getElementById('75').innerHTML="Q<sub>th</sub>="+mano20[6][p].toFixed(2)+"cm<sup>3</sup>/s";
-			// document.getElementById('76').innerHTML="C<sub>d</sub>(Q<sub>act</sub>/Q<sub>th</sub>)="+mano20[7][p];
 		}
 	
 	}

@@ -2,18 +2,15 @@
 <html lang="en-US">
 <head>
 <meta charset="UTF-8">
-
 <title>SOLVE</title>
+<link rel="stylesheet" href="../../../css/mathstyle.css" />
 <link rel="stylesheet" href="css/rvnotch.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
-<script type="text/javascript" src= "js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src= "../../../js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src= "js/rvnotch.js"></script>
-<link rel="stylesheet" href="css/mathstyle.css" />
 
 <script>
 var simsubscreennum=0;
 var temp=0;
-<!-- var lnt=0; -->
 var values=[[4.6,13.36,8.76,5.87,17.45,11.58,13.348,6466.08,10219.52,0.6327],
 			[4.6,12.26,7.66,5.87,16.5,10.63,13.568,5220.39,8494.1,0.6146],
 			[4.6,11.36,6.76,5.87,15.79,9.92,13.748,4391.87,7135.39,0.6155],
@@ -25,17 +22,12 @@ var values=[[4.6,13.36,8.76,5.87,17.45,11.58,13.348,6466.08,10219.52,0.6327],
 </script>
 </head>
 
-
-
-<!-- <body  onload="select.reset();" style="margin:0;"> -->
 <body style="margin:0;">
-<!--Simulation Screen start		-->
+
 <div id="simscreen">
 
-<!--Title of Simulation		-->
 <div id="title"><h3>CALIBRATION OF RECTANGULAR NOTCH</h3></div>
 
-<!--SubScreen Home	-->	
 <div class="simsubscreen" id="canvas0">
 <h3 class="incanvas" >Objective:</h3>
 <p class="incanvas" >To determine the coeffcient of discharge of a rectangular notch.</p></br>
@@ -44,7 +36,6 @@ var values=[[4.6,13.36,8.76,5.87,17.45,11.58,13.348,6466.08,10219.52,0.6327],
 <img id="" style="position: absolute; left: 180px; top: 125px;" src="Images/1.png"/>
 </div>
 
-<!--Step1	-->	
 <div class="simsubscreen" id="canvas1" style="visibility:hidden">
 <strong id="titlestep" class="incanvas">STEP</strong>
 <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
@@ -58,7 +49,6 @@ var values=[[4.6,13.36,8.76,5.87,17.45,11.58,13.348,6466.08,10219.52,0.6327],
 
 </div>
 
-<!--Step2	-->	
 <div class="simsubscreen" id="canvas2" style="visibility:hidden">
 <strong id="titlestep" class="incanvas">STEP</strong>
 <span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
@@ -69,7 +59,6 @@ var values=[[4.6,13.36,8.76,5.87,17.45,11.58,13.348,6466.08,10219.52,0.6327],
 <img id="can2-4" style="position: absolute; left: 284px; top: 146px;cursor:zoom-in;" src="Images/nob2.png"/>
 </div>
 
-<!--Step3	-->	
 <div class="simsubscreen" id="canvas3" style="visibility:hidden">
 <strong class="incanvas">STEP</strong>
 <span class="circlebg">&nbsp;3&nbsp;</span>
@@ -104,7 +93,6 @@ var values=[[4.6,13.36,8.76,5.87,17.45,11.58,13.348,6466.08,10219.52,0.6327],
 </div> 
 </div>
 
-<!--Step4	-->	
 <div class="simsubscreen" id="canvas4" style="visibility:hidden">
 <strong class="incanvas">STEP</strong>
 <span class="circlebg">&nbsp;4&nbsp;</span>
@@ -138,11 +126,8 @@ var values=[[4.6,13.36,8.76,5.87,17.45,11.58,13.348,6466.08,10219.52,0.6327],
 </div>
 </div>
 
-
-<!--Step5	-->	
 <div class="simsubscreen" id="canvas5" style="visibility:hidden">
 <strong class="incanvas" style="position:absolute;top: 10px; left:50px" ><h2>Observation</h2></strong>
-
 <p id="can6-1" style="position:absolute;top: 60px; left:100px;">  Length of the collecting tank = 70 cm  </p>
 <p id="can6-2" style="position:absolute;top: 90px; left:100px;"> Breadth of the collecting tank = 50 cm  </p>
 <p id="can6-3" style="position:absolute;top: 120px; left:100px;"> Length of rectangular notch, L = 15.1 cm </p>
@@ -151,42 +136,31 @@ var values=[[4.6,13.36,8.76,5.87,17.45,11.58,13.348,6466.08,10219.52,0.6327],
 <p id="can6-6" style="position:absolute;top: 210px; left:100px;"> Co-efficient of discharge for V-notch = 0.6  </p>
 <p id="can6-7" style="position:absolute;top: 240px; left:100px;"> </p>
 <p id="can6-8" style="position:absolute;top: 270px; left:100px;"> </p>
-
 <strong class="incanvas" style="position:absolute;top: 300px; left:50px" ><h2>Result</h2></strong>
-
 <div style="position:absolute; top: 350px; left:100px;">
 	<p>Coefficient of discharge, C<sub>d</sub> = <span class="frac"><sup>Q<sub>act</sub></sup><span>&frasl;</span><sub>Q<sub>th</sub></sub></span> = <span id="can6-5"></span></p>
 </div>
-
 </div>
 
-<!--Step6	-->	
 <div class="simsubscreen" id="canvas6" style="visibility:hidden">
 <strong class="incanvas" ><h2>Characteristic Curves</h2></strong>
 <span id="step7text1" style="border: 2px solid; position:absolute;top: 90px; left:40px;cursor:pointer" onclick=" document.getElementById('graph').src='Images/G_1.png'" >&nbsp;&nbsp;Rankine's Efficiency vs Lift to Fall Ratio&nbsp;&nbsp;</span>
-
 </div>
 
-
-<!--Trial text	-->
 <div id="">	
 <p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;"><strong>Trial = </strong></p>
 </div>
 
-	
-<!--next  Arrow	-->	
 <div id="nav">
 	<img id="nextButton" onclick="navNext(); " src="Images/Next.png" />
 </div>
 
-<!--Trial text	-->
 <div id="">	
 <p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;"><strong>Trial = </strong></p>
 </div>
 
-<!--Blinking Arrow	-->	
 <img class ="" id="arrow1" style="visibility:hidden" src="Images/arrow1.png"/>
 
-<div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
+<div id="copyright"> &copy; 2016 - <script>document.write(new Date().getFullYear())</script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
 </body>
 </html>

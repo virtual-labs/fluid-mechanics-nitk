@@ -45,7 +45,7 @@ function userCalculation(elem, corAns, corUnit)
 }
 function isANumber(ele)
 {
-		ele.value = ele.value.match(/\d*(\.\d*)?/)[0];
+	ele.value = ele.value.match(/\d*(\.\d*)?/)[0];
 }
 function checkResult(ans,unit)
 {
@@ -135,7 +135,6 @@ function goToNextFunction()
 	}
 }
 
-
 function navNext()
 {
 	for (temp = 0; temp <= 6 ; temp++) 
@@ -149,31 +148,23 @@ function navNext()
 	magic();
 }
 
-
 //Move pointing finger with mouse
 $(document).mousemove(function(e)
 {
-
-if(simsubscreennum==1 && mpointer==0) 
-{
-if(e.pageX<800 && e.pageY<600)  
-{
-document.getElementById('onarm').style.visibility="visible";
-
- $("#onarm").css({left:e.pageX, top:e.pageY});
-}
-
-
-}
-
-else if(simsubscreennum!=1)
-{
-	document.getElementById('onarm').style.visibility="hidden";
-}
-
-
+	if(simsubscreennum==1 && mpointer==0) 
+	{
+		if(e.pageX<800 && e.pageY<600)  
+		{
+			document.getElementById('onarm').style.visibility="visible";
+			$("#onarm").css({left:e.pageX, top:e.pageY});
+		}
+	}
+	else if(simsubscreennum!=1)
+	{
+		document.getElementById('onarm').style.visibility="hidden";
+	}
 });
-//-----------------------------------------blink arrow on the next step---------------------------------------------
+
 //blink arrow on the next step
 function animatearrow()
 {
@@ -199,9 +190,15 @@ function magic()
 		if(flag==1)
 		{
 			document.getElementById('can1on').onclick="";
+			document.getElementById('stepnumber').innerHTML="&nbsp;5&nbsp;"
 			document.getElementById('pumptext').innerHTML="Stop the pump by pressing the stop button."
 			document.getElementById('trial').style="visibility:visible ;left: 700px; top: 100px;position: absolute;font-weight: bold;text-transform: uppercase;";
 			document.getElementById('trial').innerHTML="";
+			document.getElementById('can1off').onclick=function(){
+				document.getElementById('can1-2').style.visibility="hidden";
+				document.getElementById('can1on').style.visibility="hidden";
+				document.getElementById('can1off').style.visibility="hidden";
+			};
 		}
 		else
 		{
@@ -366,11 +363,6 @@ function step3andhalf()
 			userCalculation(idInput, values[p][2], "cm");
 		
 		}, 500);
-		//document.getElementById('can3-11').innerHTML="Head of water = "+values[p][2] + " cm";
-		//document.getElementById('can3-12').innerHTML="Theoretical discharge, Q<sub>th</sub> = "+values[p][8] +" cm<sup>3</sup>/sec" ;
-		// setTimeout(function(){
-			// document.getElementById('nextButton').style.visibility="visible";
-		// }, 500);
 	
 	}, 3000);
 }
@@ -405,15 +397,9 @@ function step4andhalf()
 			idInput = document.getElementById('can4-11');
 			userCalculation(idInput, values[p][5], "cm");
 		}, 500);
-	// document.getElementById('can4-11').innerHTML="Head of water = "+values[p][5] + " cm";
-	// document.getElementById('can4-12').innerHTML="Actual discharge, Q<sub>act</sub> = "+values[p][7] +" cm<sup>3</sup>/sec" ;
-	// setTimeout(function(){
-	// document.getElementById('nextButton').style.visibility="visible";
-	// }, 500);
-	
+
 	}, 3000);
 }
-
 
 function step5()
 {
@@ -422,13 +408,9 @@ function step5()
 
 	setTimeout(function()
 	{
-		//console.log(values[p][8],values[p][7]);
 		noq=true;	//noq=>no more questions(if thre is one question)
 		idInput = document.getElementById('can6-5');
 		userCalculation(idInput, values[p][9], "cm");
-		//document.getElementById('can6-5').innerHTML="Coefficient of discharge, C<sub>d</sub> = "+values[p][9] +" cm" ;
-		//document.getElementById('nextButton').style.visibility="visible";
-		//p+=1;
 	}, 500);
 }
 

@@ -123,7 +123,6 @@ function goToNextFunction()
 	}
 }
 
-
 function navNext()
 {
 
@@ -190,6 +189,7 @@ function magic()
 		{
 
 			document.getElementById('can1on').onclick="";
+			document.getElementById('stepnumber').innerHTML="&nbsp;5&nbsp;";
 			document.getElementById('pumptext').innerHTML="Stop the pump by pressing the stop button."
 			document.getElementById('trial').style="visibility:visible ; left: 700px; top: 100px;position: absolute;font-weight: bold;text-transform: uppercase;";
 			document.getElementById('trial').innerHTML="";
@@ -392,13 +392,6 @@ function step3andhalf()
 			idInput = document.getElementById('can3-11');
 			userCalculation(idInput, values[p][2], "cm");
 		}, 500);
-		//document.getElementById('can3-11').innerHTML="Head of water = "+values[lnt][2] + " cm";
-		//document.getElementById('can3-12').innerHTML="Theoretical discharge, Q<sub>act</sub> = "+values[lnt][3] +" cm<sup>3</sup>/sec" ;
-		
-		
-		// setTimeout(function(){
-		// document.getElementById('nextButton').style.visibility="visible";
-		// }, 500);
 	
 	}, 3000);
 }
@@ -416,7 +409,6 @@ function step4()
 	
 	setTimeout(function(){
 	document.getElementById('can4-9').innerHTML="Time required by water to fill 10cm height ="+values[p][5] +" sec" ;
-	// document.getElementById('can4-10').innerHTML="Discharge of water = "+values[lnt][6] +" cm<sup>3</sup> / sec" ;
 	setTimeout(function()
 	{
 		document.getElementById('can4-10').innerHTML="Discharge of water, Q<sub>act</sub> = ";
@@ -425,12 +417,6 @@ function step4()
 		idInput = document.getElementById('can4-10');
 		userCalculation(idInput, values[p][6], "cm<sup>3</sup>/sec");
 	},500);			
-	//old comment//document.getElementById('can4-11').innerHTML="Head of water = "+values[lnt][3] + " cm";
-	//old comment//document.getElementById('can4-12').innerHTML="Actual discharge, Q<sub>act</sub> = "+values[lnt][4] +" m<sup>3</sup>/sec" ;
-	
-	// setTimeout(function(){
-	// document.getElementById('nextButton').style.visibility="visible";
-	// }, 500);
 	
 	}, 2600);
 }
@@ -446,10 +432,6 @@ function step5()
 		idInput = document.getElementById('can6-5');
 		userCalculation(idInput, values[p][7], "");
 
-		//document.getElementById('can6-5').innerHTML="Coefficient of discharge, C<sub>d</sub> = "+values[lnt][7] +" cm" ;
-	
-	//document.getElementById('nextButton').style.visibility="visible";
-	//	lnt+=1;
 	}, 500);
 	
 	
@@ -570,21 +552,13 @@ function refresh1()
 	
 	document.getElementById("can3-13").style.animation = "";
 	document.getElementById("can3-3").style.animation = "";
-	
+
 	document.getElementById('can3-10').innerHTML="Final reading = ";
 	document.getElementById('can3-11').innerHTML="Head of water = ";
 	document.getElementById('can3-12').innerHTML="Theoretical discharge, Q<sub>act</sub> = ";
-	
 	document.getElementById('can4-9').innerHTML="Time required by water to fill 10cm height =";
 	document.getElementById('can4-10').innerHTML="Discharge of water = ";
-	//document.getElementById('can4-11').innerHTML="Head of water = ";
-	
-	//document.getElementById('can4-12').innerHTML="Actual discharge, Q<sub>act</sub> = ";
 	document.getElementById("can4-7").style.animation = "";
-	
 	document.getElementById('can6-5').innerHTML="";
-	
-	
 	document.getElementById('nextButton').style.visibility="hidden";	
-	
 }

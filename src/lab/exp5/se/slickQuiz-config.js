@@ -4,275 +4,73 @@
 
 var quizJSON = {
     "info": {
-        "name":    "Self Evaluation",
+        "name":    "Test Your Knowledge",
         "main":    "<p></p>",
-        "results": "<p style='font-size:20px'><a href='index.html'><u>Click here</u></a> to go to simulation</p>",
-        "level1":  "Good! You can move on to the simulator right away",
-        "level2":  "Make sure to get that one right the next time",
-        "level3":  "You did well, but there is still scope of improvement. We suggest another reading of basics before going to simulator",
-        "level4":  "May be it is better you improve your understanding a little more before moving on to the simulator",
-        "level5":  "We think you should go through the theory once more before using the simulator" // no comma here
+        "results": "<h5>Learn More</h5><p>study and take quiz</p>",
+        "level1":  "Jeopardy Ready",
+        "level2":  "Jeopardy Contender",
+        "level3":  "Jeopardy Amateur",
+        "level4":  "Jeopardy Newb",
+		
+        "level5":  "Stay in school, kid..." // no comma here
     },
     "questions": [
-         { // Question 1 - Multiple Choice, Single True Answer
-            "q": " A body is said to undergo free vibration, when?",
+        { // Question 1 - Multiple Choice, Single True Answer
+            "q": "Coefficient of discharge vary with the following factors",
             "a": [
-                {"option": "It  vibrates in free space",      "correct": false},
-                {"option": "It vibrates  freely with no force acting on it",     "correct": true},
-                {"option": "The force causing the initial displacement  is removed",      "correct": false},
-                {"option": "It vibrates freely with no resistive force acting on it",     "correct": false} // no comma here
+                {"option": "Type of orifice",      "correct": false},
+                {"option": "Pipe size",     "correct": false},
+                {"option": "Reynolds number",      "correct": false },
+                {"option": "All the above",     "correct": true} // no comma here
             ],
-            "correct": "<p><span>Right answer</span> Ans:It vibrates  freely with no force acting on it</p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans:It vibrates  freely with no force acting on it</p>" // no comma here
+            "correct": "<p><span>Right answer</span></p>",
+            "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: All the above</p>" // no comma here
         },
-       
-       { // Question 3 - Multiple Choice, Multiple True Answers, Select All
-            "q": " If energy is lost in any way during vibration, the system can be considered to be  ?",
+        { // Question 2 - Multiple Choice, Multiple True Answers, Select Any
+            "q": "The velocity of discharge of a fluid through an venturi meter is associated most closely with",
             "a": [
-                {"option": "Damped",           "correct": true},
-                {"option": "Undamped",                  "correct": false},
-                {"option": "Underdamped ",  "correct": false},
-                {"option": "Overdamped",          "correct": false} // no comma here
+                {"option": "Torricelli",	 "correct": false},
+				{"option": "Bernoulli",	 "correct": true},
+				{"option": "Eulers principle ",	 "correct": false},				
+                {"option": "Archimedes", 		"correct": false} // no comma here
             ],
-             "correct": "<p><span>Right answer</span> Ans: Damped </p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans:Damped </p>" // no comma here
+            "correct": "<p><span>Right answer</span> </p>",
+            "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: Bernoulli</p>" // no comma here
         },
-        { // Question 4
-            "q": " A system is said to be a Simply Supported beam system if it has a hinged connection at one end and .................. connection in other end. ",
-            "a": [
-                {"option": " Roller",    "correct": true},
-                {"option": "Hinged",     "correct": false},
-                {"option": "Fixed",      "correct": false},
-              {"option": "Free ",   "correct": false} // no comma here
+        { // Question 3 - Multiple Choice, Multiple True Answers, Select All
+            "q": "The vena-contracta is the point of",
+             "a": [
+                {"option": "Maximum convergence",           "correct": true},
+				{"option": "Maximum expansion",           "correct": false},
+				{"option": "Maximum flow",           "correct": false},
+                {"option": "None of the above",          "correct": false} // no comma here
             ],
-            "correct": "<p><span>Right answer</span> Ans: Roller</p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans: Roller</p>"  // no comma here
+             "correct": "<p><span>Right answer</span></p>",
+            "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans:  Maximum convergence</p>" // no comma here
         },
-       
-{ // Question 13
-            "q": "For a simply supported beam with a point load at the middle, The stiffness is",
+		 { // Question 4 - Multiple Choice, Multiple True Answers, Select Any
+            "q": "Choose the correct answer",
             "a": [
-                {"option": " <img src=\"../images/equations/abc.png\"\height=50 width=50/>",    "correct": true},
-                {"option": " <img src=\"../images/equations/vib2.png\"\height=50 width=50/> ",     "correct": false},
-		 {"option": "<img src=\"../images/equations/vib3.png\"\height=50 width=50/>",  "correct": false},
-		{"option": "<img src=\"../images/equations/vib4.png\"\height=50 width=50/>",  "correct": false}
-               
-
-
-// no comma here
+                {"option": "Head loss across venturimeter is high",	 "correct": false},
+				{"option": "Head loss across orificemeter is low",	 "correct": false},
+				{"option": "All the above are correct",	 "correct": false},				
+                {"option": "All the above are wrong", 		"correct": true} // no comma here
             ],
-            "correct": "<p><span>Right answer</span> Ans:<img src=\"../images/equations/abc.png\"\height=50 width=50/> </p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans:<img src=\"../images/equations/abc.png\"\height=50 width=50/> </p>"  // no comma here
+            "correct": "<p><span>Right answer</span> </p>",
+            "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: All the above are wrong </p>" // no comma here
         },
-  { // Question 7
-            "q": " In free vibration experiment the damping may occur due to",
+		{ // Question 5 - Multiple Choice, Multiple True Answers, Select Any
+            "q": "The coefficient of discharge for venturi meter will typically be in the following range:",
             "a": [
-                {"option": "Friction at support",    "correct": false},
-                {"option": "Hysteresis damping",     "correct": false},
-		 {"option": "Friction at support and Hysteresis damping",  "correct": true},
-                {"option": "None of the above",  "correct": false} 
-
-
-// no comma here
+                {"option": "0.92 to 0.96",	 "correct": false},
+				{"option": "0.75 to 0.90",	 "correct": false},
+				{"option": "0.60 to 0.65 ",	 "correct": false},				
+                {"option": "0.95 to 1.0", 		"correct": true} // no comma here
             ],
-            "correct": "<p><span>Right answer</span> Ans: Friction at support and Hysteresis damping</p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,Ans:Friction at support and Hysteresis damping</p>"  // no comma here
-        },
-
-
-{ // Question 10
-            "q": " The moment of inertia of the beam cross-section and for a circular cross-section it is given as,?",
-            "a": [
-                 {"option": "I=pi/64d<sup>4</sup>",    "correct": true},
-                {"option": "I=pi/32d<sup>4</sup>",     "correct": false},
-		 {"option": "I=pi/62d<sup>4</sup>",  "correct": false},
-                {"option": "I=pi/34d<sup>4</sup>",  "correct": false} 
-
-
-// no comma here
-            ],
-            "correct": "<p><span>Right answer</span> Ans: I=pi/64d<sup>4</sup></p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans:I=pi/64d<sup>4</sup></p>"  // no comma here
-        } ,
-
-{ // Question 11
-             "q": "The natural frequency of a system with mass m damping c and stiffness k is given by _____",
-            "a": [
-                {"option": " (k/c)<sup>0.5</sup>",    "correct": false},
-                {"option": " (k/c)<sup>0.5</sup>",     "correct": true},
-		 {"option": " (k/c)<sup>0.5</sup>",  "correct": false},
-                {"option": " (k/c)<sup>0.5</sup>",  "correct": false} 
-
-
-// no comma here
-            ],
-            "correct": "<p><span>Right answer</span> Ans:  (k/m)<sup>0.5</sup></p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans:(k/m)<sup>0.5</sup></p>"  // no comma here
-        } ,
-
-{ // Question 13
-            "q": " When a system vibrates in a fluid medium, the damping is _____",
-            "a": [
-                {"option": " Viscous",    "correct": true},
-                {"option": " Coulomb ",     "correct": false},
-		 {"option": "solid",  "correct": false},
-		{"option": "structural",  "correct": false}
-               
-
-
-// no comma here
-            ],
-            "correct": "<p><span>Right answer</span> Ans:Viscous</p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans:Viscous</p>"  // no comma here
-        },
-
-
-
-
-{ // Question 13
-            "q": " The mechanical clock represents a _____ pendulum.",
-            "a": [
-                {"option": " simple",    "correct": true},
-                {"option": "compound",     "correct": false},
-		{"option": "complex",     "correct": false},
-		{"option": "normal",     "correct": false}
-		
-               
-
-
-// no comma here
-            ],
-            "correct": "<p><span>Right answer</span> Ans:simple</p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans:simple</p>"  // no comma here
-        },
-
-{ // Question 13
-            "q": "  Systems undergo dangerously large oscillations at _____",
-            "a": [
-                {"option": " Resonance",    "correct": true},
-                {"option": "excitation",     "correct": false},
-		{"option": "damped frequency",     "correct": false},
-		{"option": "logarithmic decrement ",     "correct": false}
-		
-               
-
-
-// no comma here
-            ],
-            "correct": "<p><span>Right answer</span> Ans:Resonance</p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans:Resonance</p>"  // no comma here
-        },
-
-{ // Question 13
-            "q": " A vibratory system consists of a spring, damper, and _____.",
-            "a": [
-                {"option": " Frame",    "correct": false},
-                {"option": "Rope",     "correct": false},
-		{"option": "Mass",     "correct": true},
-		{"option": "stiffness ",     "correct": false}
-		
-               
-
-
-// no comma here
-            ],
-            "correct": "<p><span>Right answer</span> Ans:Mass</p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans:Mass</p>"  // no comma here
-        },
-{ // Question 13
-            "q": " If a motion repeats after equal Intervals of time, it is called a _____ motion.",
-            "a": [
-                {"option": " nonperiodic",    "correct": false},
-                {"option": "random",     "correct": false},
-		{"option": "periodic",     "correct": true},
-		{"option": "frequent ",     "correct": false}
-		
-               
-
-
-// no comma here
-            ],
-            "correct": "<p><span>Right answer</span> Ans:periodic</p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans:periodic</p>"  // no comma here
-        },
-{ // Question 13
-            "q": " The time taken to complete one cycle of motion is called the _____ of vibration.",
-            "a": [
-                {"option": " one cycle",    "correct": false},
-                {"option": "time period",     "correct": true},
-		{"option": "amplitude ",     "correct": false},
-		{"option": "frequency ",     "correct": false}
-		
-               
-
-
-// no comma here
-            ],
-            "correct": "<p><span>Right answer</span> Ans:time period</p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans:time period</p>"  // no comma here
-        },
-{ // Question 13
-            "q": " The number of cycles per unit time is called the _____ of vibration.",
-            "a": [
-                {"option": " Resonance",    "correct": false},
-                {"option": "frequency",     "correct": true},
-		{"option": "periodic motion ",     "correct": false},
-		{"option": "time period ",     "correct": false}
-		
-               
-
-
-// no comma here
-            ],
-            "correct": "<p><span>Right answer</span> Ans:frequency</p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans:frequency</p>"  // no comma here
-        },
-
-{ // Question 13
-            "q": " Systems with a finite number of degrees of freedom are called _____ systems.",
-            "a": [
-                {"option": "discrete",    "correct": true},
-                {"option": "continous",     "correct": false},
-		{"option": "linear ",     "correct": false},
-		{"option": "non-linear",     "correct": false}
-		
-               
-
-
-// no comma here
-            ],
-            "correct": "<p><span>Right answer</span> Ans:discrete</p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans:discrete</p>"  // no comma here
-        },
-{ // Question 13
-            "q": " The number of degrees of freedom of a system denotes the minimum number of independent coordinate",
-            "a": [
-                {"option": "true",    "correct": true},
-                {"option": "false",     "correct": false}
-		
-
-
-// no comma here
-            ],
-            "correct": "<p><span>Right answer</span> Ans:true</p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans:true</p>"  // no comma here
-        },
-{ // Question 13
-            "q": " If a system vibrates due to initial disturbance only, it is called _____ vibration.",
-            "a": [
-                {"option": "free",    "correct": true},
-                {"option": "forced",     "correct": false},
-		{"option": "damped",    "correct": false},
-                {"option": "undamped",     "correct": false}
-
-		
-
-
-// no comma here
-            ],
-            "correct": "<p><span>Right answer</span> Ans:free</p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans:free</p>"  // no comma here
+            "correct": "<p><span>Right answer</span> </p>",
+            "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: 0.95 to 1.0</p>" // no comma here
         }
-
+		
+   // no comma here
     ]
 };
