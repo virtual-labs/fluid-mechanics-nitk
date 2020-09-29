@@ -13,30 +13,30 @@
 
 <script>
 var simsubscreennum=0;
-
-var hemi=[[50,100,150],
-          [41,32,26],
-		  [439.02,562.5,692.31],
-		  [3.58,4.58,5.64],
-		  [3.143,5.159,7.815],
-		  [2.289,4.578,3.867],
-		  [0.728,0.887,0.879]];
 		  
-var flat=[[25,50,75],
-          [43,31,25],
-		  [418.6,580.65,720],
-		  [3.41,4.73,5.87],
-		  [1.429,2.479,4.226],
-		  [1.145,2.289,3.434],
-		  [0.801,0.833,0.812]];			
+var flat=[[25,50,75,100],
+          [43.8,33.4,25.2,23],
+		  [410.96,538.92,714.29,782.61],
+		  [331.71,435,576.55,631.7],
+		  [1.36,2.34,4.12,4.94],//Theoretical force, Fth (N) (x-axis)
+		  [1.1445,2.289,3.4335,4.578],//Actual force, Fact =((b/a)*Weight) (N) (y-axis)
+		  [0.84,0.98,0.83,0.93]];		
 
-var inclined=[[10,15,20],
-              [61,50,43],
-			  [295.08,360,418.60],
-			  [2.41,2.93,3.41],
-			  [1.689,2.514,3.399],
-			  [0.458,0.687,0.916],
-			  [0.271,0.273,0.269]];
+var hemi=[[50,100,150,200], //Weight Applied(g)
+          [43,33.5,27,23], //Time, t in (sec)
+		  [418.6,537.31,666.67,782.61], //Discharge, (cm3/sec) Qact( ((A*H)/t)
+		  [337.88,433.7,538.11,631.7], //Velocity, V=Qact/a in (Cm/sec)
+		  [2.83,4.66,7.17,9.89],//Theoretical force, Fth (N)
+		  [2.289,4.578,6.867,9.156],//Fact =((b/a)*Weight) (N)
+		  [0.81,0.98,0.96,0.93]];//Coefficient of impact		  
+
+var inclined=[[5,10,15,20],
+              [60,50,38,34.5],
+			  [242.15,290.58,382.34,421.13],
+			  [242.15,290.58,382.34,421.13],
+			  [0.54,0.78,1.36,1.65],//Theoretical force, Fth (N)
+			  [0.2289,0.4578,0.6867,0.9156],
+			  [0.42,0.59,0.5,0.55]];
 
 </script>
 </head>
@@ -211,9 +211,9 @@ var inclined=[[10,15,20],
 
 <img id="can6-9" style="position: absolute; left: 192.10px; top: 272.99px; " src="images/waterpipe.png">
 
-<p id="v6-1" style="position:absolute; top: 390px; left:390px"> Time taken by water to fill 5cm height, t =</p>
+<p id="v6-1" style="position:absolute; top: 390px; left:387px;"> Time taken by water to fill 5cm height, t=</p>
 
-<div class="tooltip" style="position:absolute; top:420px; left:390px; visibility:hidden;">
+<div class="tooltip" style="position:absolute; top:420px; left:387px; visibility:hidden;">
 	<p id="v6-2">Discharge of water, Q = </p>
 	<span id="fcan4-11" class="tooltiptext" ><span>Q (cm<sup>3</sup>/sec) = <span class="frac"><sup>A &times; h</sup><span>&frasl;</span><sub>t</sub></span><br>Where, A = 3600cm<sup>2</sup></span></span>
 </div> 
@@ -227,8 +227,8 @@ var inclined=[[10,15,20],
 <p>Breadth of channel = 60cm</p>
 <p>Area of collecting tank = 3600cm<sup>2</sup></p><!-- 60 x 40 -->
 
-<p>Diameter of nozzle, d = 1.25 cm</p>
-<span class="tooltip">Area of the nozzle, A = 1.2266cm<sup>2</sup>
+<p>Diameter of nozzle, d = 1.256cm</p>
+<span class="tooltip">Area of the nozzle, A = 1.2389cm<sup>2</sup>
 	<span id="fcan4-11" class="tooltiptext" ><span>A = <span class="frac"><sup>&pi; &times; d<sup>2</sup></sup><span>&frasl;</span><sub>4</sub></span> </span></span>
 </span>
 
@@ -246,7 +246,7 @@ var inclined=[[10,15,20],
 <h3 style="position:absolute; left: 0px; top:50px;">Calculation:</h3>
 <p id="v7-4f" style="position:absolute; top: 100px; left:15px; visibility:hidden; border-bottom-style:double;"> For Flat vane: </p>
 <p id="v7-4h" style="position:absolute; top: 100px; left:15px; visibility:hidden; border-bottom-style:double;"> For curved vane (hemispherical): </p>
-<p id="v7-4i" style="position:absolute; top: 100px; left:15px;; visibility:hidden; border-bottom-style:double;"> For inclined vane (&theta; =60&deg; with the horizontal):</p>
+<p id="v7-4i" style="position:absolute; top: 100px; left:15px;; visibility:hidden; border-bottom-style:double;"> For inclined vane (&theta; = 30&deg; with the horizontal):</p>
 
 <div id="vp7-5" style="position:absolute; left:15px; top: 150px;">
 	<p>Velocity of jet, V = <span class="frac"><sup title="Discharge of water">Q</sup><span>&frasl;</span><sub title="Area of the nozzle">A</sub></span> = <span id="v7-5"></span></p>

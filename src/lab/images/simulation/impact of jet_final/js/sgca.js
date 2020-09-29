@@ -106,7 +106,7 @@ function goToNextFunction()
 		document.getElementById("nextButton").style.visibility = "visible";
 		if(simsubscreennum==7)
 		{
-			if(repeat<3)
+			if(repeat<4)
 			{
 				lnt++;
 				simsubscreennum=3;
@@ -236,10 +236,7 @@ function myStopFunction()
      document.getElementById('arrow1').style.visibility="hidden";
 }
 
-
-
 //-------------------------------------function magic starts here----------------------------------------------------
-
 function magic()
 {
 	
@@ -302,8 +299,6 @@ function magic()
 		 },1000);
 		}
     }
-	
-	
 	else if (simsubscreennum==3)
 	{
 		refresh();
@@ -972,7 +967,7 @@ function step53()
 			noq=true;
 			if(flag==1)
 			 {
-				document.getElementById('v6-1').innerHTML="Time taken by water to fill 5cm height, t = " +flat[1][lnt]+ "sec";
+				document.getElementById('v6-1').innerHTML="Time taken by water to fill 5cm height, t=" +flat[1][lnt]+ "sec";
 				setTimeout(function()
 				{
 					document.getElementById('v6-2').style.visibility="visible";
@@ -983,7 +978,7 @@ function step53()
 			 }
 			 else if(flag==2)
 			 {
-				document.getElementById('v6-1').innerHTML="Time taken by water to fill 5cm height, t = " +hemi[1][lnt]+ "sec";
+				document.getElementById('v6-1').innerHTML="Time taken by water to fill 5cm height, t=" +hemi[1][lnt]+ "sec";
 				setTimeout(function()
 				{
 					document.getElementById('v6-2').style.visibility="visible";
@@ -994,7 +989,7 @@ function step53()
 			 }
 			 else if(flag==3)
 			 {
-				document.getElementById('v6-1').innerHTML="Time taken by water to fill 5cm height, t = " +inclined[1][lnt]+ "sec";
+				document.getElementById('v6-1').innerHTML="Time taken by water to fill 5cm height, t=" +inclined[1][lnt]+ "sec";
 				setTimeout(function()
 				{
 					document.getElementById('v6-2').style.visibility="visible";
@@ -1012,36 +1007,30 @@ function step53()
 	{
 		if(flag==1)
 		{
-			  
-			  	
-        $("#chartContainer").ejChart(
+		$("#chartContainer").ejChart(
         {
  		    //Initializing Primary X Axis	
 		    primaryXAxis:
             {
 			    labelFormat: "{value}",
                 title: { text: 'Theoretical force (N)' },
-                range: { min: 0, max: 5, interval:1 }
+                range: { min: 1, max: 5, interval:1 }
             },	
-			
 			//Initializing Primary Y Axis	
             primaryYAxis:
             {
-				
 				labelFormat: "{value}",
                 title: { text: 'Actual force (N)' },
-                range: { min: 0, max: 5, interval: 1 }
-				
-               
-            },	
-				
-            series: 
+                range: { min: 1, max: 5, interval: 1 }
+			},	
+			series: 
 			[
 			    {
                 points: [
 				{ x: flat[4][0], y: flat[5][0]},
 				{ x: flat[4][1], y: flat[5][1]},
-				{ x: flat[4][2], y: flat[5][2]}
+				{ x: flat[4][2], y: flat[5][2]},
+				{ x: flat[4][3], y: flat[5][3]}
 			],
 				type: 'spline',
 					fill: "#0066FF",
@@ -1063,7 +1052,6 @@ function step53()
 			
 			legend:{visible:false}
         });
-
 		}
 		else if(flag==2)
 		{
@@ -1075,22 +1063,17 @@ function step53()
             {
 			    labelFormat: "{value}",
                 title: { text: 'Theoretical force (N)' },
-                range: { min: 0, max: 8, interval:1 }
+                range: { min: 2, max: 10, interval:1 }
             },	
-			
 			//Initializing Primary Y Axis	
             primaryYAxis:
             {
 				
 				 labelFormat: "{value}",
                 title: { text: 'Actual force (N)' },
-                range: { min: 0, max: 8, interval: 1 }
-				
-               
-            },	
-			
+                range: { min: 2, max: 10, interval: 1 }
+			},	
 			//Initializing Common Properties for all the series
-           
             //Initializing Series				
             series: 
 			[
@@ -1098,7 +1081,8 @@ function step53()
                 points: [
 				{ x: hemi[4][0], y: hemi[5][0]},
 				{ x: hemi[4][1], y: hemi[5][1]},
-				{ x: hemi[4][2], y: hemi[5][2]}
+				{ x: hemi[4][2], y: hemi[5][2]},
+				{ x: hemi[4][3], y: hemi[5][3]}
 			],
 				type: 'spline',
 					fill: "#0066FF",
@@ -1120,13 +1104,10 @@ function step53()
 			
 			legend:{visible:false}
         });
-
-
 		}
-		 
+
         else if(flag==3)
 		{
-	  	
         $("#chartContainer").ejChart(
         {
  		    //Initializing Primary X Axis	
@@ -1134,9 +1115,8 @@ function step53()
             {
 			    labelFormat: "{value}",
                 title: { text: 'Theoretical force (N)' },
-                range: { min : 1, max : 4, interval : 0.5}
+                range: { min : 0, max : 2, interval : 0.25}
             },	
-			
 			//Initializing Primary Y Axis	
             primaryYAxis:
             {
@@ -1144,12 +1124,8 @@ function step53()
 				 labelFormat: "{value}",
                 title: { text: 'Actual force (N)' },
                 range: { min : 0, max : 1, interval : 0.2 }
-				
-               
-            },	
-			
+			},	
 			//Initializing Common Properties for all the series
-           
             //Initializing Series				
             series: 
 			[
@@ -1157,7 +1133,8 @@ function step53()
                 points: [
 				{ x: inclined[4][0], y: inclined[5][0]},
 				{ x: inclined[4][1], y: inclined[5][1]},
-				{ x: inclined[4][2], y: inclined[5][2]}
+				{ x: inclined[4][2], y: inclined[5][2]},
+				{ x: inclined[4][3], y: inclined[5][3]}
 			],
 				type: 'spline',
 					fill: "#0066FF",

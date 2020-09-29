@@ -438,89 +438,83 @@ function step5()
 }
 function step6()
 {
-	
-     
 	$("#chartContainer").ejChart(
-        {	
-			//Initializing Primary X Axis	 
-            
-			
-			//Initializing Primary Y Axis	
-			primaryXAxis:
-            {
-                valueType: "logarithmic",
-                minorTicksPerInterval: 5,
-                range: { min: 1, max: 10000, interval: 1 },
-                majorGridLines: { width: 1.5, opacity: 0.8 },
-                minorGridLines:{ visible: true },
-				minorTickLines:{ width: 1, size: 4, visible: true },
-                title: { text: 'Head' },
-                labelFormat:'{value}'
-            },   
-			 primaryYAxis:
-            {
-				valueType: "logarithmic",
-                minorTicksPerInterval: 4,
-                range: { min: 1, max: 10000, interval: 1 },
-                majorGridLines: { width: 1.5, opacity: 0.8 },
-                minorGridLines:{ visible: true },
-				minorTickLines:{ width: 1, size: 4, visible: true },
-                title: { text: 'Theoretical Discharge' },
-                labelFormat:'{value}'
-            }, 
-            
-			//Initializing Series
-			
-			series: 
-			[ 
-				{
-                    points:[{ x: values[0][2], y: values[0][3]}, 
-							{ x: values[1][2], y: values[1][3]},
-							{ x: values[2][2], y: values[2][3]},
-							{ x: values[3][2], y: values[3][3]},
-							{ x: values[4][2], y: values[4][3]},
-							{ x: values[5][2], y: values[5][3]}
-							],
-                    type: 'line',
-					border :{width:5},
-					tooltip:{visible:true},
-					marker:{
-                        shape: 'circle',
-						size:
-                        {
-                            height: 5, width: 5
-                        },
-                        visible: true
-                    },					
-					enableAnimation :true
-                },
-				{
-                    points:
-					[
-							{ x: 1, y: 15 },
-							{ x: values[5][2], y: values[5][3]}
-					],
-                    type: 'line',
-					fill: "#0066FF",
-					border :{width:5},
-					tooltip:{visible:true},
-					marker:{
-                        shape: 'circle',
-						size:
-                        {
-                            height: 5, width: 5
-                        },
-                        visible: true
-                    },					
-					enableAnimation :true
-                }
-			],
-			
-            load:"loadTheme",
-			isResponsive: true,
-			
-			legend:{visible:false}
-        });
+    {		
+		primaryXAxis:
+		{
+			valueType: "logarithmic",
+			minorTicksPerInterval: 5,
+			range: { min: 1, max: 10, interval: 1 },
+			majorGridLines: { width: 1.5, opacity: 0.8 },
+			minorGridLines:{ visible: true },
+			minorTickLines:{ width: 1, size: 4, visible: true },
+			title: { text: 'Head' },
+			labelFormat:'{value}'
+		},   
+		 primaryYAxis:
+		{
+			valueType: "logarithmic",
+			minorTicksPerInterval: 4,
+			range: { min: 1, max: 10000, interval: 1 },
+			majorGridLines: { width: 1.5, opacity: 0.8 },
+			minorGridLines:{ visible: true },
+			minorTickLines:{ width: 1, size: 4, visible: true },
+			title: { text: 'Actual Discharge' },
+			labelFormat:'{value}'
+		}, 
+		
+		//Initializing Series
+		
+		series: 
+		[ 
+			{
+				points:[{ x: values[0][2], y: values[0][6]}, 
+						{ x: values[1][2], y: values[1][6]},
+						{ x: values[2][2], y: values[2][6]},
+						{ x: values[3][2], y: values[3][6]},
+						{ x: values[4][2], y: values[4][6]},
+						{ x: values[5][2], y: values[5][6]}
+						],
+				type: 'line',
+				border :{width:5},
+				tooltip:{visible:true},
+				marker:{
+					shape: 'circle',
+					size:
+					{
+						height: 5, width: 5
+					},
+					visible: true
+				},					
+				enableAnimation :true
+			},
+			{
+				points:
+				[
+						{ x: 1, y: 15 },
+						{ x: values[5][2], y: values[5][6]}
+				],
+				type: 'line',
+				fill: "#0066FF",
+				border :{width:5},
+				tooltip:{visible:true},
+				marker:{
+					shape: 'circle',
+					size:
+					{
+						height: 5, width: 5
+					},
+					visible: true
+				},					
+				enableAnimation :true
+			}
+		],
+		
+		load:"loadTheme",
+		isResponsive: true,
+		
+		legend:{visible:false}
+	});
 		
 	setTimeout(function()
 	{
